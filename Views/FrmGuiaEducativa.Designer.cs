@@ -154,7 +154,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Narrow", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(519, 24);
+            label1.Location = new Point(624, 24);
             label1.Name = "label1";
             label1.Size = new Size(114, 22);
             label1.TabIndex = 12;
@@ -165,7 +165,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(965, 503);
+            ClientSize = new Size(1278, 503);
             Controls.Add(label1);
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;

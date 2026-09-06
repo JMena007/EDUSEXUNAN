@@ -76,7 +76,7 @@ namespace EDUSEX
             SideMenuPanel.Dock = DockStyle.Left;
             SideMenuPanel.Location = new Point(0, 0);
             SideMenuPanel.Name = "SideMenuPanel";
-            SideMenuPanel.Size = new Size(200, 518);
+            SideMenuPanel.Size = new Size(200, 527);
             SideMenuPanel.TabIndex = 0;
             // 
             // panel1
@@ -90,7 +90,7 @@ namespace EDUSEX
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(200, 518);
+            panel1.Size = new Size(200, 527);
             panel1.TabIndex = 4;
             // 
             // panel2
@@ -109,7 +109,7 @@ namespace EDUSEX
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 518);
+            panel2.Size = new Size(200, 527);
             panel2.TabIndex = 4;
             panel2.Paint += panel2_Paint;
             // 
@@ -128,7 +128,7 @@ namespace EDUSEX
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 518);
+            panel3.Size = new Size(200, 527);
             panel3.TabIndex = 10;
             // 
             // label3
@@ -404,7 +404,7 @@ namespace EDUSEX
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(963, 518);
+            ClientSize = new Size(963, 527);
             Controls.Add(label1);
             Controls.Add(SideMenuPanel);
             FormBorderStyle = FormBorderStyle.None;
