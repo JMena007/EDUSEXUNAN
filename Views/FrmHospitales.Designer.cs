@@ -166,7 +166,7 @@
             // 
             dgwHospitales.BackgroundColor = SystemColors.ButtonFace;
             dgwHospitales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwHospitales.Location = new Point(241, 315);
+            dgwHospitales.Location = new Point(241, 288);
             dgwHospitales.Name = "dgwHospitales";
             dgwHospitales.Size = new Size(703, 205);
             dgwHospitales.TabIndex = 13;

@@ -45,7 +45,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(323, 62);
+            label1.Location = new Point(337, 51);
             label1.Name = "label1";
             label1.Size = new Size(343, 22);
             label1.TabIndex = 0;
@@ -55,10 +55,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(152, 12);
             label2.Name = "label2";
-            label2.Size = new Size(96, 20);
+            label2.Size = new Size(101, 20);
             label2.TabIndex = 1;
             label2.Text = "Iniciar Sesion";
             label2.Click += label2_Click;
@@ -96,9 +96,9 @@
             panelLogin.Controls.Add(label2);
             panelLogin.Controls.Add(label3);
             panelLogin.Controls.Add(label4);
-            panelLogin.Location = new Point(297, 124);
+            panelLogin.Location = new Point(318, 135);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(396, 272);
+            panelLogin.Size = new Size(402, 272);
             panelLogin.TabIndex = 4;
             // 
             // btnInicioSesion
@@ -145,7 +145,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(990, 520);
+            ClientSize = new Size(1000, 521);
             Controls.Add(panelLogin);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;

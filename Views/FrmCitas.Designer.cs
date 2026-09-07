@@ -106,7 +106,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 524);
+            panel3.Size = new Size(200, 525);
             panel3.TabIndex = 12;
             // 
             // label2
@@ -459,7 +459,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1003, 524);
+            ClientSize = new Size(1003, 525);
             Controls.Add(btnEliminarcita);
             Controls.Add(btnEditarcita);
             Controls.Add(label3);
