@@ -33,7 +33,7 @@
             label3 = new Label();
             label4 = new Label();
             panelLogin = new Panel();
-            btnentrarlogin = new Button();
+            btnInicioSesion = new Button();
             linkInvitado = new LinkLabel();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -55,17 +55,19 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(146, 20);
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(152, 12);
             label2.Name = "label2";
-            label2.Size = new Size(76, 15);
+            label2.Size = new Size(96, 20);
             label2.TabIndex = 1;
             label2.Text = "Iniciar Sesion";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(168, 117);
+            label3.Location = new Point(164, 117);
             label3.Name = "label3";
             label3.Size = new Size(67, 15);
             label3.TabIndex = 2;
@@ -87,7 +89,7 @@
             // 
             panelLogin.BackColor = Color.WhiteSmoke;
             panelLogin.BorderStyle = BorderStyle.Fixed3D;
-            panelLogin.Controls.Add(btnentrarlogin);
+            panelLogin.Controls.Add(btnInicioSesion);
             panelLogin.Controls.Add(linkInvitado);
             panelLogin.Controls.Add(textBox2);
             panelLogin.Controls.Add(textBox1);
@@ -99,16 +101,16 @@
             panelLogin.Size = new Size(396, 272);
             panelLogin.TabIndex = 4;
             // 
-            // btnentrarlogin
+            // btnInicioSesion
             // 
-            btnentrarlogin.BackColor = Color.SlateBlue;
-            btnentrarlogin.ForeColor = SystemColors.ButtonFace;
-            btnentrarlogin.Location = new Point(158, 183);
-            btnentrarlogin.Name = "btnentrarlogin";
-            btnentrarlogin.Size = new Size(77, 23);
-            btnentrarlogin.TabIndex = 6;
-            btnentrarlogin.Text = "Entrar";
-            btnentrarlogin.UseVisualStyleBackColor = false;
+            btnInicioSesion.BackColor = Color.RoyalBlue;
+            btnInicioSesion.ForeColor = SystemColors.ButtonFace;
+            btnInicioSesion.Location = new Point(155, 179);
+            btnInicioSesion.Name = "btnInicioSesion";
+            btnInicioSesion.Size = new Size(93, 30);
+            btnInicioSesion.TabIndex = 6;
+            btnInicioSesion.Text = "Entrar";
+            btnInicioSesion.UseVisualStyleBackColor = false;
             // 
             // linkInvitado
             // 
@@ -165,6 +167,6 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private LinkLabel linkInvitado;
-        private Button btnentrarlogin;
+        private Button btnInicioSesion;
     }
 }
