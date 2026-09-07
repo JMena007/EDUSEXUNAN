@@ -57,7 +57,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 503);
+            panel3.Size = new Size(200, 515);
             panel3.TabIndex = 11;
             // 
             // label3
@@ -154,7 +154,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Narrow", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(624, 24);
+            label1.Location = new Point(526, 24);
             label1.Name = "label1";
             label1.Size = new Size(114, 22);
             label1.TabIndex = 12;
@@ -165,12 +165,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1278, 503);
+            ClientSize = new Size(937, 515);
             Controls.Add(label1);
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmGuiaEducativa";
             Text = "Guia Educativa";
+            Load += FrmGuiaEducativa_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);

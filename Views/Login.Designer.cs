@@ -33,10 +33,10 @@
             label3 = new Label();
             label4 = new Label();
             panelLogin = new Panel();
+            btnentrarlogin = new Button();
             linkInvitado = new LinkLabel();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            btnentrarlogin = new Button();
             panelLogin.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,8 +44,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(322, 65);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(323, 62);
             label1.Name = "label1";
             label1.Size = new Size(343, 22);
             label1.TabIndex = 0;
@@ -55,11 +55,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(145, 12);
+            label2.Location = new Point(146, 20);
             label2.Name = "label2";
-            label2.Size = new Size(104, 18);
+            label2.Size = new Size(76, 15);
             label2.TabIndex = 1;
             label2.Text = "Iniciar Sesion";
             // 
@@ -92,15 +90,25 @@
             panelLogin.Controls.Add(btnentrarlogin);
             panelLogin.Controls.Add(linkInvitado);
             panelLogin.Controls.Add(textBox2);
-            panelLogin.Controls.Add(label3);
-            panelLogin.Controls.Add(label4);
             panelLogin.Controls.Add(textBox1);
             panelLogin.Controls.Add(label2);
-            panelLogin.ForeColor = SystemColors.ActiveCaptionText;
+            panelLogin.Controls.Add(label3);
+            panelLogin.Controls.Add(label4);
             panelLogin.Location = new Point(297, 124);
             panelLogin.Name = "panelLogin";
             panelLogin.Size = new Size(396, 272);
             panelLogin.TabIndex = 4;
+            // 
+            // btnentrarlogin
+            // 
+            btnentrarlogin.BackColor = Color.SlateBlue;
+            btnentrarlogin.ForeColor = SystemColors.ButtonFace;
+            btnentrarlogin.Location = new Point(158, 183);
+            btnentrarlogin.Name = "btnentrarlogin";
+            btnentrarlogin.Size = new Size(77, 23);
+            btnentrarlogin.TabIndex = 6;
+            btnentrarlogin.Text = "Entrar";
+            btnentrarlogin.UseVisualStyleBackColor = false;
             // 
             // linkInvitado
             // 
@@ -130,24 +138,12 @@
             textBox1.Size = new Size(188, 23);
             textBox1.TabIndex = 2;
             // 
-            // btnentrarlogin
-            // 
-            btnentrarlogin.BackColor = Color.SlateBlue;
-            btnentrarlogin.ForeColor = SystemColors.ButtonFace;
-            btnentrarlogin.Location = new Point(158, 183);
-            btnentrarlogin.Name = "btnentrarlogin";
-            btnentrarlogin.Size = new Size(77, 23);
-            btnentrarlogin.TabIndex = 6;
-            btnentrarlogin.Text = "Entrar";
-            btnentrarlogin.UseVisualStyleBackColor = false;
-            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SlateBlue;
-            BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(956, 512);
+            BackColor = Color.SteelBlue;
+            ClientSize = new Size(990, 520);
             Controls.Add(panelLogin);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;

@@ -15,5 +15,7 @@ namespace EDUSEX
             ApplicationConfiguration.Initialize();
             Application.Run(new Login());
         }
+
+       
     }
 }

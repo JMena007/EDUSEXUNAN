@@ -7,10 +7,12 @@ namespace EDUSEX.conexion
     {
         public EDUSEXContext()
         {
+
         }
 
         public EDUSEXContext(DbContextOptions<EDUSEXContext> options) : base(options)
         {
+
         }
 
         // Add DbSet<T> properties here when you create your entities

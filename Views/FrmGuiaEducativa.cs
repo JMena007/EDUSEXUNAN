@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using EDUSEX;
 
 namespace EDUSEX.Views
 {
@@ -13,10 +14,22 @@ namespace EDUSEX.Views
         public FrmGuiaEducativa()
         {
             InitializeComponent();
+
+            button18.Click += (sender, e) => NavigationHelper.Open<FormPrincipal>(this);
+            button17.Click += (sender, e) => NavigationHelper.Open<FrmUsuario>(this);
+            button16.Click += (sender, e) => NavigationHelper.Open<FrmHospital>(this);
+            button15.Click += (sender, e) => NavigationHelper.Open<FrmHospitales>(this);
+            button14.Click += (sender, e) => NavigationHelper.Open<FrmGuiaEducativa>(this);
+            button11.Click += (sender, e) => NavigationHelper.Logout(this);
         }
 
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmGuiaEducativa_Load(object sender, EventArgs e)
         {
 
         }

@@ -39,7 +39,9 @@
             button17 = new Button();
             button18 = new Button();
             label1 = new Label();
+            dgwHospitales = new DataGridView();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgwHospitales).BeginInit();
             SuspendLayout();
             // 
             // panel3
@@ -57,7 +59,7 @@
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 517);
+            panel3.Size = new Size(200, 551);
             panel3.TabIndex = 11;
             // 
             // label3
@@ -160,11 +162,21 @@
             label1.TabIndex = 12;
             label1.Text = "Hospitales";
             // 
+            // dgwHospitales
+            // 
+            dgwHospitales.BackgroundColor = SystemColors.ButtonFace;
+            dgwHospitales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwHospitales.Location = new Point(241, 315);
+            dgwHospitales.Name = "dgwHospitales";
+            dgwHospitales.Size = new Size(703, 205);
+            dgwHospitales.TabIndex = 13;
+            // 
             // FrmHospitales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(954, 517);
+            ClientSize = new Size(991, 551);
+            Controls.Add(dgwHospitales);
             Controls.Add(label1);
             Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
@@ -172,8 +184,10 @@
             Text = "Hospitales";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgwHospitales).EndInit();
             ResumeLayout(false);
             PerformLayout();
+
         }
 
         #endregion
@@ -189,5 +203,6 @@
         private Button button17;
         private Button button18;
         private Label label1;
+        private DataGridView dgwHospitales;
     }
 }

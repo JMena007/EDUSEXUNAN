@@ -46,21 +46,21 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtnombre = new TextBox();
+            txtCedula = new TextBox();
+            txtapellido = new TextBox();
             btnGuardar = new Button();
             btnEditar = new Button();
             btnEliminar = new Button();
             btnLimpiar = new Button();
             label9 = new Label();
-            textBox7 = new TextBox();
-            maskedTextBox1 = new MaskedTextBox();
-            numericUpDown1 = new NumericUpDown();
-            comboBox1 = new ComboBox();
+            txtCorreo = new TextBox();
+            txtTelefono = new MaskedTextBox();
+            numEdad = new NumericUpDown();
+            boxsexo = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -68,9 +68,9 @@
             dataGridView1.BackgroundColor = SystemColors.Control;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.GridColor = SystemColors.InactiveBorder;
-            dataGridView1.Location = new Point(274, 310);
+            dataGridView1.Location = new Point(250, 310);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(592, 203);
+            dataGridView1.Size = new Size(534, 203);
             dataGridView1.TabIndex = 0;
             // 
             // panel2
@@ -88,7 +88,7 @@
             panel2.Dock = DockStyle.Left;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 525);
+            panel2.Size = new Size(200, 541);
             panel2.TabIndex = 5;
             // 
             // label2
@@ -249,33 +249,33 @@
             label8.TabIndex = 12;
             label8.Text = "Telefono";
             // 
-            // textBox1
+            // txtnombre
             // 
-            textBox1.Location = new Point(303, 56);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(239, 23);
-            textBox1.TabIndex = 13;
+            txtnombre.Location = new Point(303, 56);
+            txtnombre.Name = "txtnombre";
+            txtnombre.Size = new Size(239, 23);
+            txtnombre.TabIndex = 13;
             // 
-            // textBox3
+            // txtCedula
             // 
-            textBox3.Location = new Point(303, 139);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(239, 23);
-            textBox3.TabIndex = 15;
+            txtCedula.Location = new Point(303, 139);
+            txtCedula.Name = "txtCedula";
+            txtCedula.Size = new Size(239, 23);
+            txtCedula.TabIndex = 15;
             // 
-            // textBox4
+            // txtapellido
             // 
-            textBox4.Location = new Point(303, 98);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(239, 23);
-            textBox4.TabIndex = 16;
+            txtapellido.Location = new Point(303, 98);
+            txtapellido.Name = "txtapellido";
+            txtapellido.Size = new Size(239, 23);
+            txtapellido.TabIndex = 16;
             // 
             // btnGuardar
             // 
             btnGuardar.BackColor = Color.SteelBlue;
             btnGuardar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(274, 249);
+            btnGuardar.Location = new Point(404, 231);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 30);
             btnGuardar.TabIndex = 19;
@@ -287,7 +287,7 @@
             // 
             btnEditar.BackColor = Color.FromArgb(128, 255, 255);
             btnEditar.ForeColor = Color.FromArgb(64, 64, 64);
-            btnEditar.Location = new Point(442, 249);
+            btnEditar.Location = new Point(814, 337);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(100, 30);
             btnEditar.TabIndex = 20;
@@ -298,7 +298,7 @@
             // 
             btnEliminar.BackColor = Color.Tomato;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(604, 249);
+            btnEliminar.Location = new Point(814, 426);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 30);
             btnEliminar.TabIndex = 21;
@@ -309,7 +309,7 @@
             // 
             btnLimpiar.BackColor = Color.Gray;
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
-            btnLimpiar.Location = new Point(766, 249);
+            btnLimpiar.Location = new Point(587, 231);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 30);
             btnLimpiar.TabIndex = 22;
@@ -326,56 +326,56 @@
             label9.Text = "Correo";
             label9.Click += label9_Click;
             // 
-            // textBox7
+            // txtCorreo
             // 
-            textBox7.Location = new Point(663, 98);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(239, 23);
-            textBox7.TabIndex = 24;
+            txtCorreo.Location = new Point(663, 98);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(239, 23);
+            txtCorreo.TabIndex = 24;
             // 
-            // maskedTextBox1
+            // txtTelefono
             // 
-            maskedTextBox1.Location = new Point(663, 51);
-            maskedTextBox1.Name = "maskedTextBox1";
-            maskedTextBox1.Size = new Size(239, 23);
-            maskedTextBox1.TabIndex = 25;
+            txtTelefono.Location = new Point(663, 51);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(239, 23);
+            txtTelefono.TabIndex = 25;
             // 
-            // numericUpDown1
+            // numEdad
             // 
-            numericUpDown1.Location = new Point(303, 182);
-            numericUpDown1.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 26;
-            numericUpDown1.Value = new decimal(new int[] { 16, 0, 0, 0 });
+            numEdad.Location = new Point(303, 182);
+            numEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
+            numEdad.Name = "numEdad";
+            numEdad.Size = new Size(120, 23);
+            numEdad.TabIndex = 26;
+            numEdad.Value = new decimal(new int[] { 16, 0, 0, 0 });
             // 
-            // comboBox1
+            // boxsexo
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Seleccionar", "Masculino", "femenino", "No Binarie", "Otros" });
-            comboBox1.Location = new Point(663, 151);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 27;
+            boxsexo.DropDownStyle = ComboBoxStyle.DropDownList;
+            boxsexo.FormattingEnabled = true;
+            boxsexo.Items.AddRange(new object[] { "Seleccionar", "Masculino", "femenino", "No Binarie", "Otros" });
+            boxsexo.Location = new Point(663, 151);
+            boxsexo.Name = "boxsexo";
+            boxsexo.Size = new Size(121, 23);
+            boxsexo.TabIndex = 27;
             // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1042, 525);
-            Controls.Add(comboBox1);
-            Controls.Add(numericUpDown1);
-            Controls.Add(maskedTextBox1);
-            Controls.Add(textBox7);
+            ClientSize = new Size(981, 541);
+            Controls.Add(boxsexo);
+            Controls.Add(numEdad);
+            Controls.Add(txtTelefono);
+            Controls.Add(txtCorreo);
             Controls.Add(label9);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(btnGuardar);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
+            Controls.Add(txtapellido);
+            Controls.Add(txtCedula);
+            Controls.Add(txtnombre);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -391,7 +391,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numEdad).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -416,15 +416,15 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtnombre;
+        private TextBox txtCedula;
+        private TextBox txtapellido;
         private Button btnGuardar;
         private Button btnEditar;
         private Button btnEliminar;
         private Button btnLimpiar;
         private Label label9;
-        private TextBox textBox7;
+        private TextBox txtCorreo;
 
         
 
@@ -443,8 +443,8 @@
             // TODO: implementar la acción para btnGuardar
         }
 
-        private MaskedTextBox maskedTextBox1;
-        private NumericUpDown numericUpDown1;
-        private ComboBox comboBox1;
+        private MaskedTextBox txtTelefono;
+        private NumericUpDown numEdad;
+        private ComboBox boxsexo;
     }
 }
