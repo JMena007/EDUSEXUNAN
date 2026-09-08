@@ -12,7 +12,7 @@ namespace EDUSEX
             button3.Click += button9_Click;
             button5.Click += button9_Click;
             button6.Click += btnUsuarios_Click;
-            button1.Click += button8_Click;
+            btnHospitales.Click += button8_Click;
             button10.Click += button10_Click;
             button11.Click += button10_Click;
             button14.Click += button12_Click;
@@ -75,6 +75,11 @@ namespace EDUSEX
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             NavigationHelper.Open<FrmUsuario>(this);
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

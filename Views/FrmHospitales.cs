@@ -15,7 +15,7 @@ namespace EDUSEX.Views
         {
             InitializeComponent();
 
-            button18.Click += (sender, e) => NavigationHelper.Open<FormPrincipal>(this);
+            btnInicio.Click += (sender, e) => NavigationHelper.Open<FormPrincipal>(this);
             button17.Click += (sender, e) => NavigationHelper.Open<FrmUsuario>(this);
             button16.Click += (sender, e) => NavigationHelper.Open<FrmHospital>(this);
             button15.Click += (sender, e) => NavigationHelper.Open<FrmHospitales>(this);
