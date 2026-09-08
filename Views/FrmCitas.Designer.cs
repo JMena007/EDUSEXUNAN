@@ -29,190 +29,61 @@
         private void InitializeComponent()
         {
             Buscadortxt = new TextBox();
-            label1 = new Label();
-            panel3 = new Panel();
-            label2 = new Label();
-            button11 = new Button();
-            panel4 = new Panel();
-            btnsoporte = new Button();
-            button14 = new Button();
-            button15 = new Button();
-            button16 = new Button();
-            button17 = new Button();
-            button18 = new Button();
             dgwCitas = new DataGridView();
             lbledad = new Label();
             lblnombre = new Label();
             llbapellidos = new Label();
             label6 = new Label();
             panelcita = new Panel();
+            numEdad = new NumericUpDown();
+            btnCancelarcita = new Button();
+            IPEstado = new ComboBox();
             comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            panelcita2 = new Panel();
-            button1 = new Button();
-            btnAgendacita = new Button();
-            panelestado = new ComboBox();
+            btnAgendarcita = new Button();
             label4 = new Label();
-            panelmotivodecita = new ComboBox();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            comboBox3 = new ComboBox();
-            lblHospital = new Label();
+            Apellidotxt = new TextBox();
+            Nombretxt = new TextBox();
+            IPMotivocita = new ComboBox();
             lblmotivo = new Label();
-            lblhora = new Label();
             llbfecha = new Label();
+            IPFecha = new DateTimePicker();
+            IPHoraCita = new DateTimePicker();
+            lblHospital = new Label();
+            IPHospitales = new ComboBox();
+            lblhora = new Label();
             label3 = new Label();
             btnEditarcita = new Button();
             btnEliminarcita = new Button();
-            panel3.SuspendLayout();
+            btnBuscar = new Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)dgwCitas).BeginInit();
             panelcita.SuspendLayout();
-            panelcita2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
             SuspendLayout();
             // 
             // Buscadortxt
             // 
-            Buscadortxt.Location = new Point(303, 20);
+            Buscadortxt.Location = new Point(217, 23);
             Buscadortxt.Name = "Buscadortxt";
             Buscadortxt.PlaceholderText = "Buscar pacientes";
             Buscadortxt.Size = new Size(332, 23);
             Buscadortxt.TabIndex = 8;
             Buscadortxt.TextChanged += Buscadortxt_TextChanged;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(239, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(44, 18);
-            label1.TabIndex = 9;
-            label1.Text = "Citas";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.SteelBlue;
-            panel3.Controls.Add(label2);
-            panel3.Controls.Add(button11);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(btnsoporte);
-            panel3.Controls.Add(button14);
-            panel3.Controls.Add(button15);
-            panel3.Controls.Add(button16);
-            panel3.Controls.Add(button17);
-            panel3.Controls.Add(button18);
-            panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 525);
-            panel3.TabIndex = 12;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ControlLight;
-            label2.Location = new Point(21, 24);
-            label2.Name = "label2";
-            label2.Size = new Size(163, 22);
-            label2.TabIndex = 9;
-            label2.Text = "System EDUSEX";
-            // 
-            // button11
-            // 
-            button11.Location = new Point(36, 430);
-            button11.Name = "button11";
-            button11.Size = new Size(102, 23);
-            button11.TabIndex = 8;
-            button11.Text = "Cerrar Sesion";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            panel4.AutoScrollMargin = new Size(200, 1);
-            panel4.BackColor = SystemColors.ControlLightLight;
-            panel4.Location = new Point(0, 337);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 1);
-            panel4.TabIndex = 7;
-            // 
-            // btnsoporte
-            // 
-            btnsoporte.BackColor = Color.Transparent;
-            btnsoporte.Location = new Point(36, 384);
-            btnsoporte.Name = "btnsoporte";
-            btnsoporte.Size = new Size(105, 23);
-            btnsoporte.TabIndex = 5;
-            btnsoporte.Text = "Soporte IT";
-            btnsoporte.UseVisualStyleBackColor = false;
-            // 
-            // button14
-            // 
-            button14.BackColor = Color.LightSkyBlue;
-            button14.Location = new Point(36, 277);
-            button14.Name = "button14";
-            button14.Size = new Size(105, 23);
-            button14.TabIndex = 4;
-            button14.Text = "Guia Educativa";
-            button14.UseVisualStyleBackColor = false;
-            // 
-            // button15
-            // 
-            button15.BackColor = Color.LightSkyBlue;
-            button15.Location = new Point(36, 231);
-            button15.Name = "button15";
-            button15.Size = new Size(105, 23);
-            button15.TabIndex = 3;
-            button15.Text = "Hospital";
-            button15.UseVisualStyleBackColor = false;
-            // 
-            // button16
-            // 
-            button16.BackColor = Color.SkyBlue;
-            button16.Location = new Point(36, 182);
-            button16.Name = "button16";
-            button16.Size = new Size(105, 23);
-            button16.TabIndex = 2;
-            button16.Text = "Citas";
-            button16.UseVisualStyleBackColor = false;
-            // 
-            // button17
-            // 
-            button17.BackColor = Color.LightSkyBlue;
-            button17.Location = new Point(36, 131);
-            button17.Name = "button17";
-            button17.Size = new Size(105, 23);
-            button17.TabIndex = 1;
-            button17.Text = "Usuarios";
-            button17.UseVisualStyleBackColor = false;
-            // 
-            // button18
-            // 
-            button18.BackColor = Color.LightSkyBlue;
-            button18.ForeColor = SystemColors.ActiveCaptionText;
-            button18.Location = new Point(36, 77);
-            button18.Name = "button18";
-            button18.Size = new Size(102, 23);
-            button18.TabIndex = 1;
-            button18.Text = "Inicio";
-            button18.UseVisualStyleBackColor = false;
-            // 
             // dgwCitas
             // 
             dgwCitas.BackgroundColor = SystemColors.ButtonHighlight;
             dgwCitas.BorderStyle = BorderStyle.Fixed3D;
             dgwCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwCitas.Location = new Point(220, 313);
+            dgwCitas.Location = new Point(217, 325);
             dgwCitas.Name = "dgwCitas";
-            dgwCitas.Size = new Size(579, 199);
+            dgwCitas.Size = new Size(579, 183);
             dgwCitas.TabIndex = 13;
             // 
             // lbledad
             // 
             lbledad.AutoSize = true;
-            lbledad.Location = new Point(10, 126);
+            lbledad.Location = new Point(10, 128);
             lbledad.Name = "lbledad";
             lbledad.Size = new Size(33, 15);
             lbledad.TabIndex = 14;
@@ -241,7 +112,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(153, 126);
+            label6.Location = new Point(136, 129);
             label6.Name = "label6";
             label6.Size = new Size(31, 15);
             label6.TabIndex = 17;
@@ -251,183 +122,181 @@
             // 
             panelcita.BackColor = SystemColors.ButtonFace;
             panelcita.BorderStyle = BorderStyle.Fixed3D;
+            panelcita.Controls.Add(numEdad);
+            panelcita.Controls.Add(btnCancelarcita);
+            panelcita.Controls.Add(IPEstado);
             panelcita.Controls.Add(comboBox2);
-            panelcita.Controls.Add(comboBox1);
-            panelcita.Controls.Add(textBox2);
-            panelcita.Controls.Add(textBox1);
+            panelcita.Controls.Add(btnAgendarcita);
+            panelcita.Controls.Add(label4);
+            panelcita.Controls.Add(Apellidotxt);
+            panelcita.Controls.Add(Nombretxt);
+            panelcita.Controls.Add(IPMotivocita);
+            panelcita.Controls.Add(lblmotivo);
             panelcita.Controls.Add(lblnombre);
             panelcita.Controls.Add(lbledad);
             panelcita.Controls.Add(label6);
             panelcita.Controls.Add(llbapellidos);
-            panelcita.Location = new Point(220, 64);
+            panelcita.Controls.Add(llbfecha);
+            panelcita.Controls.Add(IPFecha);
+            panelcita.Controls.Add(IPHoraCita);
+            panelcita.Controls.Add(lblHospital);
+            panelcita.Controls.Add(IPHospitales);
+            panelcita.Controls.Add(lblhora);
+            panelcita.Location = new Point(217, 54);
             panelcita.Name = "panelcita";
-            panelcita.Size = new Size(302, 177);
+            panelcita.Size = new Size(570, 237);
             panelcita.TabIndex = 18;
+            // 
+            // numEdad
+            // 
+            numEdad.Location = new Point(49, 123);
+            numEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
+            numEdad.Name = "numEdad";
+            numEdad.Size = new Size(69, 23);
+            numEdad.TabIndex = 28;
+            numEdad.Value = new decimal(new int[] { 16, 0, 0, 0 });
+            // 
+            // btnCancelarcita
+            // 
+            btnCancelarcita.BackColor = Color.FromArgb(255, 128, 128);
+            btnCancelarcita.ForeColor = SystemColors.ButtonFace;
+            btnCancelarcita.Location = new Point(318, 183);
+            btnCancelarcita.Name = "btnCancelarcita";
+            btnCancelarcita.Size = new Size(80, 25);
+            btnCancelarcita.TabIndex = 27;
+            btnCancelarcita.Text = "Cancelar";
+            btnCancelarcita.UseVisualStyleBackColor = false;
+            // 
+            // IPEstado
+            // 
+            IPEstado.FormattingEnabled = true;
+            IPEstado.Items.AddRange(new object[] { "Confirmado", "Pendiente" });
+            IPEstado.Location = new Point(510, 125);
+            IPEstado.Name = "IPEstado";
+            IPEstado.Size = new Size(42, 23);
+            IPEstado.TabIndex = 25;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(190, 119);
+            comboBox2.Items.AddRange(new object[] { "Masculino", "Femenino", "Otros" });
+            comboBox2.Location = new Point(173, 122);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(50, 23);
             comboBox2.TabIndex = 21;
             // 
-            // comboBox1
+            // btnAgendarcita
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(49, 119);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(50, 23);
-            comboBox1.TabIndex = 20;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(67, 68);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(156, 23);
-            textBox2.TabIndex = 19;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(67, 18);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(156, 23);
-            textBox1.TabIndex = 18;
-            // 
-            // panelcita2
-            // 
-            panelcita2.BackColor = SystemColors.ButtonFace;
-            panelcita2.BorderStyle = BorderStyle.Fixed3D;
-            panelcita2.Controls.Add(button1);
-            panelcita2.Controls.Add(btnAgendacita);
-            panelcita2.Controls.Add(panelestado);
-            panelcita2.Controls.Add(label4);
-            panelcita2.Controls.Add(panelmotivodecita);
-            panelcita2.Controls.Add(dateTimePicker2);
-            panelcita2.Controls.Add(dateTimePicker1);
-            panelcita2.Controls.Add(comboBox3);
-            panelcita2.Controls.Add(lblHospital);
-            panelcita2.Controls.Add(lblmotivo);
-            panelcita2.Controls.Add(lblhora);
-            panelcita2.Controls.Add(llbfecha);
-            panelcita2.Location = new Point(561, 64);
-            panelcita2.Name = "panelcita2";
-            panelcita2.Size = new Size(344, 190);
-            panelcita2.TabIndex = 19;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(255, 128, 128);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(207, 152);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 27;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // btnAgendacita
-            // 
-            btnAgendacita.BackColor = Color.PaleTurquoise;
-            btnAgendacita.Location = new Point(67, 152);
-            btnAgendacita.Name = "btnAgendacita";
-            btnAgendacita.Size = new Size(75, 23);
-            btnAgendacita.TabIndex = 26;
-            btnAgendacita.Text = "Agendar Cita";
-            btnAgendacita.UseVisualStyleBackColor = false;
-            btnAgendacita.Click += button1_Click;
-            // 
-            // panelestado
-            // 
-            panelestado.FormattingEnabled = true;
-            panelestado.Location = new Point(275, 108);
-            panelestado.Name = "panelestado";
-            panelestado.Size = new Size(40, 23);
-            panelestado.TabIndex = 25;
+            btnAgendarcita.BackColor = Color.PaleTurquoise;
+            btnAgendarcita.Location = new Point(148, 183);
+            btnAgendarcita.Name = "btnAgendarcita";
+            btnAgendarcita.Size = new Size(80, 25);
+            btnAgendarcita.TabIndex = 26;
+            btnAgendarcita.Text = "Agendar Cita";
+            btnAgendarcita.UseVisualStyleBackColor = false;
+            btnAgendarcita.Click += button1_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(227, 114);
+            label4.Location = new Point(462, 130);
             label4.Name = "label4";
             label4.Size = new Size(42, 15);
             label4.TabIndex = 24;
             label4.Text = "Estado";
             label4.Click += label4_Click;
             // 
-            // panelmotivodecita
+            // Apellidotxt
             // 
-            panelmotivodecita.FormattingEnabled = true;
-            panelmotivodecita.Location = new Point(165, 108);
-            panelmotivodecita.Name = "panelmotivodecita";
-            panelmotivodecita.Size = new Size(44, 23);
-            panelmotivodecita.TabIndex = 23;
+            Apellidotxt.Location = new Point(67, 68);
+            Apellidotxt.Name = "Apellidotxt";
+            Apellidotxt.Size = new Size(156, 23);
+            Apellidotxt.TabIndex = 19;
             // 
-            // dateTimePicker2
+            // Nombretxt
             // 
-            dateTimePicker2.Location = new Point(49, 108);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(48, 23);
-            dateTimePicker2.TabIndex = 22;
+            Nombretxt.Location = new Point(67, 18);
+            Nombretxt.Name = "Nombretxt";
+            Nombretxt.Size = new Size(156, 23);
+            Nombretxt.TabIndex = 18;
             // 
-            // dateTimePicker1
+            // IPMotivocita
             // 
-            dateTimePicker1.Location = new Point(67, 59);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(169, 23);
-            dateTimePicker1.TabIndex = 21;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(67, 23);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(123, 23);
-            comboBox3.TabIndex = 21;
-            // 
-            // lblHospital
-            // 
-            lblHospital.AutoSize = true;
-            lblHospital.Location = new Point(10, 26);
-            lblHospital.Name = "lblHospital";
-            lblHospital.Size = new Size(51, 15);
-            lblHospital.TabIndex = 15;
-            lblHospital.Text = "Hospital";
+            IPMotivocita.FormattingEnabled = true;
+            IPMotivocita.Items.AddRange(new object[] { "Personal", "Familiar", "Sexual", "Abuso" });
+            IPMotivocita.Location = new Point(399, 122);
+            IPMotivocita.Name = "IPMotivocita";
+            IPMotivocita.Size = new Size(44, 23);
+            IPMotivocita.TabIndex = 23;
             // 
             // lblmotivo
             // 
             lblmotivo.AutoSize = true;
-            lblmotivo.Location = new Point(114, 114);
+            lblmotivo.Location = new Point(348, 129);
             lblmotivo.Name = "lblmotivo";
             lblmotivo.Size = new Size(45, 15);
             lblmotivo.TabIndex = 14;
             lblmotivo.Text = "Motivo";
             // 
-            // lblhora
-            // 
-            lblhora.AutoSize = true;
-            lblhora.Location = new Point(10, 116);
-            lblhora.Name = "lblhora";
-            lblhora.Size = new Size(33, 15);
-            lblhora.TabIndex = 17;
-            lblhora.Text = "Hora";
-            // 
             // llbfecha
             // 
             llbfecha.AutoSize = true;
-            llbfecha.Location = new Point(10, 65);
+            llbfecha.Location = new Point(291, 21);
             llbfecha.Name = "llbfecha";
             llbfecha.Size = new Size(38, 15);
             llbfecha.TabIndex = 16;
             llbfecha.Text = "Fecha";
             llbfecha.Click += label10_Click;
             // 
+            // IPFecha
+            // 
+            IPFecha.Location = new Point(348, 15);
+            IPFecha.Name = "IPFecha";
+            IPFecha.Size = new Size(169, 23);
+            IPFecha.TabIndex = 21;
+            IPFecha.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
+            // IPHoraCita
+            // 
+            IPHoraCita.CustomFormat = "hh:mm tt";
+            IPHoraCita.Format = DateTimePickerFormat.Custom;
+            IPHoraCita.Location = new Point(281, 122);
+            IPHoraCita.Name = "IPHoraCita";
+            IPHoraCita.Size = new Size(48, 23);
+            IPHoraCita.TabIndex = 22;
+            IPHoraCita.ValueChanged += dateTimePicker2_ValueChanged;
+            // 
+            // lblHospital
+            // 
+            lblHospital.AutoSize = true;
+            lblHospital.Location = new Point(291, 75);
+            lblHospital.Name = "lblHospital";
+            lblHospital.Size = new Size(51, 15);
+            lblHospital.TabIndex = 15;
+            lblHospital.Text = "Hospital";
+            // 
+            // IPHospitales
+            // 
+            IPHospitales.FormattingEnabled = true;
+            IPHospitales.Location = new Point(348, 68);
+            IPHospitales.Name = "IPHospitales";
+            IPHospitales.Size = new Size(123, 23);
+            IPHospitales.TabIndex = 21;
+            // 
+            // lblhora
+            // 
+            lblhora.AutoSize = true;
+            lblhora.Location = new Point(242, 128);
+            lblhora.Name = "lblhora";
+            lblhora.Size = new Size(33, 15);
+            lblhora.TabIndex = 17;
+            lblhora.Text = "Hora";
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(220, 277);
+            label3.Location = new Point(227, 304);
             label3.Name = "label3";
             label3.Size = new Size(125, 18);
             label3.TabIndex = 20;
@@ -437,7 +306,7 @@
             // 
             btnEditarcita.BackColor = Color.LightSeaGreen;
             btnEditarcita.ForeColor = SystemColors.ButtonFace;
-            btnEditarcita.Location = new Point(830, 368);
+            btnEditarcita.Location = new Point(805, 368);
             btnEditarcita.Name = "btnEditarcita";
             btnEditarcita.Size = new Size(90, 30);
             btnEditarcita.TabIndex = 27;
@@ -448,79 +317,76 @@
             // 
             btnEliminarcita.BackColor = Color.FromArgb(255, 128, 128);
             btnEliminarcita.ForeColor = SystemColors.ButtonFace;
-            btnEliminarcita.Location = new Point(830, 430);
+            btnEliminarcita.Location = new Point(805, 435);
             btnEliminarcita.Name = "btnEliminarcita";
             btnEliminarcita.Size = new Size(90, 30);
             btnEliminarcita.TabIndex = 28;
             btnEliminarcita.Text = "Eliminar";
             btnEliminarcita.UseVisualStyleBackColor = false;
             // 
+            // btnBuscar
+            // 
+            btnBuscar.BackColor = Color.FromArgb(0, 0, 180);
+            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Location = new Point(555, 23);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Size = new Size(79, 25);
+            btnBuscar.TabIndex = 29;
+            btnBuscar.Text = "Buscar";
+            btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // FrmHospital
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1003, 525);
+            Controls.Add(btnBuscar);
             Controls.Add(btnEliminarcita);
             Controls.Add(btnEditarcita);
             Controls.Add(label3);
-            Controls.Add(panelcita2);
             Controls.Add(panelcita);
             Controls.Add(dgwCitas);
-            Controls.Add(panel3);
-            Controls.Add(label1);
             Controls.Add(Buscadortxt);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmHospital";
             Text = "Citas";
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgwCitas).EndInit();
             panelcita.ResumeLayout(false);
             panelcita.PerformLayout();
-            panelcita2.ResumeLayout(false);
-            panelcita2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numEdad).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Label label1;
         private TextBox Buscadortxt;
-        private Panel panel3;
-        private Label label2;
-        private Button button11;
-        private Panel panel4;
-        private Button btnsoporte;
-        private Button button14;
-        private Button button15;
-        private Button button16;
-        private Button button17;
-        private Button button18;
         private DataGridView dgwCitas;
         private Label lbledad;
         private Label lblnombre;
         private Label llbapellidos;
         private Label label6;
         private Panel panelcita;
-        private Panel panelcita2;
         private Label lblHospital;
         private Label lblmotivo;
         private Label lblhora;
         private Label llbfecha;
         private Label label3;
         private ComboBox comboBox2;
-        private ComboBox comboBox1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox3;
+        private TextBox Apellidotxt;
+        private TextBox Nombretxt;
+        private DateTimePicker IPFecha;
+        private ComboBox IPHospitales;
         private Label label4;
-        private ComboBox panelmotivodecita;
-        private DateTimePicker dateTimePicker2;
-        private ComboBox panelestado;
-        private Button btnAgendacita;
-        private Button button1;
+        private ComboBox IPMotivocita;
+        private DateTimePicker IPHoraCita;
+        private ComboBox IPEstado;
+        private Button btnAgendarcita;
+        private Button btnCancelarcita;
         private Button btnEditarcita;
         private Button btnEliminarcita;
+        private Button btnBuscar;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private NumericUpDown numEdad;
     }
 }

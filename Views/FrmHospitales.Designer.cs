@@ -173,8 +173,9 @@
             button3.Name = "button3";
             button3.Size = new Size(194, 28);
             button3.TabIndex = 12;
-            button3.Text = "Inicio";
+            button3.Text = "Usuarios";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 

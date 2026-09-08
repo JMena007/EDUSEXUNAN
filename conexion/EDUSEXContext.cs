@@ -22,16 +22,11 @@ namespace EDUSEX.conexion
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // Try to read connection string from environment variable first
-                var connectionString = Environment.GetEnvironmentVariable("EDUSEX_CONNECTION");
-
-                // Fallback to LocalDB if environment variable not set
-                if (string.IsNullOrEmpty(connectionString))
-                {
-                    connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Integrated Security=True;Persist Security Info=False;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Application Name=\"SQL Server Management Studio\";Command Timeout=0";
-                }
-
-                optionsBuilder.UseSqlServer(connectionString);
+                optionsBuilder.UseSqlServer(
+                "Data Source=(localdb)\\MSSQLLocalDB;" +
+                "Initial Catalog=EDUSEX_Proyect_Db;" +
+                "Integrated Security=True;" +
+                "TrustServerCertificate=True;");
             }
         }
     }

@@ -16,11 +16,16 @@ namespace EDUSEX.Views
             InitializeComponent();
 
             btnInicio.Click += (sender, e) => NavigationHelper.Open<FormPrincipal>(this);
-            button17.Click += (sender, e) => NavigationHelper.Open<FrmUsuario>(this);
-            button16.Click += (sender, e) => NavigationHelper.Open<FrmHospital>(this);
-            button15.Click += (sender, e) => NavigationHelper.Open<FrmHospitales>(this);
-            button14.Click += (sender, e) => NavigationHelper.Open<FrmGuiaEducativa>(this);
+            button3.Click += (sender, e) => NavigationHelper.Open<FrmUsuario>(this);
+            button2.Click += (sender, e) => NavigationHelper.Open<FrmHospital>(this);
+            button1.Click += (sender, e) => NavigationHelper.Open<FrmHospitales>(this);
+            button4.Click += (sender, e) => NavigationHelper.Open<FrmGuiaEducativa>(this);
             button11.Click += (sender, e) => NavigationHelper.Logout(this);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

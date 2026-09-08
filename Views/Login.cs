@@ -10,9 +10,22 @@ namespace EDUSEX.Views
 {
     public partial class Login : Form
     {
+        private FormPrincipal? formPrincipal;
+
         public Login()
         {
             InitializeComponent();
+            PrepararLogin();
+        }
+
+        internal void PrepararLogin()
+        {
+            lnputUsertxt.Clear();
+            inputContraseña.Clear();
+            lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
+            inputContraseña.PlaceholderText = "Contraseña";
+            linkInvitado.Visible = true;
+            linkCreateCuenta.Visible = true;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -27,10 +40,14 @@ namespace EDUSEX.Views
 
         private void linkInvitado_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FormPrincipal frmyes = new FormPrincipal();
+            if (formPrincipal == null || formPrincipal.IsDisposed)
+            {
+                formPrincipal = new FormPrincipal(this);
+            }
 
-            frmyes.Show();
-            this.Hide();
+            formPrincipal.Show();
+            formPrincipal.Activate();
+            Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,6 +56,11 @@ namespace EDUSEX.Views
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Login_Load(object sender, EventArgs e)
         {
 
         }

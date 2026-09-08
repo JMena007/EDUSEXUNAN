@@ -14,12 +14,6 @@ namespace EDUSEX.Views
         public FrmUsuario()
         {
             InitializeComponent();
-
-            button1BtnInicio.Click += button1BtnInicio_Click;
-            button8.Click += button8_Click;
-            button9.Click += button9_Click;
-            button12.Click += (sender, e) => NavigationHelper.Open<FrmGuiaEducativa>(this);
-            button10.Click += button10_Click;
         }
 
         private void button1BtnInicio_Click(object sender, EventArgs e)

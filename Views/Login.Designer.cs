@@ -30,13 +30,12 @@
         {
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
             panelLogin = new Panel();
             btnInicioSesion = new Button();
             linkInvitado = new LinkLabel();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            inputContraseña = new TextBox();
+            lnputUsertxt = new TextBox();
+            linkCreateCuenta = new LinkLabel();
             panelLogin.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,39 +62,16 @@
             label2.Text = "Iniciar Sesion";
             label2.Click += label2_Click;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(164, 117);
-            label3.Name = "label3";
-            label3.Size = new Size(67, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Contraseña";
-            label3.Click += label3_Click;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.ForeColor = SystemColors.ActiveCaptionText;
-            label4.Location = new Point(175, 54);
-            label4.Name = "label4";
-            label4.Size = new Size(47, 15);
-            label4.TabIndex = 3;
-            label4.Text = "Usuario";
-            label4.Click += label4_Click;
-            // 
             // panelLogin
             // 
             panelLogin.BackColor = Color.WhiteSmoke;
             panelLogin.BorderStyle = BorderStyle.Fixed3D;
+            panelLogin.Controls.Add(linkCreateCuenta);
             panelLogin.Controls.Add(btnInicioSesion);
             panelLogin.Controls.Add(linkInvitado);
-            panelLogin.Controls.Add(textBox2);
-            panelLogin.Controls.Add(textBox1);
+            panelLogin.Controls.Add(inputContraseña);
+            panelLogin.Controls.Add(lnputUsertxt);
             panelLogin.Controls.Add(label2);
-            panelLogin.Controls.Add(label3);
-            panelLogin.Controls.Add(label4);
             panelLogin.Location = new Point(318, 135);
             panelLogin.Name = "panelLogin";
             panelLogin.Size = new Size(402, 272);
@@ -105,9 +81,9 @@
             // 
             btnInicioSesion.BackColor = Color.RoyalBlue;
             btnInicioSesion.ForeColor = SystemColors.ButtonFace;
-            btnInicioSesion.Location = new Point(155, 179);
+            btnInicioSesion.Location = new Point(142, 155);
             btnInicioSesion.Name = "btnInicioSesion";
-            btnInicioSesion.Size = new Size(93, 30);
+            btnInicioSesion.Size = new Size(120, 35);
             btnInicioSesion.TabIndex = 6;
             btnInicioSesion.Text = "Entrar";
             btnInicioSesion.UseVisualStyleBackColor = false;
@@ -116,7 +92,7 @@
             // 
             linkInvitado.AutoSize = true;
             linkInvitado.DisabledLinkColor = Color.White;
-            linkInvitado.Location = new Point(136, 239);
+            linkInvitado.Location = new Point(132, 238);
             linkInvitado.Name = "linkInvitado";
             linkInvitado.Size = new Size(130, 15);
             linkInvitado.TabIndex = 5;
@@ -124,21 +100,33 @@
             linkInvitado.Text = "Acceder como Invitado";
             linkInvitado.LinkClicked += linkInvitado_LinkClicked;
             // 
-            // textBox2
+            // inputContraseña
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Location = new Point(106, 135);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(188, 23);
-            textBox2.TabIndex = 3;
+            inputContraseña.BorderStyle = BorderStyle.FixedSingle;
+            inputContraseña.Location = new Point(87, 115);
+            inputContraseña.Name = "inputContraseña";
+            inputContraseña.PlaceholderText = "Contraseña";
+            inputContraseña.Size = new Size(221, 23);
+            inputContraseña.TabIndex = 3;
             // 
-            // textBox1
+            // lnputUsertxt
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Location = new Point(106, 72);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(188, 23);
-            textBox1.TabIndex = 2;
+            lnputUsertxt.BorderStyle = BorderStyle.FixedSingle;
+            lnputUsertxt.Location = new Point(87, 71);
+            lnputUsertxt.Name = "lnputUsertxt";
+            lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
+            lnputUsertxt.Size = new Size(221, 23);
+            lnputUsertxt.TabIndex = 2;
+            // 
+            // linkCreateCuenta
+            // 
+            linkCreateCuenta.AutoSize = true;
+            linkCreateCuenta.Location = new Point(95, 208);
+            linkCreateCuenta.Name = "linkCreateCuenta";
+            linkCreateCuenta.Size = new Size(210, 15);
+            linkCreateCuenta.TabIndex = 7;
+            linkCreateCuenta.TabStop = true;
+            linkCreateCuenta.Text = "No tienes usuario? Crea tu cuenta aqui";
             // 
             // Login
             // 
@@ -151,6 +139,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
             ResumeLayout(false);
@@ -164,9 +153,10 @@
         private Label label3;
         private Label label4;
         private Panel panelLogin;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox inputContraseña;
+        private TextBox lnputUsertxt;
         private LinkLabel linkInvitado;
         private Button btnInicioSesion;
+        private LinkLabel linkCreateCuenta;
     }
 }

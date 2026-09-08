@@ -30,16 +30,18 @@
         {
             label1 = new Label();
             panel3 = new Panel();
-            btnReportes = new Button();
+            btnCloseSesion = new Button();
+            btnSoporte = new Button();
+            btnGuiaEdu = new Button();
             button3 = new Button();
             btnCitas = new Button();
             btnHospitales = new Button();
             label3 = new Label();
-            button11 = new Button();
             panel4 = new Panel();
-            btnsoporte = new Button();
             btnInicio = new Button();
+            pictureBox1 = new PictureBox();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -56,34 +58,66 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(0, 0, 64);
-            panel3.Controls.Add(btnReportes);
+            panel3.Controls.Add(btnCloseSesion);
+            panel3.Controls.Add(btnSoporte);
+            panel3.Controls.Add(btnGuiaEdu);
             panel3.Controls.Add(button3);
             panel3.Controls.Add(btnCitas);
             panel3.Controls.Add(btnHospitales);
             panel3.Controls.Add(label3);
-            panel3.Controls.Add(button11);
             panel3.Controls.Add(panel4);
-            panel3.Controls.Add(btnsoporte);
             panel3.Controls.Add(btnInicio);
             panel3.Dock = DockStyle.Left;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 518);
             panel3.TabIndex = 12;
+            panel3.Paint += panel3_Paint;
             // 
-            // btnReportes
+            // btnCloseSesion
             // 
-            btnReportes.BackColor = Color.FromArgb(0, 0, 97);
-            btnReportes.FlatAppearance.BorderColor = Color.Navy;
-            btnReportes.FlatStyle = FlatStyle.Flat;
-            btnReportes.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnReportes.ForeColor = SystemColors.Control;
-            btnReportes.Location = new Point(3, 288);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(194, 28);
-            btnReportes.TabIndex = 13;
-            btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = false;
+            btnCloseSesion.BackColor = Color.FromArgb(0, 0, 97);
+            btnCloseSesion.FlatAppearance.BorderColor = Color.Navy;
+            btnCloseSesion.FlatStyle = FlatStyle.Flat;
+            btnCloseSesion.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCloseSesion.ForeColor = SystemColors.Control;
+            btnCloseSesion.Location = new Point(0, 446);
+            btnCloseSesion.Name = "btnCloseSesion";
+            btnCloseSesion.Size = new Size(194, 28);
+            btnCloseSesion.TabIndex = 15;
+            btnCloseSesion.Text = "Cerrar Sesion";
+            btnCloseSesion.UseVisualStyleBackColor = false;
+            btnCloseSesion.Click += btnCloseSesion_Click;
+            // 
+            // btnSoporte
+            // 
+            btnSoporte.BackColor = Color.FromArgb(0, 0, 97);
+            btnSoporte.FlatAppearance.BorderColor = Color.Navy;
+            btnSoporte.FlatStyle = FlatStyle.Flat;
+            btnSoporte.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSoporte.ForeColor = SystemColors.Control;
+            btnSoporte.Location = new Point(3, 402);
+            btnSoporte.Name = "btnSoporte";
+            btnSoporte.Size = new Size(194, 28);
+            btnSoporte.TabIndex = 14;
+            btnSoporte.Text = "Soporte IT";
+            btnSoporte.UseVisualStyleBackColor = false;
+            btnSoporte.Click += btnSoporte_Click;
+            // 
+            // btnGuiaEdu
+            // 
+            btnGuiaEdu.BackColor = Color.FromArgb(0, 0, 97);
+            btnGuiaEdu.FlatAppearance.BorderColor = Color.Navy;
+            btnGuiaEdu.FlatStyle = FlatStyle.Flat;
+            btnGuiaEdu.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuiaEdu.ForeColor = SystemColors.Control;
+            btnGuiaEdu.Location = new Point(3, 288);
+            btnGuiaEdu.Name = "btnGuiaEdu";
+            btnGuiaEdu.Size = new Size(194, 28);
+            btnGuiaEdu.TabIndex = 13;
+            btnGuiaEdu.Text = "Guia Educativa";
+            btnGuiaEdu.UseVisualStyleBackColor = false;
+            btnGuiaEdu.Click += btnGuiaEdu_Click;
             // 
             // button3
             // 
@@ -139,15 +173,6 @@
             label3.TabIndex = 9;
             label3.Text = "System EDUSEX";
             // 
-            // button11
-            // 
-            button11.Location = new Point(39, 460);
-            button11.Name = "button11";
-            button11.Size = new Size(102, 23);
-            button11.TabIndex = 8;
-            button11.Text = "Cerrar Sesion";
-            button11.UseVisualStyleBackColor = true;
-            // 
             // panel4
             // 
             panel4.AutoScrollMargin = new Size(200, 1);
@@ -156,16 +181,6 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 1);
             panel4.TabIndex = 7;
-            // 
-            // btnsoporte
-            // 
-            btnsoporte.BackColor = Color.Transparent;
-            btnsoporte.Location = new Point(39, 410);
-            btnsoporte.Name = "btnsoporte";
-            btnsoporte.Size = new Size(105, 23);
-            btnsoporte.TabIndex = 5;
-            btnsoporte.Text = "Soporte IT";
-            btnsoporte.UseVisualStyleBackColor = false;
             // 
             // btnInicio
             // 
@@ -181,12 +196,22 @@
             btnInicio.Text = "Inicio";
             btnInicio.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(368, 79);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(427, 351);
+            pictureBox1.TabIndex = 13;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(999, 518);
+            Controls.Add(pictureBox1);
             Controls.Add(panel3);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -194,6 +219,7 @@
             Text = "Form1";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -201,15 +227,16 @@
         #endregion
         private Label label1;
         private Panel panel3;
-        private Button btnReportes;
+        private Button btnGuiaEdu;
         private Button button3;
         private Button btnCitas;
         private Button btnHospitales;
         private Label label3;
-        private Button button11;
         private Panel panel4;
-        private Button btnsoporte;
         private Button btnInicio;
+        private Button btnSoporte;
+        private Button btnCloseSesion;
+        private PictureBox pictureBox1;
     }
 }
 
