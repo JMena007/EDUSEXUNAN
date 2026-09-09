@@ -7,7 +7,7 @@ namespace EDUSEX.conexion
     {
         public EDUSEXContext()
         {
-
+            EDUSEXContext EScontext = new EDUSEXContext();
         }
 
         public EDUSEXContext(DbContextOptions<EDUSEXContext> options) : base(options)
@@ -16,7 +16,9 @@ namespace EDUSEX.conexion
         }
 
         // Add DbSet<T> properties here when you create your entities
-        public DbSet<Models.Usuarios> Usuarios { get; set; }
+        public DbSet<Models.Usuario> Usuarios { get; set; }
+
+        public DbSet<Models.Citas> Citas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
