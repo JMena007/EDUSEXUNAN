@@ -132,6 +132,7 @@
             button3.TabIndex = 12;
             button3.Text = "Usuarios";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += btnUsuario_Click;
             // 
             // btnCitas
             // 
@@ -195,6 +196,7 @@
             btnInicio.TabIndex = 1;
             btnInicio.Text = "Inicio";
             btnInicio.UseVisualStyleBackColor = false;
+            btnInicio.Click += btnInicio_Click;
             // 
             // pictureBox1
             // 

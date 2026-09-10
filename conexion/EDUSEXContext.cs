@@ -1,14 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace EDUSEX.conexion
 {
     public class EDUSEXContext : DbContext
     {
-        public EDUSEXContext()
-        {
-            EDUSEXContext EScontext = new EDUSEXContext();
-        }
 
         public EDUSEXContext(DbContextOptions<EDUSEXContext> options) : base(options)
         {
@@ -19,6 +17,14 @@ namespace EDUSEX.conexion
         public DbSet<Models.Usuario> Usuarios { get; set; }
 
         public DbSet<Models.Citas> Citas { get; set; }
+
+        public DbSet<Models.Usuario> Credenciales { get; set; }
+
+        public DbSet<Models.Usuario> GuiaEducativa { get; set; }
+
+        public DbSet<Models.Usuario> Hospitales { get; set; }
+
+        public DbSet<Models.Usuario> Roles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
