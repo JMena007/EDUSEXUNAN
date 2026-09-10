@@ -1,4 +1,6 @@
-﻿namespace EDUSEX.Views
+﻿using EDUSEX.Models;
+
+namespace EDUSEX.Views
 {
     public partial class FrmUsuario : Form
     {
@@ -195,6 +197,7 @@
             btnLimpiar.TabIndex = 22;
             btnLimpiar.Text = "Limpiar ";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // label9
             // 
@@ -276,6 +279,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmUsuario";
             Text = "Registro de Usuarios";
+            Load += FrmUsuario_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).EndInit();
             panel1.ResumeLayout(false);
@@ -304,7 +308,18 @@
         private Label label9;
         private TextBox txtCorreo;
 
-        
+
+        //Metodo agregado al evento btnlimpiar
+        private void LimpiarCampos()
+        {
+            txtnombre.Text = string.Empty;
+            txtapellido.Text = string.Empty;
+            txtCedula.Text = string.Empty;
+            numEdad.Value = 16;
+            boxsexo.SelectedIndex = 0; 
+            txtTelefono.Text = string.Empty;
+            txtCorreo.Text = string.Empty;
+        }
 
         private void button12_Click(object sender, EventArgs e)
         {
@@ -318,7 +333,20 @@
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // TODO: implementar la acción para btnGuardar
+            Usuarios usuario = new Usuarios()
+            {
+                Nombres = txtnombre.Text,
+                Apellidos = txtapellido.Text,
+                Cedula = txtCedula.Text,
+                Edad = (int)numEdad.Value,
+                Sexo = boxsexo.SelectedItem.ToString()[0], // Tomar la primera letra del sexo seleccionado
+                Telefono = txtTelefono.Text,
+                Correo = txtCorreo.Text
+            };
+            usuarioControl.InsertarUsuario(usuario);
+
+            MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        
         }
 
         private MaskedTextBox txtTelefono;

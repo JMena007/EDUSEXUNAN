@@ -7,24 +7,27 @@ namespace EDUSEX.conexion
 {
     public class EDUSEXContext : DbContext
     {
-
+        // controlador
+        public EDUSEXContext()
+        {
+        }
         public EDUSEXContext(DbContextOptions<EDUSEXContext> options) : base(options)
         {
 
         }
 
         // Add DbSet<T> properties here when you create your entities
-        public DbSet<Models.Usuario> Usuarios { get; set; }
+        public DbSet<Models.Usuarios> Usuarios { get; set; }
 
         public DbSet<Models.Citas> Citas { get; set; }
 
-        public DbSet<Models.Usuario> Credenciales { get; set; }
+        public DbSet<Models.Credenciales> Credenciales { get; set; }
 
-        public DbSet<Models.Usuario> GuiaEducativa { get; set; }
+        public DbSet<Models.GuiaEducativa> GuiaEducativa { get; set; }
 
-        public DbSet<Models.Usuario> Hospitales { get; set; }
+        public DbSet<Models.Hospitales> Hospitales { get; set; }
 
-        public DbSet<Models.Usuario> Roles { get; set; }
+        public DbSet<Models.Roles> Roles { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

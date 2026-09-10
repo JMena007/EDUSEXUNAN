@@ -5,7 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using EDUSEX;
+using EDUSEX.Controllers;
+using EDUSEX.Models;
 
 namespace EDUSEX.Views
 {
@@ -51,5 +52,9 @@ namespace EDUSEX.Views
             // etiqueta informativa, no necesita acción
         }
 
+        private void FrmUsuario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
