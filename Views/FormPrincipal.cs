@@ -150,7 +150,18 @@ namespace EDUSEX
 
         private void btnGuiaEdu_Click(object sender, EventArgs e)
         {
+            // Limpia el panel
+            panelContenido.Controls.Clear();
 
+            // Crea instancia del formulario
+            FrmGuiaEducativa frm = new FrmGuiaEducativa();
+            frm.TopLevel = false;       // importante para que se embeba
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+
+            // Agrega al panel
+            panelContenido.Controls.Add(frm);
+            frm.Show();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ namespace EDUSEX.Models
 
     public class Citas
     {
-        public int IdCitas { get; set; }
+        public int IdCita { get; set; }
         public int IdUsuario { get; set; }
         public int IdHospital { get; set; }
 
@@ -18,7 +18,7 @@ namespace EDUSEX.Models
 
         public Citas() 
         {
-           this.IdCitas = 0;
+           this.IdCita = 0;
             this.IdUsuario = 0;
             this.IdHospital = 0;
             this.FechaCita = string.Empty;

@@ -1,17 +1,26 @@
-﻿using System;
+﻿using EDUSEX.conexion;
+using EDUSEX.Controllers;
+using EDUSEX.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Text;
 using System.Windows.Forms;
-using EDUSEX.Controllers;
-using EDUSEX.Models;
 
 namespace EDUSEX.Views
 {
     public partial class FrmUsuario : Form
     {
+        private UsuarioControl usuarioControl = new UsuarioControl();
+
+        private void CargarUsuarios()
+        {
+            dvgUsuarios.DataSource = usuarioControl.ObtenerUsuarios();
+        }
         public FrmUsuario()
         {
             InitializeComponent();
@@ -55,6 +64,23 @@ namespace EDUSEX.Views
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
 
+            CargarUsuarios();
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

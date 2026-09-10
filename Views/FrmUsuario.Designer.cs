@@ -1,7 +1,9 @@
 ﻿using EDUSEX.Models;
+using EDUSEX.Controllers;
 
 namespace EDUSEX.Views
 {
+
     public partial class FrmUsuario : Form
     {
         /// <summary>
@@ -30,7 +32,7 @@ namespace EDUSEX.Views
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dvgUsuarios = new DataGridView();
             label1 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -51,20 +53,21 @@ namespace EDUSEX.Views
             numEdad = new NumericUpDown();
             boxsexo = new ComboBox();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dvgUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dvgUsuarios
             // 
-            dataGridView1.BackgroundColor = SystemColors.Control;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.GridColor = SystemColors.InactiveBorder;
-            dataGridView1.Location = new Point(250, 310);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(546, 203);
-            dataGridView1.TabIndex = 0;
+            dvgUsuarios.BackgroundColor = SystemColors.Control;
+            dvgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgUsuarios.GridColor = SystemColors.InactiveBorder;
+            dvgUsuarios.Location = new Point(250, 310);
+            dvgUsuarios.Name = "dvgUsuarios";
+            dvgUsuarios.Size = new Size(546, 203);
+            dvgUsuarios.TabIndex = 0;
+            dvgUsuarios.CellContentClick += dataGridView1_CellContentClick;
             // 
             // label1
             // 
@@ -175,6 +178,7 @@ namespace EDUSEX.Views
             btnEditar.TabIndex = 20;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
@@ -275,12 +279,12 @@ namespace EDUSEX.Views
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dvgUsuarios);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmUsuario";
             Text = "Registro de Usuarios";
             Load += FrmUsuario_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dvgUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -290,7 +294,7 @@ namespace EDUSEX.Views
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dvgUsuarios;
         private Label label1;
         private Label label3;
         private Label label4;
@@ -310,45 +314,38 @@ namespace EDUSEX.Views
 
 
         //Metodo agregado al evento btnlimpiar
+
+       
         private void LimpiarCampos()
         {
-            txtnombre.Text = string.Empty;
-            txtapellido.Text = string.Empty;
-            txtCedula.Text = string.Empty;
-            numEdad.Value = 16;
-            boxsexo.SelectedIndex = 0; 
-            txtTelefono.Text = string.Empty;
-            txtCorreo.Text = string.Empty;
+            txtnombre.Clear();
+            txtapellido.Clear();
+            txtCedula.Clear();
+            txtTelefono.Clear();
+            txtCorreo.Clear();
         }
 
-        private void button12_Click(object sender, EventArgs e)
-        {
-            // TODO: implementar la acción para button12 (Guia Educativa)
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            // TODO: implementar la acción para btnUsuarios
-        }
+       
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Usuarios usuario = new Usuarios()
+            Usuarios u = new Usuarios();
             {
-                Nombres = txtnombre.Text,
-                Apellidos = txtapellido.Text,
-                Cedula = txtCedula.Text,
-                Edad = (int)numEdad.Value,
-                Sexo = boxsexo.SelectedItem.ToString()[0], // Tomar la primera letra del sexo seleccionado
-                Telefono = txtTelefono.Text,
-                Correo = txtCorreo.Text
+                u.Nombres = txtnombre.Text;
+                u.Apellidos = txtapellido.Text;
+                u.Cedula = txtCedula.Text;
+                u.Edad = (int)numEdad.Value;
+                u.Sexo = boxsexo.Text;
+                u.Telefono = txtTelefono.Text;
+                u.Correo = txtCorreo.Text;
             };
-            usuarioControl.InsertarUsuario(usuario);
+            usuarioControl.InsertarUsuario(u);
 
             MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         
         }
 
+       
         private MaskedTextBox txtTelefono;
         private NumericUpDown numEdad;
         private ComboBox boxsexo;
