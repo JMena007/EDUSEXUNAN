@@ -18,7 +18,7 @@ namespace EDUSEX.Controllers
             }
         }
 
-        /* public List<Models.Usuarios> ObtenerUsuarios()
+         public List<Models.Usuarios> ObtenerUsuarios()
          {
                using (EDUSEXContext context = new EDUSEXContext())
                {
@@ -26,7 +26,7 @@ namespace EDUSEX.Controllers
                } 
 
          }
-         */
+         
         public void Editarusuario(Models.Usuarios usuario)
         {
             using (EDUSEXContext context = new EDUSEXContext())

@@ -28,92 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel3 = new Panel();
-            label3 = new Label();
-            button11 = new Button();
-            panel4 = new Panel();
-            btnsoporte = new Button();
-            btnInicio = new Button();
             label1 = new Label();
             dgwHospitales = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgwHospitales).BeginInit();
             SuspendLayout();
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(0, 0, 64);
-            panel3.Controls.Add(button4);
-            panel3.Controls.Add(button3);
-            panel3.Controls.Add(button2);
-            panel3.Controls.Add(button1);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(button11);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(btnsoporte);
-            panel3.Controls.Add(btnInicio);
-            panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 551);
-            panel3.TabIndex = 11;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ControlLight;
-            label3.Location = new Point(21, 24);
-            label3.Name = "label3";
-            label3.Size = new Size(163, 22);
-            label3.TabIndex = 9;
-            label3.Text = "System EDUSEX";
-            // 
-            // button11
-            // 
-            button11.Location = new Point(39, 460);
-            button11.Name = "button11";
-            button11.Size = new Size(102, 23);
-            button11.TabIndex = 8;
-            button11.Text = "Cerrar Sesion";
-            button11.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            panel4.AutoScrollMargin = new Size(200, 1);
-            panel4.BackColor = Color.LightSteelBlue;
-            panel4.Location = new Point(3, 369);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 1);
-            panel4.TabIndex = 7;
-            // 
-            // btnsoporte
-            // 
-            btnsoporte.BackColor = Color.Transparent;
-            btnsoporte.Location = new Point(39, 410);
-            btnsoporte.Name = "btnsoporte";
-            btnsoporte.Size = new Size(105, 23);
-            btnsoporte.TabIndex = 5;
-            btnsoporte.Text = "Soporte IT";
-            btnsoporte.UseVisualStyleBackColor = false;
-            // 
-            // btnInicio
-            // 
-            btnInicio.BackColor = Color.FromArgb(0, 0, 97);
-            btnInicio.FlatAppearance.BorderColor = Color.Navy;
-            btnInicio.FlatStyle = FlatStyle.Flat;
-            btnInicio.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInicio.ForeColor = SystemColors.Control;
-            btnInicio.Location = new Point(3, 79);
-            btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(194, 28);
-            btnInicio.TabIndex = 1;
-            btnInicio.Text = "Inicio";
-            btnInicio.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -134,63 +52,6 @@
             dgwHospitales.Size = new Size(703, 205);
             dgwHospitales.TabIndex = 13;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(0, 0, 97);
-            button1.FlatAppearance.BorderColor = Color.Navy;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(3, 235);
-            button1.Name = "button1";
-            button1.Size = new Size(194, 28);
-            button1.TabIndex = 10;
-            button1.Text = "Inicio";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(0, 0, 97);
-            button2.FlatAppearance.BorderColor = Color.Navy;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(3, 183);
-            button2.Name = "button2";
-            button2.Size = new Size(194, 28);
-            button2.TabIndex = 11;
-            button2.Text = "Inicio";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(0, 0, 97);
-            button3.FlatAppearance.BorderColor = Color.Navy;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(3, 132);
-            button3.Name = "button3";
-            button3.Size = new Size(194, 28);
-            button3.TabIndex = 12;
-            button3.Text = "Usuarios";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(0, 0, 97);
-            button4.FlatAppearance.BorderColor = Color.Navy;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = SystemColors.Control;
-            button4.Location = new Point(3, 288);
-            button4.Name = "button4";
-            button4.Size = new Size(194, 28);
-            button4.TabIndex = 13;
-            button4.Text = "Inicio";
-            button4.UseVisualStyleBackColor = false;
-            // 
             // FrmHospitales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -198,12 +59,9 @@
             ClientSize = new Size(991, 551);
             Controls.Add(dgwHospitales);
             Controls.Add(label1);
-            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmHospitales";
             Text = "Hospitales";
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgwHospitales).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -211,18 +69,7 @@
         }
 
         #endregion
-
-        private Panel panel3;
-        private Label label3;
-        private Button button11;
-        private Panel panel4;
-        private Button btnsoporte;
-        private Button btnInicio;
         private Label label1;
         private DataGridView dgwHospitales;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
     }
 }

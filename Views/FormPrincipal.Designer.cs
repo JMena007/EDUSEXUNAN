@@ -192,9 +192,11 @@
             btnInicio.ForeColor = SystemColors.Control;
             btnInicio.Location = new Point(3, 79);
             btnInicio.Name = "btnInicio";
+            btnInicio.RightToLeft = RightToLeft.Yes;
             btnInicio.Size = new Size(194, 28);
             btnInicio.TabIndex = 1;
             btnInicio.Text = "Inicio";
+            btnInicio.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnInicio.UseVisualStyleBackColor = false;
             btnInicio.Click += btnInicio_Click;
             // 

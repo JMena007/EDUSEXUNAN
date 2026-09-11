@@ -1,12 +1,14 @@
 ﻿
-using Microsoft.EntityFrameworkCore;
 using EDUSEX.conexion;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace EDUSEX.Models
 {
 
     public class Citas
     {
+        [Key]
         public int IdCita { get; set; }
         public int IdUsuario { get; set; }
         public int IdHospital { get; set; }
