@@ -72,6 +72,12 @@ namespace EDUSEX.Views
 
         private void lnputUsertxt_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnInicioSesion_Click(object sender, EventArgs e)
+        {
+        
             string usuario = lnputUsertxt.Text.Trim();
             string password = inputContraseña.Text;
 
@@ -92,10 +98,21 @@ namespace EDUSEX.Views
                     "Inicio de sesión",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
+
+                return;
             }
 
-            return;
+            MessageBox.Show("Inicio de sesión correcto.");
+
+            FormPrincipal formPrincipal = new FormPrincipal();
+
+            formPrincipal.Show();
+
+            this.Hide();
+
+            // Aquí vamos a validar el rol
         }
     }
+    
 }
 

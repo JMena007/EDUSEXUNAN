@@ -97,6 +97,7 @@
             btnInicioSesion.TabIndex = 6;
             btnInicioSesion.Text = "Entrar";
             btnInicioSesion.UseVisualStyleBackColor = false;
+            btnInicioSesion.Click += btnInicioSesion_Click;
             // 
             // linkInvitado
             // 
