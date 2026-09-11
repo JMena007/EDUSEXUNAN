@@ -10,6 +10,7 @@ namespace EDUSEX.Models
 
         public int IdRol { get; set; }
         public string NombreRol { get; set; }
+
         public Roles(int IdRol, String NombreRol) {
         
           this.IdRol = IdRol;
