@@ -172,7 +172,7 @@ namespace EDUSEX.Views
             // 
             btnEditar.BackColor = Color.FromArgb(128, 255, 255);
             btnEditar.ForeColor = Color.FromArgb(64, 64, 64);
-            btnEditar.Location = new Point(802, 352);
+            btnEditar.Location = new Point(811, 356);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(100, 30);
             btnEditar.TabIndex = 20;
@@ -184,7 +184,7 @@ namespace EDUSEX.Views
             // 
             btnEliminar.BackColor = Color.Tomato;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(802, 426);
+            btnEliminar.Location = new Point(811, 424);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 30);
             btnEliminar.TabIndex = 21;

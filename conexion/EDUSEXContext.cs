@@ -17,18 +17,17 @@ namespace EDUSEX.conexion
         }
 
         // Add DbSet<T> properties here when you create your entities
-        public DbSet<Models.Usuarios> Usuarios { get; set; }
-
-        public DbSet<Models.Citas> Citas { get; set; }
 
         public DbSet<Models.Credenciales> Credenciales { get; set; }
+        public DbSet<Models.Roles> Roles { get; set; }
+        public DbSet<Models.Usuarios> Usuarios { get; set; }
+       
+      /*  public DbSet<Models.Citas> Citas { get; set; }
 
         public DbSet<Models.GuiaEducativa> GuiaEducativa { get; set; }
 
-        public DbSet<Models.Hospitales> Hospitales { get; set; }
-
-        public DbSet<Models.Roles> Roles { get; set; }
-
+        public DbSet<Models.Hospitales> Hospitales { get; set; }  */
+                                                              
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

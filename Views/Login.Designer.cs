@@ -31,11 +31,11 @@
             label1 = new Label();
             label2 = new Label();
             panelLogin = new Panel();
+            linkCreateCuenta = new LinkLabel();
             btnInicioSesion = new Button();
             linkInvitado = new LinkLabel();
             inputContraseña = new TextBox();
             lnputUsertxt = new TextBox();
-            linkCreateCuenta = new LinkLabel();
             panelLogin.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,6 +77,16 @@
             panelLogin.Size = new Size(402, 272);
             panelLogin.TabIndex = 4;
             // 
+            // linkCreateCuenta
+            // 
+            linkCreateCuenta.AutoSize = true;
+            linkCreateCuenta.Location = new Point(95, 208);
+            linkCreateCuenta.Name = "linkCreateCuenta";
+            linkCreateCuenta.Size = new Size(210, 15);
+            linkCreateCuenta.TabIndex = 7;
+            linkCreateCuenta.TabStop = true;
+            linkCreateCuenta.Text = "No tienes usuario? Crea tu cuenta aqui";
+            // 
             // btnInicioSesion
             // 
             btnInicioSesion.BackColor = Color.RoyalBlue;
@@ -117,16 +127,7 @@
             lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
             lnputUsertxt.Size = new Size(221, 23);
             lnputUsertxt.TabIndex = 2;
-            // 
-            // linkCreateCuenta
-            // 
-            linkCreateCuenta.AutoSize = true;
-            linkCreateCuenta.Location = new Point(95, 208);
-            linkCreateCuenta.Name = "linkCreateCuenta";
-            linkCreateCuenta.Size = new Size(210, 15);
-            linkCreateCuenta.TabIndex = 7;
-            linkCreateCuenta.TabStop = true;
-            linkCreateCuenta.Text = "No tienes usuario? Crea tu cuenta aqui";
+            lnputUsertxt.TextChanged += lnputUsertxt_TextChanged;
             // 
             // Login
             // 

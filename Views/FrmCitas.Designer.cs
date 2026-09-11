@@ -83,7 +83,7 @@
             // lbledad
             // 
             lbledad.AutoSize = true;
-            lbledad.Location = new Point(10, 128);
+            lbledad.Location = new Point(8, 131);
             lbledad.Name = "lbledad";
             lbledad.Size = new Size(33, 15);
             lbledad.TabIndex = 14;
@@ -112,7 +112,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(136, 129);
+            label6.Location = new Point(148, 128);
             label6.Name = "label6";
             label6.Size = new Size(31, 15);
             label6.TabIndex = 17;
@@ -144,12 +144,12 @@
             panelcita.Controls.Add(lblhora);
             panelcita.Location = new Point(217, 54);
             panelcita.Name = "panelcita";
-            panelcita.Size = new Size(570, 237);
+            panelcita.Size = new Size(688, 237);
             panelcita.TabIndex = 18;
             // 
             // numEdad
             // 
-            numEdad.Location = new Point(49, 123);
+            numEdad.Location = new Point(49, 127);
             numEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
             numEdad.Name = "numEdad";
             numEdad.Size = new Size(69, 23);
@@ -162,7 +162,7 @@
             btnCancelarcita.ForeColor = SystemColors.ButtonFace;
             btnCancelarcita.Location = new Point(318, 183);
             btnCancelarcita.Name = "btnCancelarcita";
-            btnCancelarcita.Size = new Size(80, 25);
+            btnCancelarcita.Size = new Size(100, 30);
             btnCancelarcita.TabIndex = 27;
             btnCancelarcita.Text = "Cancelar";
             btnCancelarcita.UseVisualStyleBackColor = false;
@@ -171,7 +171,7 @@
             // 
             IPEstado.FormattingEnabled = true;
             IPEstado.Items.AddRange(new object[] { "Confirmado", "Pendiente" });
-            IPEstado.Location = new Point(510, 125);
+            IPEstado.Location = new Point(595, 125);
             IPEstado.Name = "IPEstado";
             IPEstado.Size = new Size(42, 23);
             IPEstado.TabIndex = 25;
@@ -180,7 +180,7 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Masculino", "Femenino", "Otros" });
-            comboBox2.Location = new Point(173, 122);
+            comboBox2.Location = new Point(185, 125);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(50, 23);
             comboBox2.TabIndex = 21;
@@ -190,7 +190,7 @@
             btnAgendarcita.BackColor = Color.PaleTurquoise;
             btnAgendarcita.Location = new Point(148, 183);
             btnAgendarcita.Name = "btnAgendarcita";
-            btnAgendarcita.Size = new Size(80, 25);
+            btnAgendarcita.Size = new Size(100, 30);
             btnAgendarcita.TabIndex = 26;
             btnAgendarcita.Text = "Agendar Cita";
             btnAgendarcita.UseVisualStyleBackColor = false;
@@ -199,7 +199,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(462, 130);
+            label4.Location = new Point(535, 129);
             label4.Name = "label4";
             label4.Size = new Size(42, 15);
             label4.TabIndex = 24;
@@ -210,21 +210,21 @@
             // 
             Apellidotxt.Location = new Point(67, 68);
             Apellidotxt.Name = "Apellidotxt";
-            Apellidotxt.Size = new Size(156, 23);
+            Apellidotxt.Size = new Size(161, 23);
             Apellidotxt.TabIndex = 19;
             // 
             // Nombretxt
             // 
-            Nombretxt.Location = new Point(67, 18);
+            Nombretxt.Location = new Point(67, 19);
             Nombretxt.Name = "Nombretxt";
-            Nombretxt.Size = new Size(156, 23);
+            Nombretxt.Size = new Size(161, 23);
             Nombretxt.TabIndex = 18;
             // 
             // IPMotivocita
             // 
             IPMotivocita.FormattingEnabled = true;
             IPMotivocita.Items.AddRange(new object[] { "Personal", "Familiar", "Sexual", "Abuso" });
-            IPMotivocita.Location = new Point(399, 122);
+            IPMotivocita.Location = new Point(444, 125);
             IPMotivocita.Name = "IPMotivocita";
             IPMotivocita.Size = new Size(44, 23);
             IPMotivocita.TabIndex = 23;
@@ -232,7 +232,7 @@
             // lblmotivo
             // 
             lblmotivo.AutoSize = true;
-            lblmotivo.Location = new Point(348, 129);
+            lblmotivo.Location = new Point(379, 128);
             lblmotivo.Name = "lblmotivo";
             lblmotivo.Size = new Size(45, 15);
             lblmotivo.TabIndex = 14;
@@ -241,7 +241,7 @@
             // llbfecha
             // 
             llbfecha.AutoSize = true;
-            llbfecha.Location = new Point(291, 21);
+            llbfecha.Location = new Point(355, 19);
             llbfecha.Name = "llbfecha";
             llbfecha.Size = new Size(38, 15);
             llbfecha.TabIndex = 16;
@@ -250,9 +250,9 @@
             // 
             // IPFecha
             // 
-            IPFecha.Location = new Point(348, 15);
+            IPFecha.Location = new Point(414, 13);
             IPFecha.Name = "IPFecha";
-            IPFecha.Size = new Size(169, 23);
+            IPFecha.Size = new Size(189, 23);
             IPFecha.TabIndex = 21;
             IPFecha.ValueChanged += dateTimePicker1_ValueChanged;
             // 
@@ -260,7 +260,7 @@
             // 
             IPHoraCita.CustomFormat = "hh:mm tt";
             IPHoraCita.Format = DateTimePickerFormat.Custom;
-            IPHoraCita.Location = new Point(281, 122);
+            IPHoraCita.Location = new Point(300, 125);
             IPHoraCita.Name = "IPHoraCita";
             IPHoraCita.Size = new Size(48, 23);
             IPHoraCita.TabIndex = 22;
@@ -269,7 +269,7 @@
             // lblHospital
             // 
             lblHospital.AutoSize = true;
-            lblHospital.Location = new Point(291, 75);
+            lblHospital.Location = new Point(355, 71);
             lblHospital.Name = "lblHospital";
             lblHospital.Size = new Size(51, 15);
             lblHospital.TabIndex = 15;
@@ -278,15 +278,15 @@
             // IPHospitales
             // 
             IPHospitales.FormattingEnabled = true;
-            IPHospitales.Location = new Point(348, 68);
+            IPHospitales.Location = new Point(429, 67);
             IPHospitales.Name = "IPHospitales";
-            IPHospitales.Size = new Size(123, 23);
+            IPHospitales.Size = new Size(174, 23);
             IPHospitales.TabIndex = 21;
             // 
             // lblhora
             // 
             lblhora.AutoSize = true;
-            lblhora.Location = new Point(242, 128);
+            lblhora.Location = new Point(261, 128);
             lblhora.Name = "lblhora";
             lblhora.Size = new Size(33, 15);
             lblhora.TabIndex = 17;
@@ -308,7 +308,7 @@
             btnEditarcita.ForeColor = SystemColors.ButtonFace;
             btnEditarcita.Location = new Point(805, 368);
             btnEditarcita.Name = "btnEditarcita";
-            btnEditarcita.Size = new Size(90, 30);
+            btnEditarcita.Size = new Size(100, 30);
             btnEditarcita.TabIndex = 27;
             btnEditarcita.Text = "Editar";
             btnEditarcita.UseVisualStyleBackColor = false;
@@ -319,7 +319,7 @@
             btnEliminarcita.ForeColor = SystemColors.ButtonFace;
             btnEliminarcita.Location = new Point(805, 435);
             btnEliminarcita.Name = "btnEliminarcita";
-            btnEliminarcita.Size = new Size(90, 30);
+            btnEliminarcita.Size = new Size(100, 30);
             btnEliminarcita.TabIndex = 28;
             btnEliminarcita.Text = "Eliminar";
             btnEliminarcita.UseVisualStyleBackColor = false;

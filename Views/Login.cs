@@ -5,12 +5,17 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using EDUSEX.Controllers;
+using EDUSEX.Models;
+
 
 namespace EDUSEX.Views
 {
     public partial class Login : Form
     {
         private FormPrincipal? formPrincipal;
+
+        private CredencialControl credencialController = new CredencialControl();
 
         public Login()
         {
@@ -64,6 +69,32 @@ namespace EDUSEX.Views
         {
 
         }
+
+        private void lnputUsertxt_TextChanged(object sender, EventArgs e)
+        {
+            string usuario = lnputUsertxt.Text.Trim();
+            string password = inputContraseña.Text;
+
+            if (string.IsNullOrWhiteSpace(usuario) ||
+                string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Ingrese su usuario y contraseña.");
+                return;
+            }
+
+            Credenciales credencial =
+                credencialController.ValidarLogin(usuario, password);
+
+            if (credencial == null)
+            {
+                MessageBox.Show(
+                    "Usuario o contraseña incorrectos.",
+                    "Inicio de sesión",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+
+            return;
     }
 }
 
