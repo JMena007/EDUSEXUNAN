@@ -143,6 +143,7 @@ namespace EDUSEX.Views
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(239, 23);
             txtnombre.TabIndex = 13;
+            txtnombre.KeyPress += txtnombre_KeyPress;
             // 
             // txtCedula
             // 
@@ -150,6 +151,7 @@ namespace EDUSEX.Views
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(239, 23);
             txtCedula.TabIndex = 15;
+            txtCedula.KeyPress += txtCedula_KeyPress;
             // 
             // txtapellido
             // 
@@ -157,6 +159,7 @@ namespace EDUSEX.Views
             txtapellido.Name = "txtapellido";
             txtapellido.Size = new Size(239, 23);
             txtapellido.TabIndex = 16;
+            txtapellido.KeyPress += txtapellido_KeyPress;
             // 
             // btnGuardar
             // 
@@ -222,6 +225,7 @@ namespace EDUSEX.Views
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(239, 23);
             txtCorreo.TabIndex = 24;
+            txtCorreo.TextChanged += txtCorreo_TextChanged;
             // 
             // txtTelefono
             // 
@@ -229,6 +233,7 @@ namespace EDUSEX.Views
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(239, 23);
             txtTelefono.TabIndex = 25;
+            txtTelefono.MaskInputRejected += txtTelefono_MaskInputRejected;
             // 
             // numEdad
             // 
@@ -248,6 +253,7 @@ namespace EDUSEX.Views
             boxsexo.Name = "boxsexo";
             boxsexo.Size = new Size(121, 23);
             boxsexo.TabIndex = 27;
+            boxsexo.SelectedIndexChanged += boxsexo_SelectedIndexChanged;
             // 
             // panel1
             // 

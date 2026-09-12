@@ -15,6 +15,8 @@ namespace EDUSEX.Views
 {
     public partial class FrmUsuario : Form
     {
+
+        // creando objeto de controlador
         private UsuarioControl usuarioControl = new UsuarioControl();
         private int? idUsuarioEditando = null;
         private void CargarUsuarios()
@@ -94,11 +96,99 @@ namespace EDUSEX.Views
             txtTelefono.Text = usuario.Telefono;
             txtCorreo.Text = usuario.Correo;
         }
-           
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
+        }
+
+        private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(txtnombre.Text))
+            {
+                MessageBox.Show("Ingrese el nombre.");
+                txtnombre.Focus();
+                return;
+            }
+            if (!char.IsLetter(e.KeyChar) &&
+                  !char.IsControl(e.KeyChar) &&
+                  e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtapellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtapellido.Text))
+            {
+                MessageBox.Show("Ingrese el apellido.");
+                txtapellido.Focus();
+                return;
+            }
+            if (!char.IsLetter(e.KeyChar) &&
+                !char.IsControl(e.KeyChar) &&
+                 e.KeyChar != ' ')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        { 
+            if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+            {
+                MessageBox.Show("Ingrese el número de teléfono.");
+                txtTelefono.Focus();
+                return;
+            }
+            txtTelefono.Mask = "0000-0000";
+        }
+
+        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                MessageBox.Show("Ingrese la cédula.");
+                txtCedula.Focus();
+                return;
+            }
+            if (!char.IsDigit(e.KeyChar) &&
+              !char.IsControl(e.KeyChar) &&
+              e.KeyChar != '-')
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCorreo_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCorreo.Text))
+            {
+                MessageBox.Show("Ingrese el correo electrónico.");
+                txtCorreo.Focus();
+                return;
+            }
+
+            if (!txtCorreo.Text.Contains("@") ||
+              !txtCorreo.Text.Contains("."))
+            {
+                MessageBox.Show("Ingrese un correo válido.");
+                txtCorreo.Focus();
+                return;
+            }
+        }
+
+        private void boxsexo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(boxsexo.Text))
+            {
+                MessageBox.Show("Seleccione una opción en Sexo.");
+               boxsexo.Focus();
+               return;
+            }
         }
     }
 }
