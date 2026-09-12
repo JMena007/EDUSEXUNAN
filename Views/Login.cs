@@ -104,6 +104,8 @@ namespace EDUSEX.Views
 
             MessageBox.Show("Inicio de sesión correcto.");
 
+
+            // aqui se le da acceso de´pues de validacion
             FormPrincipal formPrincipal = new FormPrincipal();
 
             formPrincipal.Show();

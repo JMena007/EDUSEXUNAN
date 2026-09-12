@@ -40,8 +40,16 @@
             panel4 = new Panel();
             btnInicio = new Button();
             pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -202,12 +210,44 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(368, 79);
+            pictureBox1.Location = new Point(228, 79);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(427, 351);
+            pictureBox1.Size = new Size(277, 219);
             pictureBox1.TabIndex = 13;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(537, 79);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(277, 219);
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Location = new Point(241, 350);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(170, 134);
+            pictureBox3.TabIndex = 15;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Location = new Point(437, 350);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(170, 134);
+            pictureBox4.TabIndex = 16;
+            pictureBox4.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Location = new Point(628, 350);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(170, 134);
+            pictureBox5.TabIndex = 17;
+            pictureBox5.TabStop = false;
             // 
             // FormPrincipal
             // 
@@ -215,6 +255,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(999, 518);
+            Controls.Add(pictureBox5);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(panel3);
             Controls.Add(label1);
@@ -224,6 +268,10 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,6 +289,10 @@
         private Button btnSoporte;
         private Button btnCloseSesion;
         private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
     }
 }
 

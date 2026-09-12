@@ -32,6 +32,7 @@ namespace EDUSEX.Views
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dvgUsuarios = new DataGridView();
             label1 = new Label();
             label3 = new Label();
@@ -60,6 +61,8 @@ namespace EDUSEX.Views
             // 
             // dvgUsuarios
             // 
+            dataGridViewCellStyle1.SelectionBackColor = Color.Purple;
+            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dvgUsuarios.BackgroundColor = SystemColors.Control;
             dvgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgUsuarios.GridColor = SystemColors.InactiveBorder;
@@ -339,10 +342,21 @@ namespace EDUSEX.Views
                 u.Telefono = txtTelefono.Text;
                 u.Correo = txtCorreo.Text;
             };
-            usuarioControl.InsertarUsuario(u);
+
+            if (idUsuarioEditando == null)
+            {
+                usuarioControl.InsertarUsuario(u);
+            }
+            
+            else
+            {
+                u.IdUsuario = idUsuarioEditando.Value;
+                usuarioControl.Editarusuario(u);
+            }
 
             MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        
+            LimpiarCampos();
+            CargarUsuarios();
         }
 
        

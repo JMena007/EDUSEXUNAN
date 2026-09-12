@@ -16,9 +16,10 @@ namespace EDUSEX.Views
     public partial class FrmUsuario : Form
     {
         private UsuarioControl usuarioControl = new UsuarioControl();
-
+        private int? idUsuarioEditando = null;
         private void CargarUsuarios()
         {
+            dvgUsuarios.DataSource = null;
             dvgUsuarios.DataSource = usuarioControl.ObtenerUsuarios();
         }
         public FrmUsuario()
@@ -75,8 +76,25 @@ namespace EDUSEX.Views
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dvgUsuarios.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un usuario.");
+                return;
+            }
 
+            Usuarios usuario = (Usuarios)dvgUsuarios.CurrentRow.DataBoundItem;
+
+            idUsuarioEditando = usuario.IdUsuario;
+
+            txtnombre.Text = usuario.Nombres;
+            txtapellido.Text = usuario.Apellidos;
+            txtCedula.Text = usuario.Cedula;
+            numEdad.Value = usuario.Edad;
+            boxsexo.Text = usuario.Sexo;
+            txtTelefono.Text = usuario.Telefono;
+            txtCorreo.Text = usuario.Correo;
         }
+           
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
