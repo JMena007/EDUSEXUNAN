@@ -170,6 +170,7 @@
             btnHospitales.TabIndex = 10;
             btnHospitales.Text = "Hospitales";
             btnHospitales.UseVisualStyleBackColor = false;
+            btnHospitales.Click += btnHospitales_Click;
             // 
             // label3
             // 

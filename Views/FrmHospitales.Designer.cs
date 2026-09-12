@@ -62,6 +62,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmHospitales";
             Text = "Hospitales";
+            Load += FrmHospitales_Load;
             ((System.ComponentModel.ISupportInitialize)dgwHospitales).EndInit();
             ResumeLayout(false);
             PerformLayout();

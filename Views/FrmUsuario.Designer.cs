@@ -70,7 +70,7 @@ namespace EDUSEX.Views
             dvgUsuarios.Name = "dvgUsuarios";
             dvgUsuarios.Size = new Size(546, 203);
             dvgUsuarios.TabIndex = 0;
-            dvgUsuarios.CellContentClick += dataGridView1_CellContentClick;
+            dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
             // 
             // label1
             // 
@@ -196,6 +196,7 @@ namespace EDUSEX.Views
             btnEliminar.TabIndex = 21;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnLimpiar
             // 
@@ -225,7 +226,7 @@ namespace EDUSEX.Views
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(239, 23);
             txtCorreo.TabIndex = 24;
-            txtCorreo.TextChanged += txtCorreo_TextChanged;
+            txtCorreo.Validating += txtCorreo_Validating;
             // 
             // txtTelefono
             // 
@@ -301,6 +302,11 @@ namespace EDUSEX.Views
             PerformLayout();
         }
 
+        private void dvgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
 
         private DataGridView dvgUsuarios;
@@ -336,34 +342,7 @@ namespace EDUSEX.Views
 
        
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            Usuarios u = new Usuarios();
-            {
-                u.Nombres = txtnombre.Text;
-                u.Apellidos = txtapellido.Text;
-                u.Cedula = txtCedula.Text;
-                u.Edad = (int)numEdad.Value;
-                u.Sexo = boxsexo.Text;
-                u.Telefono = txtTelefono.Text;
-                u.Correo = txtCorreo.Text;
-            };
-
-            if (idUsuarioEditando == null)
-            {
-                usuarioControl.InsertarUsuario(u);
-            }
-            
-            else
-            {
-                u.IdUsuario = idUsuarioEditando.Value;
-                usuarioControl.Editarusuario(u);
-            }
-
-            MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            LimpiarCampos();
-            CargarUsuarios();
-        }
+        
 
        
         private MaskedTextBox txtTelefono;

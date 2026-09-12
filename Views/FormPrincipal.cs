@@ -33,7 +33,7 @@ namespace EDUSEX
 
             btnInicio.Click += (sender, e) => MostrarInicio();
             button3.Click += (sender, e) => MostrarFormulario(new FrmUsuario());
-            btnCitas.Click += (sender, e) => MostrarFormulario(new FrmHospital());
+            btnCitas.Click += (sender, e) => MostrarFormulario(new FrmCitas());
             btnHospitales.Click += (sender, e) => MostrarFormulario(new FrmHospitales());
             // El control en el diseñador se llama "btnCloseSesion". Usar ese nombre aquí.
             btnCloseSesion.Click += btnCloseSesion_Click;
@@ -99,7 +99,7 @@ namespace EDUSEX
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            MostrarFormulario(new FrmHospital());
+            MostrarFormulario(new FrmCitas());
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -172,6 +172,11 @@ namespace EDUSEX
         private void btnUsuario_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnHospitales_Click(object sender, EventArgs e)
+        {
+            MostrarFormulario(new FrmHospitales());
         }
     }
 }

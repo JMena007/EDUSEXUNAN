@@ -15,15 +15,16 @@ namespace EDUSEX.Views
 {
     public partial class FrmUsuario : Form
     {
-
         // creando objeto de controlador
         private UsuarioControl usuarioControl = new UsuarioControl();
         private int? idUsuarioEditando = null;
+
         private void CargarUsuarios()
         {
             dvgUsuarios.DataSource = null;
             dvgUsuarios.DataSource = usuarioControl.ObtenerUsuarios();
         }
+
         public FrmUsuario()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace EDUSEX.Views
 
         private void button9_Click(object sender, EventArgs e)
         {
-            NavigationHelper.Open<FrmHospital>(this);
+            NavigationHelper.Open<FrmCitas>(this);
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -56,19 +57,15 @@ namespace EDUSEX.Views
 
         private void label6_Click(object sender, EventArgs e)
         {
-            // etiqueta informativa, no necesita acción
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-            // etiqueta informativa, no necesita acción
         }
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
-
             CargarUsuarios();
-
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -76,6 +73,7 @@ namespace EDUSEX.Views
             LimpiarCampos();
         }
 
+        // Metodo editar
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if (dvgUsuarios.CurrentRow == null)
@@ -97,24 +95,12 @@ namespace EDUSEX.Views
             txtCorreo.Text = usuario.Correo;
         }
 
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+        // Nombres
         private void txtnombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            if (string.IsNullOrWhiteSpace(txtnombre.Text))
-            {
-                MessageBox.Show("Ingrese el nombre.");
-                txtnombre.Focus();
-                return;
-            }
             if (!char.IsLetter(e.KeyChar) &&
-                  !char.IsControl(e.KeyChar) &&
-                  e.KeyChar != ' ')
+                !char.IsControl(e.KeyChar) &&
+                e.KeyChar != ' ')
             {
                 e.Handled = true;
             }
@@ -122,73 +108,148 @@ namespace EDUSEX.Views
 
         private void txtapellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtapellido.Text))
-            {
-                MessageBox.Show("Ingrese el apellido.");
-                txtapellido.Focus();
-                return;
-            }
             if (!char.IsLetter(e.KeyChar) &&
                 !char.IsControl(e.KeyChar) &&
-                 e.KeyChar != ' ')
+                e.KeyChar != ' ')
             {
                 e.Handled = true;
             }
         }
 
         private void txtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        { 
-            if (string.IsNullOrWhiteSpace(txtTelefono.Text))
-            {
-                MessageBox.Show("Ingrese el número de teléfono.");
-                txtTelefono.Focus();
-                return;
-            }
-            txtTelefono.Mask = "0000-0000";
+        {
+
         }
 
+        // Cedula
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCedula.Text))
-            {
-                MessageBox.Show("Ingrese la cédula.");
-                txtCedula.Focus();
-                return;
-            }
-            if (!char.IsDigit(e.KeyChar) &&
-              !char.IsControl(e.KeyChar) &&
-              e.KeyChar != '-')
+            if (!char.IsLetterOrDigit(e.KeyChar) &&
+                !char.IsControl(e.KeyChar) &&
+                e.KeyChar != '-')
             {
                 e.Handled = true;
             }
         }
 
-        private void txtCorreo_TextChanged(object sender, EventArgs e)
+        private void txtCorreo_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtCorreo.Text))
-            {
-                MessageBox.Show("Ingrese el correo electrónico.");
-                txtCorreo.Focus();
-                return;
-            }
 
-            if (!txtCorreo.Text.Contains("@") ||
-              !txtCorreo.Text.Contains("."))
-            {
-                MessageBox.Show("Ingrese un correo válido.");
-                txtCorreo.Focus();
-                return;
-            }
         }
 
         private void boxsexo_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // Sin alertas en tiempo real
+        }
+
+        // Validación centralizada: se llama SOLO al guardar/insertar/editar
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrWhiteSpace(txtnombre.Text))
+            {
+                MessageBox.Show("Ingrese el nombre.");
+                txtnombre.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtapellido.Text))
+            {
+                MessageBox.Show("Ingrese el apellido.");
+                txtapellido.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtCedula.Text))
+            {
+                MessageBox.Show("Ingrese la cédula.");
+                txtCedula.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtTelefono.Text))
+            {
+                MessageBox.Show("Ingrese el número de teléfono.");
+                txtTelefono.Focus();
+                return false;
+            }
+
             if (string.IsNullOrWhiteSpace(boxsexo.Text))
             {
                 MessageBox.Show("Seleccione una opción en Sexo.");
-               boxsexo.Focus();
-               return;
+                boxsexo.Focus();
+                return false;
             }
+
+            if (string.IsNullOrWhiteSpace(txtCorreo.Text) ||
+                !txtCorreo.Text.Contains("@") ||
+                !txtCorreo.Text.Contains("."))
+            {
+                MessageBox.Show("Ingrese un correo válido.");
+                txtCorreo.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Usuarios u = new Usuarios();
+            {
+                u.Nombres = txtnombre.Text;
+                u.Apellidos = txtapellido.Text;
+                u.Cedula = txtCedula.Text;
+                u.Edad = (int)numEdad.Value;
+                u.Sexo = boxsexo.Text;
+                u.Telefono = txtTelefono.Text;
+                u.Correo = txtCorreo.Text;
+            }
+            ;
+
+            if (idUsuarioEditando == null)
+            {
+                usuarioControl.InsertarUsuario(u);
+            }
+
+            else
+            {
+                u.IdUsuario = idUsuarioEditando.Value;
+                usuarioControl.Editarusuario(u);
+            }
+
+            MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            LimpiarCampos();
+            CargarUsuarios();
+            ValidarCampos();
+        }
+
+        
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+        
+            if (dvgUsuarios.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un usuario.");
+                return;
+            }
+
+            Usuarios usuario = (Usuarios)dvgUsuarios.CurrentRow.DataBoundItem;
+
+            DialogResult confirmacion = MessageBox.Show(
+                $"¿Está seguro que desea eliminar a {usuario.Nombres} {usuario.Apellidos}?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (confirmacion == DialogResult.Yes)
+            {
+                usuarioControl.EliminarUsuario(usuario.IdUsuario);
+                CargarUsuarios(); 
+                LimpiarCampos();
+            }
+
         }
     }
+    
 }

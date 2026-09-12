@@ -20,5 +20,10 @@ namespace EDUSEX.Views
         {
 
         }
+
+        private void FrmHospitales_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,18 +16,20 @@ namespace EDUSEX.conexion
 
         }
 
-        // Add DbSet<T> properties here when you create your entities
+        // Add DbSet<T> representando a mis carnales tablas 
 
         public DbSet<Models.Credenciales> Credenciales { get; set; }
         public DbSet<Models.Roles> Roles { get; set; }
         public DbSet<Models.Usuarios> Usuarios { get; set; }
-       
-      /*  public DbSet<Models.Citas> Citas { get; set; }
 
-        public DbSet<Models.GuiaEducativa> GuiaEducativa { get; set; }
+        public DbSet<Models.Citas> Citas { get; set; }
 
-        public DbSet<Models.Hospitales> Hospitales { get; set; }  */
-                                                              
+        public DbSet<Models.Hospitales> Hospitales { get; set; }
+
+        /* public DbSet<Models.GuiaEducativa> GuiaEducativa { get; set; } */
+
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

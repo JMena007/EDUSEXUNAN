@@ -12,12 +12,11 @@ namespace EDUSEX.Models
         public int IdCita { get; set; }
         public int IdUsuario { get; set; }
         public int IdHospital { get; set; }
-
-        public string FechaCita { get; set; }
         public string HoraCita { get; set; }
         public string Motivo { get; set; }
         public string Estado { get; set; }
-
+        public string FechaCita { get; set; }
+        public DateTime FechaRegistro { get; set; }
         public Citas() 
         {
            this.IdCita = 0;
@@ -27,6 +26,7 @@ namespace EDUSEX.Models
             this.HoraCita = string.Empty;
             this.Motivo = string.Empty;
             this.Estado = string.Empty;
+            this.FechaRegistro = DateTime.Now;
         }
     }
 }
