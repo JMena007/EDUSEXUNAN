@@ -221,7 +221,7 @@ namespace EDUSEX.Views
             MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimpiarCampos();
             CargarUsuarios();
-            ValidarCampos();
+            
         }
 
         
