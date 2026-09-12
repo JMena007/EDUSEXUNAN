@@ -105,14 +105,12 @@ namespace EDUSEX.Views
             MessageBox.Show("Inicio de sesión correcto.");
 
 
-            // aqui se le da acceso de´pues de validacion
+            // aqui se le da acceso de´pues de validacion a FrmPrincipal
             FormPrincipal formPrincipal = new FormPrincipal();
 
             formPrincipal.Show();
 
             this.Hide();
-
-            // Aquí vamos a validar el rol
         }
     }
     

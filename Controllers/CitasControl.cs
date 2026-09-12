@@ -41,7 +41,7 @@ namespace EDUSEX.Controllers
         }
 
 
-        public List<Models.Citas> ObtenerCitas()
+        public List<Models.Citas> CargarCitas()
         {
             using (EDUSEXContext context = new EDUSEXContext())
             {

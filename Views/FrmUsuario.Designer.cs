@@ -70,7 +70,6 @@ namespace EDUSEX.Views
             dvgUsuarios.Name = "dvgUsuarios";
             dvgUsuarios.Size = new Size(546, 203);
             dvgUsuarios.TabIndex = 0;
-            dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
             // 
             // label1
             // 
@@ -302,10 +301,6 @@ namespace EDUSEX.Views
             PerformLayout();
         }
 
-        private void dvgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
 

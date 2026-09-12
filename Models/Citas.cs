@@ -20,8 +20,8 @@ namespace EDUSEX.Models
         public Citas() 
         {
            this.IdCita = 0;
-            this.IdUsuario = 0;
-            this.IdHospital = 0;
+            this.IdUsuario = 1;
+            this.IdHospital = 1;
             this.FechaCita = string.Empty;
             this.HoraCita = string.Empty;
             this.Motivo = string.Empty;

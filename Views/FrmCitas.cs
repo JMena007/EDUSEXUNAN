@@ -27,7 +27,7 @@ namespace EDUSEX.Views
         private void CargarCitas(CitasControl citasControl)
         {
             dgwCitas.DataSource = null;
-            dgwCitas.DataSource = citasControl.ObtenerCitas();
+            dgwCitas.DataSource = citasControl.CargarCitas();
         }
 
         public FrmCitas()
@@ -38,13 +38,13 @@ namespace EDUSEX.Views
         // agregado: carga hospitales reales en el combo y las citas existentes al abrir el formulario
         private void FrmCitas_Load(object sender, EventArgs e)
         {
-            using (var context = new EDUSEXContext())
+           /* using (var context = new EDUSEXContext())
             {
                 hospitalesBindingSource.DataSource = context.Hospitales.ToList();
             }
 
             IPHospitales.DisplayMember = "NombreHospital";
-            IPHospitales.ValueMember = "IdHospital";
+            IPHospitales.ValueMember = "IdHospital";  */
 
             CargarCitas(citasControl);
         }
