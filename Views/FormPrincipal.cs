@@ -35,7 +35,7 @@ namespace EDUSEX
             button3.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmUsuario()); };
             btnCitas.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmCitas()); };
             btnHospitales.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmHospitales()); };
-            // El control en el diseñador se llama "btnCloseSesion". Usar ese nombre aquí.
+            
             btnCloseSesion.Click += btnCloseSesion_Click;
 
             MostrarInicio();
@@ -73,7 +73,7 @@ namespace EDUSEX
             panelContenido.Controls.Clear();
         }
 
-        // Apaga (deja sin color de selección) todos los botones del sidebar en panel3
+        // función especial 
         private void ButtonOff()
         {
             foreach (Control control in panel3.Controls)
@@ -85,7 +85,7 @@ namespace EDUSEX
             }
         }
 
-        // Apaga todos y prende solo el botón que se tocó
+        // encendido el btn presionado 
         private void SetBotonActivo(Button botonSeleccionado)
         {
             ButtonOff();
