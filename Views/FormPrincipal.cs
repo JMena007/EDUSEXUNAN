@@ -31,11 +31,11 @@ namespace EDUSEX
             label1.BringToFront();
             btnSoporte.Visible = true;
 
-            btnInicio.Click += (sender, e) => MostrarInicio();
-            button3.Click += (sender, e) => MostrarFormulario(new FrmUsuario());
-            btnCitas.Click += (sender, e) => MostrarFormulario(new FrmCitas());
-            btnHospitales.Click += (sender, e) => MostrarFormulario(new FrmHospitales());
-            // El control en el dise�ador se llama "btnCloseSesion". Usar ese nombre aqu�.
+            btnInicio.Click += (sender, e) => { ButtonOff(); MostrarInicio(); };
+            button3.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmUsuario()); };
+            btnCitas.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmCitas()); };
+            btnHospitales.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmHospitales()); };
+            // El control en el diseñador se llama "btnCloseSesion". Usar ese nombre aquí.
             btnCloseSesion.Click += btnCloseSesion_Click;
 
             MostrarInicio();
@@ -73,6 +73,25 @@ namespace EDUSEX
             panelContenido.Controls.Clear();
         }
 
+        // Apaga (deja sin color de selección) todos los botones del sidebar en panel3
+        private void ButtonOff()
+        {
+            foreach (Control control in panel3.Controls)
+            {
+                if (control is Button btn)
+                {
+                    btn.BackColor = Color.Transparent;
+                }
+            }
+        }
+
+        // Apaga todos y prende solo el botón que se tocó
+        private void SetBotonActivo(Button botonSeleccionado)
+        {
+            ButtonOff();
+            botonSeleccionado.BackColor = Color.FromArgb(173, 216, 230); // celeste claro
+        }
+
         private static void OcultarMenuInterno(Form formulario)
         {
             int anchoMenu = 0;
@@ -99,6 +118,7 @@ namespace EDUSEX
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            SetBotonActivo(button2_Click_1 as Button); // revisar: ver nota abajo
             MostrarFormulario(new FrmCitas());
         }
 
@@ -150,6 +170,8 @@ namespace EDUSEX
 
         private void btnGuiaEdu_Click(object sender, EventArgs e)
         {
+            SetBotonActivo(btnGuiaEdu);
+
             // Limpia el panel
             panelContenido.Controls.Clear();
 
