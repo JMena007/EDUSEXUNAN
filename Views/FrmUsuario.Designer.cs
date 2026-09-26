@@ -316,6 +316,11 @@ namespace EDUSEX.Views
             PerformLayout();
         }
 
+        private void dvgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
 
         #endregion
 

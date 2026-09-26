@@ -31,11 +31,11 @@ namespace EDUSEX
             label1.BringToFront();
             btnSoporte.Visible = true;
 
-            btnInicio.Click += (sender, e) => { ButtonOff(); MostrarInicio(); };
+            btnInicio.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarInicio(); };
             button3.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmUsuario()); };
             btnCitas.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmCitas()); };
             btnHospitales.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmHospitales()); };
-            
+            btnGuiaEdu.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmGuiaEducativa()); };
             btnCloseSesion.Click += btnCloseSesion_Click;
 
             MostrarInicio();
@@ -88,8 +88,8 @@ namespace EDUSEX
         // encendido el btn presionado 
         private void SetBotonActivo(Button botonSeleccionado)
         {
+            botonSeleccionado.BackColor = Color.SteelBlue;// celeste claro
             ButtonOff();
-            botonSeleccionado.BackColor = Color.FromArgb(173, 216, 210); // celeste claro
         }
 
         private static void OcultarMenuInterno(Form formulario)
@@ -118,7 +118,6 @@ namespace EDUSEX
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            SetBotonActivo(sender as Button);
             MostrarFormulario(new FrmCitas());
         }
 
@@ -170,7 +169,6 @@ namespace EDUSEX
 
         private void btnGuiaEdu_Click(object sender, EventArgs e)
         {
-            SetBotonActivo(btnGuiaEdu);
 
             // Limpia el panel
             panelContenido.Controls.Clear();
