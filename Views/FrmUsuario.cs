@@ -221,13 +221,13 @@ namespace EDUSEX.Views
             MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimpiarCampos();
             CargarUsuarios();
-            
+
         }
 
-        
+
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-        
+
             if (dvgUsuarios.CurrentRow == null)
             {
                 MessageBox.Show("Seleccione un usuario.");
@@ -245,11 +245,18 @@ namespace EDUSEX.Views
             if (confirmacion == DialogResult.Yes)
             {
                 usuarioControl.EliminarUsuario(usuario.IdUsuario);
-                CargarUsuarios(); 
+                CargarUsuarios();
                 LimpiarCampos();
             }
 
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
-    
+
 }

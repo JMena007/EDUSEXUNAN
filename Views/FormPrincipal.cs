@@ -89,7 +89,7 @@ namespace EDUSEX
         private void SetBotonActivo(Button botonSeleccionado)
         {
             ButtonOff();
-            botonSeleccionado.BackColor = Color.FromArgb(173, 216, 230); // celeste claro
+            botonSeleccionado.BackColor = Color.FromArgb(173, 216, 210); // celeste claro
         }
 
         private static void OcultarMenuInterno(Form formulario)
@@ -118,7 +118,7 @@ namespace EDUSEX
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            SetBotonActivo(button2_Click_1 as Button); // revisar: ver nota abajo
+            SetBotonActivo(sender as Button);
             MostrarFormulario(new FrmCitas());
         }
 
@@ -177,13 +177,14 @@ namespace EDUSEX
 
             // Crea instancia del formulario
             FrmGuiaEducativa frm = new FrmGuiaEducativa();
-            frm.TopLevel = false;       // importante para que se embeba
+            frm.TopLevel = false;   
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
 
             // Agrega al panel
             panelContenido.Controls.Add(frm);
             frm.Show();
+
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -200,5 +201,6 @@ namespace EDUSEX
         {
             MostrarFormulario(new FrmHospitales());
         }
+
     }
 }

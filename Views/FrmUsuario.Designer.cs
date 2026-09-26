@@ -33,6 +33,8 @@ namespace EDUSEX.Views
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dvgUsuarios = new DataGridView();
             label1 = new Label();
             label3 = new Label();
@@ -54,6 +56,7 @@ namespace EDUSEX.Views
             numEdad = new NumericUpDown();
             boxsexo = new ComboBox();
             panel1 = new Panel();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dvgUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
             panel1.SuspendLayout();
@@ -70,6 +73,7 @@ namespace EDUSEX.Views
             dvgUsuarios.Name = "dvgUsuarios";
             dvgUsuarios.Size = new Size(546, 203);
             dvgUsuarios.TabIndex = 0;
+            dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
             // 
             // label1
             // 
@@ -177,7 +181,7 @@ namespace EDUSEX.Views
             // 
             btnEditar.BackColor = Color.FromArgb(128, 255, 255);
             btnEditar.ForeColor = Color.FromArgb(64, 64, 64);
-            btnEditar.Location = new Point(811, 356);
+            btnEditar.Location = new Point(811, 351);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(100, 30);
             btnEditar.TabIndex = 20;
@@ -189,7 +193,7 @@ namespace EDUSEX.Views
             // 
             btnEliminar.BackColor = Color.Tomato;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(811, 424);
+            btnEliminar.Location = new Point(811, 426);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 30);
             btnEliminar.TabIndex = 21;
@@ -279,6 +283,17 @@ namespace EDUSEX.Views
             panel1.Size = new Size(652, 222);
             panel1.TabIndex = 28;
             // 
+            // guna2Button1
+            // 
+            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.Font = new Font("Segoe UI", 9F);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(0, 0);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.Size = new Size(180, 45);
+            guna2Button1.TabIndex = 0;
+            // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -344,5 +359,6 @@ namespace EDUSEX.Views
         private NumericUpDown numEdad;
         private ComboBox boxsexo;
         private Panel panel1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
