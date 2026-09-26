@@ -18,7 +18,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Buscadortxt = new TextBox();
             dgwCitas = new DataGridView();
             lbledad = new Label();
@@ -41,13 +41,12 @@
             IPHoraCita = new DateTimePicker();
             lblHospital = new Label();
             IPHospitales = new ComboBox();
-            lblhora = new Label();
             hospitalesBindingSource = new BindingSource(components);
+            lblhora = new Label();
             label3 = new Label();
             btnEditarcita = new Button();
             btnEliminarcita = new Button();
             btnBuscar = new Button();
-            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)dgwCitas).BeginInit();
             panelcita.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
@@ -67,14 +66,14 @@
             // 
             dgwCitas.BackgroundColor = SystemColors.ButtonHighlight;
             dgwCitas.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgwCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwCitas.Location = new Point(217, 325);
             dgwCitas.Name = "dgwCitas";
@@ -282,13 +281,14 @@
             // 
             // IPHospitales
             // 
+            IPHospitales.DataSource = hospitalesBindingSource;
             IPHospitales.FormattingEnabled = true;
-            IPHospitales.Items.AddRange(new object[] { "Hospital Psicosocial Nacional", "Hospital Alejandro Velez Paiz", "Hospital Salud Integral", "Hospital Doctor Davila Bolaños" });
             IPHospitales.Location = new Point(429, 67);
             IPHospitales.Name = "IPHospitales";
             IPHospitales.Size = new Size(208, 23);
             IPHospitales.TabIndex = 21;
             IPHospitales.SelectedIndexChanged += IPHospitales_SelectedIndexChanged;
+            //
             // 
             // lblhora
             // 
@@ -398,7 +398,6 @@
         private Button btnEditarcita;
         private Button btnEliminarcita;
         private Button btnBuscar;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private NumericUpDown numEdad;
         private BindingSource hospitalesBindingSource;
     }

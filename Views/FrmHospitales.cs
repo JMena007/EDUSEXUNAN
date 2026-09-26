@@ -1,11 +1,13 @@
-﻿using System;
+﻿using EDUSEX;
+using EDUSEX.conexion;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using EDUSEX;
 
 namespace EDUSEX.Views
 {
@@ -25,5 +27,14 @@ namespace EDUSEX.Views
         {
 
         }
-    }
+
+        
+        private void dgwHospitales_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using(var context = new EDUSEXContext())
+            {
+                
+            }
+        }
+    }   
 }

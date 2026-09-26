@@ -51,6 +51,7 @@
             dgwHospitales.Name = "dgwHospitales";
             dgwHospitales.Size = new Size(703, 205);
             dgwHospitales.TabIndex = 13;
+            dgwHospitales.CellContentClick += dgwHospitales_CellContentClick;
             // 
             // FrmHospitales
             // 

@@ -31,11 +31,28 @@ namespace EDUSEX
             label1.BringToFront();
             btnSoporte.Visible = true;
 
-            btnInicio.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarInicio(); };
+            btnInicio.Click += (sender, e) => { ButtonOff(); MostrarInicio(); };
+
             button3.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmUsuario()); };
-            btnCitas.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmCitas()); };
+
+            btnCitas.Click += (sender, e) =>
+            {
+                SetBotonActivo((Button)sender);
+
+                FrmCitas frmCitas = new FrmCitas();
+                frmCitas.SolicitudIrAUsuarios += () =>
+                {
+                    SetBotonActivo(button3); 
+                    MostrarFormulario(new FrmUsuario());
+                };
+
+                MostrarFormulario(frmCitas);
+            };
+
             btnHospitales.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmHospitales()); };
+
             btnGuiaEdu.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmGuiaEducativa()); };
+
             btnCloseSesion.Click += btnCloseSesion_Click;
 
             MostrarInicio();
@@ -44,7 +61,6 @@ namespace EDUSEX
         private void MostrarFormulario(Form formulario)
         {
             LimpiarContenido();
-
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
@@ -73,7 +89,7 @@ namespace EDUSEX
             panelContenido.Controls.Clear();
         }
 
-        // función especial 
+       
         private void ButtonOff()
         {
             foreach (Control control in panel3.Controls)
@@ -85,11 +101,11 @@ namespace EDUSEX
             }
         }
 
-        // encendido el btn presionado 
+        
         private void SetBotonActivo(Button botonSeleccionado)
         {
-            botonSeleccionado.BackColor = Color.SteelBlue;// celeste claro
             ButtonOff();
+            botonSeleccionado.BackColor = Color.FromArgb(197, 225, 245); // celeste suave
         }
 
         private static void OcultarMenuInterno(Form formulario)
@@ -118,7 +134,6 @@ namespace EDUSEX
 
         private void button2_Click_1(object sender, EventArgs e)
         {
-            MostrarFormulario(new FrmCitas());
         }
 
         private void label1_Click_1(object sender, EventArgs e)
@@ -140,7 +155,6 @@ namespace EDUSEX
 
         private void button11_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnCloseSesion_Click(object sender, EventArgs e)
@@ -159,46 +173,26 @@ namespace EDUSEX
 
         private void panel3_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnGuiaEdu_Click(object sender, EventArgs e)
         {
-
-            // Limpia el panel
-            panelContenido.Controls.Clear();
-
-            // Crea instancia del formulario
-            FrmGuiaEducativa frm = new FrmGuiaEducativa();
-            frm.TopLevel = false;   
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            // Agrega al panel
-            panelContenido.Controls.Add(frm);
-            frm.Show();
-
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnHospitales_Click(object sender, EventArgs e)
         {
-            MostrarFormulario(new FrmHospitales());
         }
-
     }
 }

@@ -16,9 +16,12 @@ namespace EDUSEX.Views
     public partial class FrmCitas : Form
     {
         CitasControl citasControl = new CitasControl();
-        UsuarioControl uControl = new UsuarioControl();
+        UsuarioControl userControl = new UsuarioControl();
         private int idCita;
         private int idUsuarioSeleccionado;
+
+        public event Action SolicitudIrAUsuarios;
+
 
         private void CargarCitas(CitasControl citasControl)
         {
@@ -26,6 +29,7 @@ namespace EDUSEX.Views
 
             using (var context = new EDUSEXContext())
             {
+                // se uso diccionario para que no se viera los id feos sjjs
                 var usuarios = context.Usuarios.ToDictionary(u => u.IdUsuario, u => u.Nombres + " " + u.Apellidos);
                 var hospitales = context.Hospitales.ToDictionary(h => h.IdHospital, h => h.NombreHospital);
 
@@ -57,6 +61,9 @@ namespace EDUSEX.Views
                 hospitalesBindingSource.DataSource = context.Hospitales.ToList();
             }
 
+            IPHospitales.DataSource = hospitalesBindingSource;
+            IPHospitales.DisplayMember = "NombreHospital";
+            IPHospitales.ValueMember = "IdHospital";
             CargarCitas(citasControl);
         }
 
@@ -79,31 +86,16 @@ namespace EDUSEX.Views
                 return;
             }
 
-            string nombreHospitalSeleccionado = IPHospitales.SelectedItem?.ToString();
-
-            if (string.IsNullOrEmpty(nombreHospitalSeleccionado))
+            if (IPHospitales.SelectedValue == null)
             {
                 MessageBox.Show("Seleccione un hospital.");
-                return;
-            }
-
-            Hospitales hospitalSeleccionado;
-            using (var context = new EDUSEXContext())
-            {
-                hospitalSeleccionado = context.Hospitales
-                    .FirstOrDefault(h => h.NombreHospital == nombreHospitalSeleccionado);
-            }
-
-            if (hospitalSeleccionado == null)
-            {
-                MessageBox.Show("El hospital seleccionado no existe en la base de datos.");
                 return;
             }
 
             Citas c = new Citas
             {
                 IdUsuario = idUsuarioSeleccionado,
-                IdHospital = hospitalSeleccionado.IdHospital,
+                IdHospital = Convert.ToInt32(IPHospitales.SelectedValue),
                 FechaCita = IPFecha.Value.Date,
                 HoraCita = IPHoraCita.Value.TimeOfDay,
                 Motivo = IPMotivocita.Text,
@@ -117,6 +109,7 @@ namespace EDUSEX.Views
             LimpiarCampos();
             MessageBox.Show("Cita guardada correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e) { }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e) { }
@@ -132,11 +125,21 @@ namespace EDUSEX.Views
                 return;
             }
 
-            Usuarios usuario = uControl.BuscarPorCedulaONombre(buscarValue);
+            Usuarios usuario = userControl.BuscarPorCedulaONombre(buscarValue);
 
             if (usuario == null)
             {
-                MessageBox.Show("Usuario no encontrado");
+                DialogResult respuesta = MessageBox.Show(
+                    "Usuario no encontrado. ¿Desea registrarlo ahora?",
+                    "Usuario no encontrado",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (respuesta == DialogResult.Yes)
+                {
+                    SolicitudIrAUsuarios?.Invoke();
+                }
+
                 idUsuarioSeleccionado = 0;
                 return;
             }
@@ -148,13 +151,12 @@ namespace EDUSEX.Views
             comboBox2.Text = usuario.Sexo;
         }
 
-        // --- Cancelar: limpia todo y vuelve al estado inicial ---
         private void btnCancelarcita_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
         }
 
-      
+
         private void dgwCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgwCitas.CurrentRow == null) return;
@@ -167,15 +169,7 @@ namespace EDUSEX.Views
             IPHoraCita.Value = DateTime.Today.Add(citaSeleccionada.HoraCita);
             IPMotivocita.Text = citaSeleccionada.Motivo;
             IpEstado.Text = citaSeleccionada.Estado;
-
-            using (var context = new EDUSEXContext())
-            {
-                Hospitales hospital = context.Hospitales.FirstOrDefault(h => h.IdHospital == citaSeleccionada.IdHospital);
-                if (hospital != null)
-                {
-                    IPHospitales.SelectedItem = hospital.NombreHospital;
-                }
-            }
+            IPHospitales.SelectedValue = citaSeleccionada.IdHospital; 
         }
 
         //  Eliminar la cita seleccionada
@@ -187,41 +181,36 @@ namespace EDUSEX.Views
                 return;
             }
 
-            MessageBox.Show("¿Está seguro de que desea eliminar la cita seleccionada?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+          DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar la cita seleccionada?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            citasControl.EliminarCita(idCita);
-            CargarCitas(citasControl);
-            LimpiarCampos();
+            if (result == DialogResult.Yes)
+            {
+                citasControl.EliminarCita(idCita);
+                CargarCitas(citasControl);
+                LimpiarCampos();
+            }
         }
 
         //  Guardar los cambios de la cita seleccionada 
         private void btnEditarcita_Click(object sender, EventArgs e)
         {
-            if (idCita == null)
+            if (idCita == 0)
             {
                 MessageBox.Show("Seleccione una cita del listado para editar.");
                 return;
             }
 
-
-            string nombreHospitalSeleccionado = IPHospitales.SelectedItem?.ToString();
-            Hospitales hospitalSeleccionado = null;
-
-            if (!string.IsNullOrEmpty(nombreHospitalSeleccionado))
+            if (IPHospitales.SelectedValue == null)
             {
-                using (var context = new EDUSEXContext())
-                {
-                    hospitalSeleccionado = context.Hospitales
-                        .FirstOrDefault(h => h.NombreHospital == nombreHospitalSeleccionado);
-                }
+                MessageBox.Show("Seleccione un hospital.");
+                return;
             }
-
 
             Citas c = new Citas
             {
                 IdCita = idCita,
                 IdUsuario = idUsuarioSeleccionado,
-                IdHospital = hospitalSeleccionado?.IdHospital ?? 0,
+                IdHospital = Convert.ToInt32(IPHospitales.SelectedValue),
                 FechaCita = IPFecha.Value.Date,
                 HoraCita = IPHoraCita.Value.TimeOfDay,
                 Motivo = IPMotivocita.Text,
@@ -256,5 +245,7 @@ namespace EDUSEX.Views
         {
             LimpiarCampos();
         }
+
+       
     }
 }
