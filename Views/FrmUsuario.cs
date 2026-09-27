@@ -116,10 +116,15 @@ namespace EDUSEX.Views
             }
         }
 
-        private void txtTelefono_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        private void txtTelefono_keyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsDigit(e.KeyChar) &&
+                !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
+
 
         // Cedula
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)

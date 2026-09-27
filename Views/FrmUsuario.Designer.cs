@@ -237,7 +237,7 @@ namespace EDUSEX.Views
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(239, 23);
             txtTelefono.TabIndex = 25;
-            txtTelefono.MaskInputRejected += txtTelefono_MaskInputRejected;
+            txtTelefono.KeyPress += txtTelefono_keyPress;
             // 
             // numEdad
             // 

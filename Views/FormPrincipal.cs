@@ -27,67 +27,105 @@ namespace EDUSEX
 
             Controls.Add(panelContenido);
             panelContenido.BringToFront();
+
             panel3.BringToFront();
             label1.BringToFront();
+            pictrueES.BringToFront();
             btnSoporte.Visible = true;
 
-            btnInicio.Click += (sender, e) => { ButtonOff(); MostrarInicio(); };
+            btnInicio.Click += (sender, e) => { MostrarInicio(); };
 
-            button3.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmUsuario()); };
+            button3.Click += (sender, e) =>
+            {
+                MostrarFormulario(new FrmUsuario());
+            };
 
             btnCitas.Click += (sender, e) =>
             {
-                SetBotonActivo((Button)sender);
-
                 FrmCitas frmCitas = new FrmCitas();
+
                 frmCitas.SolicitudIrAUsuarios += () =>
                 {
-                    SetBotonActivo(button3); 
                     MostrarFormulario(new FrmUsuario());
                 };
 
                 MostrarFormulario(frmCitas);
             };
 
-            btnHospitales.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmHospitales()); };
+            btnHospitales.Click += (sender, e) =>
+            {
+                MostrarFormulario(new FrmHospitales());
+            };
 
-            btnGuiaEdu.Click += (sender, e) => { SetBotonActivo((Button)sender); MostrarFormulario(new FrmGuiaEducativa()); };
+            btnGuiaEdu.Click += (sender, e) =>
+            {
+                MostrarFormulario(new FrmGuiaEducativa());
+            };
 
             btnCloseSesion.Click += btnCloseSesion_Click;
 
             ConfigurarSidebarPorRol();
 
             MostrarInicio();
-
         }
 
         private void ConfigurarSidebarPorRol()
         {
             if (SesionActual.RolUsuario == "Paciente")
             {
-                button3.Visible = false;       // Usuarios: gestión exclusiva de personal de salud (RF-03)
-                btnHospitales.Visible = false; // Gestión de hospitales: exclusiva de personal de salud (RF-09)
+                button3.Visible = false;
+                btnHospitales.Visible = false;
             }
-            // Admin y Medico ven todo el sidebar
         }
 
         private void MostrarFormulario(Form formulario)
         {
             LimpiarContenido();
+
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
+
             OcultarMenuInterno(formulario);
 
             label1.Visible = false;
+
             panelContenido.Controls.Add(formulario);
+
+            // DEBUG
+            MessageBox.Show(
+                "Formulario creado correctamente.\n\n" +
+                $"Formulario: {formulario.Name}\n" +
+                $"Visible antes de Show: {formulario.Visible}\n" +
+                $"Controles del formulario: {formulario.Controls.Count}\n" +
+                $"Controles en panelContenido: {panelContenido.Controls.Count}",
+                "DEBUG - MostrarFormulario",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
             formulario.Show();
+
+            // DEBUG
+            MessageBox.Show(
+                "Después de Show().\n\n" +
+                $"Formulario visible: {formulario.Visible}\n" +
+                $"Formulario tamaño: {formulario.Size}\n" +
+                $"Formulario ubicación: {formulario.Location}\n" +
+                $"panelContenido visible: {panelContenido.Visible}\n" +
+                $"panelContenido tamaño: {panelContenido.Size}",
+                "DEBUG - Estado visual",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+
             formulario.BringToFront();
         }
 
         private void MostrarInicio()
         {
             LimpiarContenido();
+
             label1.Visible = true;
             label1.BringToFront();
         }
@@ -100,25 +138,6 @@ namespace EDUSEX
             }
 
             panelContenido.Controls.Clear();
-        }
-
-       
-        private void ButtonOff()
-        {
-            foreach (Control control in panel3.Controls)
-            {
-                if (control is Button btn)
-                {
-                    btn.BackColor = Color.Transparent;
-                }
-            }
-        }
-
-        
-        private void SetBotonActivo(Button botonSeleccionado)
-        {
-            ButtonOff();
-            botonSeleccionado.BackColor = Color.FromArgb(197, 225, 245); 
         }
 
         private static void OcultarMenuInterno(Form formulario)
@@ -194,8 +213,6 @@ namespace EDUSEX
 
         private void btnGuiaEdu_Click(object sender, EventArgs e)
         {
-            SetBotonActivo((Button)sender);
-            ButtonOff();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -207,6 +224,10 @@ namespace EDUSEX
         }
 
         private void btnHospitales_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
         {
         }
     }

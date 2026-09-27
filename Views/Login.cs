@@ -34,6 +34,14 @@ namespace EDUSEX.Views
             linkCreateCuenta.Visible = true;
         }
 
+        private void CampoTexto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -78,7 +86,7 @@ namespace EDUSEX.Views
 
         private void btnInicioSesion_Click(object sender, EventArgs e)
         {
-        
+
             string usuario = lnputUsertxt.Text.Trim();
             string password = inputContraseña.Text;
 
@@ -93,7 +101,7 @@ namespace EDUSEX.Views
             // aqui validamos con la funcion del controlador de credenciales para validar el login
             Credenciales credencial =
                 credencialController.ValidarLogin(usuario, password);
-            
+
 
             if (credencial == null)
             {
@@ -112,13 +120,18 @@ namespace EDUSEX.Views
 
             // aqui se le da acceso de´pues de validacion a FrmPrincipal
             FormPrincipal formPrincipal = new FormPrincipal();
-            
+
 
             formPrincipal.Show();
 
             this.Hide();
         }
+
+        private void inputContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-    
+
 }
 

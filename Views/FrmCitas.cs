@@ -85,7 +85,7 @@ namespace EDUSEX.Views
                 Buscadortxt.Visible = false;
                 btnBuscar.Visible = false;
 
-                
+
                 idUsuarioSeleccionado = SesionActual.IdUsuarioLogueado;
             }
             else
@@ -284,6 +284,21 @@ namespace EDUSEX.Views
         private void Apellidotxt_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            citasControl.EditarCita(new Citas
+            {
+                IdCita = idCita,
+                IdUsuario = idUsuarioSeleccionado,
+                IdHospital = Convert.ToInt32(IPHospitales.SelectedValue),
+                FechaCita = IPFecha.Value.Date,
+                HoraCita = IPHoraCita.Value.TimeOfDay,
+                Motivo = IPMotivocita.Text,
+                Estado = IpEstado.Text,
+                FechaRegistro = DateTime.Now
+            });
         }
     }
 }

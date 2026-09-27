@@ -26,6 +26,7 @@
             llbapellidos = new Label();
             label6 = new Label();
             panelcita = new Panel();
+            btnActualizar = new Button();
             numEdad = new NumericUpDown();
             btnCancelarcita = new Button();
             IpEstado = new ComboBox();
@@ -123,6 +124,7 @@
             // 
             panelcita.BackColor = SystemColors.ButtonFace;
             panelcita.BorderStyle = BorderStyle.Fixed3D;
+            panelcita.Controls.Add(btnActualizar);
             panelcita.Controls.Add(numEdad);
             panelcita.Controls.Add(btnCancelarcita);
             panelcita.Controls.Add(IpEstado);
@@ -148,6 +150,18 @@
             panelcita.Size = new Size(688, 237);
             panelcita.TabIndex = 18;
             // 
+            // btnActualizar
+            // 
+            btnActualizar.BackColor = Color.Pink;
+            btnActualizar.Location = new Point(477, 183);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(100, 30);
+            btnActualizar.TabIndex = 29;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
+            btnActualizar.BringToFront();
+            // 
             // numEdad
             // 
             numEdad.Location = new Point(49, 127);
@@ -161,7 +175,7 @@
             // 
             btnCancelarcita.BackColor = Color.FromArgb(255, 128, 128);
             btnCancelarcita.ForeColor = SystemColors.ButtonFace;
-            btnCancelarcita.Location = new Point(355, 183);
+            btnCancelarcita.Location = new Point(293, 183);
             btnCancelarcita.Name = "btnCancelarcita";
             btnCancelarcita.RightToLeft = RightToLeft.No;
             btnCancelarcita.Size = new Size(100, 30);
@@ -191,7 +205,7 @@
             // btnAgendarcita
             // 
             btnAgendarcita.BackColor = Color.PaleTurquoise;
-            btnAgendarcita.Location = new Point(194, 183);
+            btnAgendarcita.Location = new Point(118, 183);
             btnAgendarcita.Name = "btnAgendarcita";
             btnAgendarcita.Size = new Size(100, 30);
             btnAgendarcita.TabIndex = 26;
@@ -407,5 +421,6 @@
         private Button btnBuscar;
         private NumericUpDown numEdad;
         private BindingSource hospitalesBindingSource;
+        private Button btnActualizar;
     }
 }

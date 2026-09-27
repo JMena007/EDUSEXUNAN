@@ -116,9 +116,12 @@
             inputContraseña.BorderStyle = BorderStyle.FixedSingle;
             inputContraseña.Location = new Point(87, 115);
             inputContraseña.Name = "inputContraseña";
+            inputContraseña.PasswordChar = '.';
             inputContraseña.PlaceholderText = "Contraseña";
             inputContraseña.Size = new Size(221, 23);
             inputContraseña.TabIndex = 3;
+            inputContraseña.TextChanged += inputContraseña_TextChanged;
+            inputContraseña.KeyDown += CampoTexto_KeyDown;
             // 
             // lnputUsertxt
             // 
@@ -129,6 +132,7 @@
             lnputUsertxt.Size = new Size(221, 23);
             lnputUsertxt.TabIndex = 2;
             lnputUsertxt.TextChanged += lnputUsertxt_TextChanged;
+            lnputUsertxt.KeyDown += CampoTexto_KeyDown;
             // 
             // Login
             // 
