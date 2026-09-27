@@ -195,6 +195,16 @@ namespace EDUSEX.Views
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos())
+                return;
+
+           
+            if (idUsuarioEditando == null && usuarioControl.CedulaExiste(txtCedula.Text.Trim()))
+            {
+                MessageBox.Show("Ya existe un usuario registrado con esta cédula.");
+                return;
+            }
+
             Usuarios u = new Usuarios();
             {
                 u.Nombres = txtnombre.Text;

@@ -27,15 +27,21 @@ namespace EDUSEX.Views
         {
             List<Citas> citas = citasControl.CargarCitas();
 
+            if (SesionActual.RolUsuario == "Paciente")
+            {
+                citas = citas.Where(c => c.IdUsuario == SesionActual.IdUsuarioLogueado).ToList();
+            }
+
             using (var context = new EDUSEXContext())
             {
-                // se uso diccionario para que no se viera los id feos sjjs
                 var usuarios = context.Usuarios.ToDictionary(u => u.IdUsuario, u => u.Nombres + " " + u.Apellidos);
                 var hospitales = context.Hospitales.ToDictionary(h => h.IdHospital, h => h.NombreHospital);
 
                 var citasConNombres = citas.Select(c => new
                 {
                     c.IdCita,
+                    c.IdUsuario,
+                    c.IdHospital,
                     Paciente = usuarios.ContainsKey(c.IdUsuario) ? usuarios[c.IdUsuario] : "Desconocido",
                     Hospital = hospitales.ContainsKey(c.IdHospital) ? hospitales[c.IdHospital] : "Desconocido",
                     c.FechaCita,
@@ -46,6 +52,9 @@ namespace EDUSEX.Views
 
                 dgwCitas.DataSource = null;
                 dgwCitas.DataSource = citasConNombres;
+
+                if (dgwCitas.Columns["IdUsuario"] != null) dgwCitas.Columns["IdUsuario"].Visible = false;
+                if (dgwCitas.Columns["IdHospital"] != null) dgwCitas.Columns["IdHospital"].Visible = false;
             }
         }
 
@@ -64,7 +73,26 @@ namespace EDUSEX.Views
             IPHospitales.DataSource = hospitalesBindingSource;
             IPHospitales.DisplayMember = "NombreHospital";
             IPHospitales.ValueMember = "IdHospital";
+
+            ConfigurarPorRol();
             CargarCitas(citasControl);
+        }
+
+        private void ConfigurarPorRol()
+        {
+            if (SesionActual.RolUsuario == "Paciente")
+            {
+                Buscadortxt.Visible = false;
+                btnBuscar.Visible = false;
+
+                
+                idUsuarioSeleccionado = SesionActual.IdUsuarioLogueado;
+            }
+            else
+            {
+                Buscadortxt.Visible = true;
+                btnBuscar.Visible = true;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e) { }
@@ -159,33 +187,29 @@ namespace EDUSEX.Views
 
         private void dgwCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgwCitas.CurrentRow == null) return;
 
-            Citas citaSeleccionada = (Citas)dgwCitas.CurrentRow.DataBoundItem;
-            idCita = citaSeleccionada.IdCita;
-            idUsuarioSeleccionado = citaSeleccionada.IdUsuario;
-
-            IPFecha.Value = citaSeleccionada.FechaCita;
-            IPHoraCita.Value = DateTime.Today.Add(citaSeleccionada.HoraCita);
-            IPMotivocita.Text = citaSeleccionada.Motivo;
-            IpEstado.Text = citaSeleccionada.Estado;
-            IPHospitales.SelectedValue = citaSeleccionada.IdHospital; 
         }
 
         //  Eliminar la cita seleccionada
         private void btnEliminarcita_Click(object sender, EventArgs e)
         {
-            if (idCita == 0)
+            if (dgwCitas.CurrentRow == null)
             {
-                MessageBox.Show("Seleccione una cita para eliminar.");
+                MessageBox.Show("Seleccione una cita del listado para editar.");
                 return;
             }
 
-          DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar la cita seleccionada?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            int id = Convert.ToInt32(
+                dgwCitas.CurrentRow.Cells["IdCita"].Value
+            );
+
+            Citas citaSeleccionada = citasControl.ObtenerCitaPorId(id);
+
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar la cita seleccionada?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes)
             {
-                citasControl.EliminarCita(idCita);
+                citasControl.EliminarCita(id);
                 CargarCitas(citasControl);
                 LimpiarCampos();
             }
@@ -194,33 +218,44 @@ namespace EDUSEX.Views
         //  Guardar los cambios de la cita seleccionada 
         private void btnEditarcita_Click(object sender, EventArgs e)
         {
-            if (idCita == 0)
+            if (dgwCitas.CurrentRow == null)
             {
                 MessageBox.Show("Seleccione una cita del listado para editar.");
                 return;
             }
 
-            if (IPHospitales.SelectedValue == null)
+            int id = Convert.ToInt32(
+                dgwCitas.CurrentRow.Cells["IdCita"].Value
+            );
+
+            Citas citaSeleccionada = citasControl.ObtenerCitaPorId(id);
+
+            if (citaSeleccionada == null)
             {
-                MessageBox.Show("Seleccione un hospital.");
+                MessageBox.Show("No se encontró la cita.");
                 return;
             }
 
-            Citas c = new Citas
-            {
-                IdCita = idCita,
-                IdUsuario = idUsuarioSeleccionado,
-                IdHospital = Convert.ToInt32(IPHospitales.SelectedValue),
-                FechaCita = IPFecha.Value.Date,
-                HoraCita = IPHoraCita.Value.TimeOfDay,
-                Motivo = IPMotivocita.Text,
-                Estado = IpEstado.Text
-            };
+            idCita = citaSeleccionada.IdCita;
+            idUsuarioSeleccionado = citaSeleccionada.IdUsuario;
 
-            citasControl.EditarCita(c);
-            CargarCitas(citasControl);
-            LimpiarCampos();
-            MessageBox.Show("Cita actualizada correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            IPFecha.Value = citaSeleccionada.FechaCita;
+            IPHoraCita.Value = DateTime.Today.Add(citaSeleccionada.HoraCita);
+            IPMotivocita.Text = citaSeleccionada.Motivo;
+            IpEstado.Text = citaSeleccionada.Estado;
+            IPHospitales.SelectedValue = citaSeleccionada.IdHospital;
+
+            Usuarios usuario = userControl.ObtenerUsuarioPorId(citaSeleccionada.IdUsuario);
+
+            if (usuario != null)
+            {
+                Nombretxt.Text = usuario.Nombres;
+                Apellidotxt.Text = usuario.Apellidos;
+                numEdad.Value = usuario.Edad;
+                comboBox2.Text = usuario.Sexo;
+            }
+
+            citasControl.EditarCita(citaSeleccionada);
         }
 
         private void IPHospitales_SelectedIndexChanged(object sender, EventArgs e) { }
@@ -246,6 +281,9 @@ namespace EDUSEX.Views
             LimpiarCampos();
         }
 
-       
+        private void Apellidotxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

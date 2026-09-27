@@ -55,7 +55,20 @@ namespace EDUSEX
 
             btnCloseSesion.Click += btnCloseSesion_Click;
 
+            ConfigurarSidebarPorRol();
+
             MostrarInicio();
+
+        }
+
+        private void ConfigurarSidebarPorRol()
+        {
+            if (SesionActual.RolUsuario == "Paciente")
+            {
+                button3.Visible = false;       // Usuarios: gestión exclusiva de personal de salud (RF-03)
+                btnHospitales.Visible = false; // Gestión de hospitales: exclusiva de personal de salud (RF-09)
+            }
+            // Admin y Medico ven todo el sidebar
         }
 
         private void MostrarFormulario(Form formulario)
@@ -105,7 +118,7 @@ namespace EDUSEX
         private void SetBotonActivo(Button botonSeleccionado)
         {
             ButtonOff();
-            botonSeleccionado.BackColor = Color.FromArgb(197, 225, 245); // celeste suave
+            botonSeleccionado.BackColor = Color.FromArgb(197, 225, 245); 
         }
 
         private static void OcultarMenuInterno(Form formulario)
@@ -181,6 +194,8 @@ namespace EDUSEX
 
         private void btnGuiaEdu_Click(object sender, EventArgs e)
         {
+            SetBotonActivo((Button)sender);
+            ButtonOff();
         }
 
         private void btnInicio_Click(object sender, EventArgs e)

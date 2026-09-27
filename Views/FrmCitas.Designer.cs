@@ -215,6 +215,7 @@
             Apellidotxt.Name = "Apellidotxt";
             Apellidotxt.Size = new Size(161, 23);
             Apellidotxt.TabIndex = 19;
+            Apellidotxt.TextChanged += Apellidotxt_TextChanged;
             // 
             // Nombretxt
             // 
@@ -222,6 +223,7 @@
             Nombretxt.Name = "Nombretxt";
             Nombretxt.Size = new Size(161, 23);
             Nombretxt.TabIndex = 18;
+            Nombretxt.TextChanged += Nombretxt_TextChanged;
             // 
             // IPMotivocita
             // 
@@ -288,7 +290,6 @@
             IPHospitales.Size = new Size(208, 23);
             IPHospitales.TabIndex = 21;
             IPHospitales.SelectedIndexChanged += IPHospitales_SelectedIndexChanged;
-            //
             // 
             // lblhora
             // 
@@ -370,6 +371,12 @@
             ResumeLayout(false);
             PerformLayout();
         }
+
+        private void Nombretxt_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
 
         #endregion
         private TextBox Buscadortxt;

@@ -23,13 +23,14 @@ namespace EDUSEX.Views
             PrepararLogin();
         }
 
+        //metodo de validacion 
         internal void PrepararLogin()
         {
             lnputUsertxt.Clear();
             inputContraseña.Clear();
             lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
             inputContraseña.PlaceholderText = "Contraseña";
-            linkInvitado.Visible = true;
+            linkInvitado.Visible = false;
             linkCreateCuenta.Visible = true;
         }
 
@@ -88,8 +89,11 @@ namespace EDUSEX.Views
                 return;
             }
 
+
+            // aqui validamos con la funcion del controlador de credenciales para validar el login
             Credenciales credencial =
                 credencialController.ValidarLogin(usuario, password);
+            
 
             if (credencial == null)
             {
@@ -104,9 +108,11 @@ namespace EDUSEX.Views
 
             MessageBox.Show("Inicio de sesión correcto.");
 
+            RolesControl rolesControl = new RolesControl();
 
             // aqui se le da acceso de´pues de validacion a FrmPrincipal
             FormPrincipal formPrincipal = new FormPrincipal();
+            
 
             formPrincipal.Show();
 

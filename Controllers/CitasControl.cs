@@ -3,6 +3,7 @@ using EDUSEX.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace EDUSEX.Controllers
 {
@@ -24,6 +25,14 @@ namespace EDUSEX.Controllers
             {
                 context.Citas.Update(cita);
                 context.SaveChanges();
+            }
+        }
+
+        public Citas ObtenerCitaPorId(int idCita)
+        {
+            using (EDUSEXContext context = new EDUSEXContext())
+            {
+                return context.Citas.FirstOrDefault(c => c.IdCita == idCita);
             }
         }
 

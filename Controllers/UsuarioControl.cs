@@ -1,7 +1,7 @@
 ﻿using EDUSEX.conexion;
 using System;
 using System.Collections.Generic;
-using System.Linq; // required for FirstOrDefault
+using System.Linq; 
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using EDUSEX.Models;
@@ -18,9 +18,17 @@ namespace EDUSEX.Controllers
                 context.Usuarios.Add(usuario);
                 context.SaveChanges();
             }
+
         }
 
-        
+        public bool CedulaExiste(string cedula)
+        {
+            using (var context = new EDUSEXContext())
+            {
+                return context.Usuarios.Any(u => u.Cedula == cedula);
+            }
+        }
+
         public List<Models.Usuarios> ObtenerUsuarios()
         {
             using (EDUSEXContext context = new EDUSEXContext())
@@ -73,5 +81,14 @@ namespace EDUSEX.Controllers
                     u.Apellidos.Contains(valor));
             }
         }
+        public Usuarios ObtenerUsuarioPorId(int idUsuario) 
+        {
+            using (EDUSEXContext context = new EDUSEXContext()) 
+            {
+                return context.Usuarios.Find(idUsuario); 
+            } 
+        
+        }
+
     }
 }
