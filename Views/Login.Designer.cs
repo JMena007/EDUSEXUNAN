@@ -33,7 +33,6 @@
             panelLogin = new Panel();
             linkCreateCuenta = new LinkLabel();
             btnInicioSesion = new Button();
-            linkInvitado = new LinkLabel();
             inputContraseña = new TextBox();
             lnputUsertxt = new TextBox();
             panelLogin.SuspendLayout();
@@ -68,7 +67,6 @@
             panelLogin.BorderStyle = BorderStyle.Fixed3D;
             panelLogin.Controls.Add(linkCreateCuenta);
             panelLogin.Controls.Add(btnInicioSesion);
-            panelLogin.Controls.Add(linkInvitado);
             panelLogin.Controls.Add(inputContraseña);
             panelLogin.Controls.Add(lnputUsertxt);
             panelLogin.Controls.Add(label2);
@@ -86,6 +84,7 @@
             linkCreateCuenta.TabIndex = 7;
             linkCreateCuenta.TabStop = true;
             linkCreateCuenta.Text = "No tienes usuario? Crea tu cuenta aqui";
+            linkCreateCuenta.LinkClicked += linkCreateCuenta_LinkClicked;
             // 
             // btnInicioSesion
             // 
@@ -98,18 +97,6 @@
             btnInicioSesion.Text = "Entrar";
             btnInicioSesion.UseVisualStyleBackColor = false;
             btnInicioSesion.Click += btnInicioSesion_Click;
-            // 
-            // linkInvitado
-            // 
-            linkInvitado.AutoSize = true;
-            linkInvitado.DisabledLinkColor = Color.White;
-            linkInvitado.Location = new Point(132, 238);
-            linkInvitado.Name = "linkInvitado";
-            linkInvitado.Size = new Size(130, 15);
-            linkInvitado.TabIndex = 5;
-            linkInvitado.TabStop = true;
-            linkInvitado.Text = "Acceder como Invitado";
-            linkInvitado.LinkClicked += linkInvitado_LinkClicked;
             // 
             // inputContraseña
             // 
@@ -142,8 +129,9 @@
             ClientSize = new Size(1000, 521);
             Controls.Add(panelLogin);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Login";
+            RightToLeft = RightToLeft.No;
             Text = "Login";
             Load += Login_Load;
             panelLogin.ResumeLayout(false);
@@ -161,7 +149,6 @@
         private Panel panelLogin;
         private TextBox inputContraseña;
         private TextBox lnputUsertxt;
-        private LinkLabel linkInvitado;
         private Button btnInicioSesion;
         private LinkLabel linkCreateCuenta;
     }

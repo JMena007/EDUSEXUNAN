@@ -10,6 +10,7 @@ namespace EDUSEX.Models
     {
         [Key]
         public int IdCredencial { get; set; }
+
         public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string PasswordHash { get; set; }
@@ -26,6 +27,7 @@ namespace EDUSEX.Models
             this.Activo = Activo;
        }
 
-
+        public Credenciales() { }
+        s
     }
 }

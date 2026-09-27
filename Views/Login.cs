@@ -30,7 +30,6 @@ namespace EDUSEX.Views
             inputContraseña.Clear();
             lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
             inputContraseña.PlaceholderText = "Contraseña";
-            linkInvitado.Visible = false;
             linkCreateCuenta.Visible = true;
         }
 
@@ -50,18 +49,6 @@ namespace EDUSEX.Views
         private void label3_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void linkInvitado_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            if (formPrincipal == null || formPrincipal.IsDisposed)
-            {
-                formPrincipal = new FormPrincipal(this);
-            }
-
-            formPrincipal.Show();
-            formPrincipal.Activate();
-            Hide();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -129,6 +116,14 @@ namespace EDUSEX.Views
 
         private void inputContraseña_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void linkCreateCuenta_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreateUsernew createUserForm = new CreateUsernew();
+
+            createUserForm.ShowDialog();
 
         }
     }

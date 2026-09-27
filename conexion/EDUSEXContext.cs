@@ -26,10 +26,8 @@ namespace EDUSEX.conexion
 
         public DbSet<Models.Hospitales> Hospitales { get; set; }
 
-        /* public DbSet<Models.GuiaEducativa> GuiaEducativa { get; set; } */
-
-
-
+       /*  public DbSet<Models.GuiaEducativa> GuiaEducativa { get; set; }  */
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

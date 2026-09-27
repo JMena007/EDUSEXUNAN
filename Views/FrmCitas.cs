@@ -23,9 +23,9 @@ namespace EDUSEX.Views
         public event Action SolicitudIrAUsuarios;
 
 
-        private void CargarCitas(CitasControl citasControl)
+        private void CargarCitas(CitasControl c)
         {
-            List<Citas> citas = citasControl.CargarCitas();
+            List<Citas> citas = c.CargarCitas();
 
             if (SesionActual.RolUsuario == "Paciente")
             {
