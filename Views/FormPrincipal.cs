@@ -89,35 +89,11 @@ namespace EDUSEX
             OcultarMenuInterno(formulario);
 
             label1.Visible = false;
+            pictrueES.Visible = false; // <-- agregado
 
             panelContenido.Controls.Add(formulario);
 
-            // DEBUG
-            MessageBox.Show(
-                "Formulario creado correctamente.\n\n" +
-                $"Formulario: {formulario.Name}\n" +
-                $"Visible antes de Show: {formulario.Visible}\n" +
-                $"Controles del formulario: {formulario.Controls.Count}\n" +
-                $"Controles en panelContenido: {panelContenido.Controls.Count}",
-                "DEBUG - MostrarFormulario",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
-
             formulario.Show();
-
-            // DEBUG
-            MessageBox.Show(
-                "Después de Show().\n\n" +
-                $"Formulario visible: {formulario.Visible}\n" +
-                $"Formulario tamaño: {formulario.Size}\n" +
-                $"Formulario ubicación: {formulario.Location}\n" +
-                $"panelContenido visible: {panelContenido.Visible}\n" +
-                $"panelContenido tamaño: {panelContenido.Size}",
-                "DEBUG - Estado visual",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
 
             formulario.BringToFront();
         }
@@ -127,9 +103,10 @@ namespace EDUSEX
             LimpiarContenido();
 
             label1.Visible = true;
+            pictrueES.Visible = true; // <-- agregado
             label1.BringToFront();
+            pictrueES.BringToFront(); // <-- agregado
         }
-
         private void LimpiarContenido()
         {
             foreach (Control control in panelContenido.Controls)
