@@ -39,9 +39,7 @@
             label3 = new Label();
             panel4 = new Panel();
             btnInicio = new Button();
-            pictrueES = new PictureBox();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictrueES).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -111,7 +109,7 @@
             btnGuiaEdu.FlatStyle = FlatStyle.Flat;
             btnGuiaEdu.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuiaEdu.ForeColor = SystemColors.Control;
-            btnGuiaEdu.Location = new Point(3, 288);
+            btnGuiaEdu.Location = new Point(3, 312);
             btnGuiaEdu.Name = "btnGuiaEdu";
             btnGuiaEdu.Size = new Size(194, 28);
             btnGuiaEdu.TabIndex = 13;
@@ -126,7 +124,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(3, 132);
+            button3.Location = new Point(3, 137);
             button3.Name = "button3";
             button3.Size = new Size(194, 28);
             button3.TabIndex = 12;
@@ -141,7 +139,7 @@
             btnCitas.FlatStyle = FlatStyle.Flat;
             btnCitas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCitas.ForeColor = SystemColors.Control;
-            btnCitas.Location = new Point(3, 183);
+            btnCitas.Location = new Point(3, 194);
             btnCitas.Name = "btnCitas";
             btnCitas.Size = new Size(194, 28);
             btnCitas.TabIndex = 11;
@@ -156,7 +154,7 @@
             btnHospitales.FlatStyle = FlatStyle.Flat;
             btnHospitales.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHospitales.ForeColor = SystemColors.Control;
-            btnHospitales.Location = new Point(3, 235);
+            btnHospitales.Location = new Point(3, 250);
             btnHospitales.Name = "btnHospitales";
             btnHospitales.Size = new Size(194, 28);
             btnHospitales.TabIndex = 10;
@@ -169,7 +167,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlLight;
-            label3.Location = new Point(21, 24);
+            label3.Location = new Point(21, 34);
             label3.Name = "label3";
             label3.Size = new Size(163, 22);
             label3.TabIndex = 9;
@@ -201,24 +199,12 @@
             btnInicio.UseVisualStyleBackColor = false;
             btnInicio.Click += btnInicio_Click;
             // 
-            // pictrueES
-            // 
-            pictrueES.Image = Properties.Resources.edusex_logo_redesign_6;
-            pictrueES.InitialImage = Properties.Resources.edusex_logo_redesign_61;
-            pictrueES.Location = new Point(360, 115);
-            pictrueES.Name = "pictrueES";
-            pictrueES.Size = new Size(381, 216);
-            pictrueES.TabIndex = 13;
-            pictrueES.TabStop = false;
-            pictrueES.Click += pictureBox1_Click;
-            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(999, 518);
-            Controls.Add(pictrueES);
             Controls.Add(panel3);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
@@ -226,7 +212,6 @@
             Text = "Form1";
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictrueES).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -243,7 +228,6 @@
         private Button btnInicio;
         private Button btnSoporte;
         private Button btnCloseSesion;
-        private PictureBox pictrueES;
     }
 }
 

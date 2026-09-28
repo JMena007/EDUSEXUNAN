@@ -53,10 +53,10 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(152, 12);
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(187, 20);
             label2.Name = "label2";
-            label2.Size = new Size(101, 20);
+            label2.Size = new Size(112, 21);
             label2.TabIndex = 1;
             label2.Text = "Iniciar Sesion";
             label2.Click += label2_Click;
@@ -70,15 +70,15 @@
             panelLogin.Controls.Add(inputContraseña);
             panelLogin.Controls.Add(lnputUsertxt);
             panelLogin.Controls.Add(label2);
-            panelLogin.Location = new Point(318, 135);
+            panelLogin.Location = new Point(260, 110);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(402, 272);
+            panelLogin.Size = new Size(489, 324);
             panelLogin.TabIndex = 4;
             // 
             // linkCreateCuenta
             // 
             linkCreateCuenta.AutoSize = true;
-            linkCreateCuenta.Location = new Point(95, 208);
+            linkCreateCuenta.Location = new Point(133, 256);
             linkCreateCuenta.Name = "linkCreateCuenta";
             linkCreateCuenta.Size = new Size(210, 15);
             linkCreateCuenta.TabIndex = 7;
@@ -90,9 +90,9 @@
             // 
             btnInicioSesion.BackColor = Color.RoyalBlue;
             btnInicioSesion.ForeColor = SystemColors.ButtonFace;
-            btnInicioSesion.Location = new Point(142, 155);
+            btnInicioSesion.Location = new Point(178, 201);
             btnInicioSesion.Name = "btnInicioSesion";
-            btnInicioSesion.Size = new Size(120, 35);
+            btnInicioSesion.Size = new Size(110, 35);
             btnInicioSesion.TabIndex = 6;
             btnInicioSesion.Text = "Entrar";
             btnInicioSesion.UseVisualStyleBackColor = false;
@@ -101,11 +101,11 @@
             // inputContraseña
             // 
             inputContraseña.BorderStyle = BorderStyle.FixedSingle;
-            inputContraseña.Location = new Point(87, 115);
+            inputContraseña.Location = new Point(96, 154);
             inputContraseña.Name = "inputContraseña";
             inputContraseña.PasswordChar = '.';
             inputContraseña.PlaceholderText = "Contraseña";
-            inputContraseña.Size = new Size(221, 23);
+            inputContraseña.Size = new Size(291, 23);
             inputContraseña.TabIndex = 3;
             inputContraseña.TextChanged += inputContraseña_TextChanged;
             inputContraseña.KeyDown += CampoTexto_KeyDown;
@@ -113,10 +113,10 @@
             // lnputUsertxt
             // 
             lnputUsertxt.BorderStyle = BorderStyle.FixedSingle;
-            lnputUsertxt.Location = new Point(87, 71);
+            lnputUsertxt.Location = new Point(96, 87);
             lnputUsertxt.Name = "lnputUsertxt";
             lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
-            lnputUsertxt.Size = new Size(221, 23);
+            lnputUsertxt.Size = new Size(291, 23);
             lnputUsertxt.TabIndex = 2;
             lnputUsertxt.TextChanged += lnputUsertxt_TextChanged;
             lnputUsertxt.KeyDown += CampoTexto_KeyDown;

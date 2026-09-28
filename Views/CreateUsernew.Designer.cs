@@ -32,6 +32,8 @@
             Label lblCedula;
             lblcuenta = new Label();
             panel1 = new Panel();
+            nmEdad = new NumericUpDown();
+            LblEdad = new Label();
             txtTelefono = new TextBox();
             txtCorreo = new TextBox();
             lblcorreo = new Label();
@@ -50,12 +52,10 @@
             btnCancelar = new Button();
             btnCreateUser = new Button();
             rolesBindingSource = new BindingSource(components);
-            LblEdad = new Label();
-            nmEdad = new NumericUpDown();
             lblCedula = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)rolesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nmEdad).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)rolesBindingSource).BeginInit();
             SuspendLayout();
             // 
             // lblCedula
@@ -71,7 +71,7 @@
             // 
             lblcuenta.AutoSize = true;
             lblcuenta.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblcuenta.Location = new Point(313, 43);
+            lblcuenta.Location = new Point(383, 42);
             lblcuenta.Name = "lblcuenta";
             lblcuenta.Size = new Size(171, 18);
             lblcuenta.TabIndex = 0;
@@ -102,10 +102,28 @@
             panel1.Controls.Add(lblnombreU);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnCreateUser);
-            panel1.Location = new Point(12, 96);
+            panel1.Location = new Point(57, 96);
             panel1.Name = "panel1";
             panel1.Size = new Size(824, 342);
             panel1.TabIndex = 4;
+            // 
+            // nmEdad
+            // 
+            nmEdad.Location = new Point(252, 212);
+            nmEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
+            nmEdad.Name = "nmEdad";
+            nmEdad.Size = new Size(120, 23);
+            nmEdad.TabIndex = 27;
+            nmEdad.Value = new decimal(new int[] { 16, 0, 0, 0 });
+            // 
+            // LblEdad
+            // 
+            LblEdad.AutoSize = true;
+            LblEdad.Location = new Point(213, 219);
+            LblEdad.Name = "LblEdad";
+            LblEdad.Size = new Size(33, 15);
+            LblEdad.TabIndex = 25;
+            LblEdad.Text = "Edad";
             // 
             // txtTelefono
             // 
@@ -142,6 +160,7 @@
             // cmbSexo
             // 
             cmbSexo.FormattingEnabled = true;
+            cmbSexo.Items.AddRange(new object[] { "Masculino", "Femenino", "Otros" });
             cmbSexo.Location = new Point(89, 211);
             cmbSexo.Name = "cmbSexo";
             cmbSexo.Size = new Size(80, 23);
@@ -239,6 +258,7 @@
             btnCancelar.TabIndex = 6;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnCreateUser
             // 
@@ -253,29 +273,11 @@
             btnCreateUser.UseVisualStyleBackColor = false;
             btnCreateUser.Click += btnCreateUser_Click;
             // 
-            // LblEdad
-            // 
-            LblEdad.AutoSize = true;
-            LblEdad.Location = new Point(213, 219);
-            LblEdad.Name = "LblEdad";
-            LblEdad.Size = new Size(33, 15);
-            LblEdad.TabIndex = 25;
-            LblEdad.Text = "Edad";
-            // 
-            // nmEdad
-            // 
-            nmEdad.Location = new Point(252, 212);
-            nmEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
-            nmEdad.Name = "nmEdad";
-            nmEdad.Size = new Size(120, 23);
-            nmEdad.TabIndex = 27;
-            nmEdad.Value = new decimal(new int[] { 16, 0, 0, 0 });
-            // 
             // CreateUsernew
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(848, 450);
+            ClientSize = new Size(943, 450);
             Controls.Add(panel1);
             Controls.Add(lblcuenta);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -283,8 +285,8 @@
             Text = "CreateUsernew";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)rolesBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)nmEdad).EndInit();
+            ((System.ComponentModel.ISupportInitialize)rolesBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

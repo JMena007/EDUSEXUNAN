@@ -28,6 +28,6 @@ namespace EDUSEX.Models
        }
 
         public Credenciales() { }
-        s
+        
     }
 }

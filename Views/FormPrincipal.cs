@@ -30,7 +30,6 @@ namespace EDUSEX
 
             panel3.BringToFront();
             label1.BringToFront();
-            pictrueES.BringToFront();
             btnSoporte.Visible = true;
 
             btnInicio.Click += (sender, e) => { MostrarInicio(); };
@@ -89,7 +88,6 @@ namespace EDUSEX
             OcultarMenuInterno(formulario);
 
             label1.Visible = false;
-            pictrueES.Visible = false; // <-- agregado
 
             panelContenido.Controls.Add(formulario);
 
@@ -103,9 +101,9 @@ namespace EDUSEX
             LimpiarContenido();
 
             label1.Visible = true;
-            pictrueES.Visible = true; // <-- agregado
+            
             label1.BringToFront();
-            pictrueES.BringToFront(); // <-- agregado
+            
         }
         private void LimpiarContenido()
         {
@@ -151,7 +149,7 @@ namespace EDUSEX
 
         private void btnSoporte_Click(object sender, EventArgs e)
         {
-            string telefono = "50587762490";
+            string telefono = "50586953946";
             string mensaje = "Hola, Necesito apoyo con el sistema EDUSEX";
             string url = $"https://wa.me/{telefono}?text={Uri.EscapeDataString(mensaje)}";
 

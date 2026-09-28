@@ -76,7 +76,7 @@ namespace EDUSEX.Views
             {
                 IdUsuario = usuarioCreado.IdUsuario,
                 NombreUsuario = txtCorreo.Text.Trim(),
-                PasswordHash = txtContraseña.Text, 
+                PasswordHash = txtContraseña.Text,
                 IdRol = 3,
                 Activo = true
             };
@@ -86,6 +86,22 @@ namespace EDUSEX.Views
 
             MessageBox.Show("Cuenta creada exitosamente. Ya puede iniciar sesión.");
             this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            //me retorna al formulario de login
+            Login login = Application.OpenForms.OfType<Login>().FirstOrDefault();
+
+            if (login != null)
+            {
+                login.PrepararLogin();
+                login.Show();
+                login.Activate();
+            }
+
+            this.Close();
+
         }
     }
 }
