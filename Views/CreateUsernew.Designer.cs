@@ -70,10 +70,10 @@
             // lblcuenta
             // 
             lblcuenta.AutoSize = true;
-            lblcuenta.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblcuenta.Location = new Point(383, 42);
+            lblcuenta.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblcuenta.Location = new Point(376, 41);
             lblcuenta.Name = "lblcuenta";
-            lblcuenta.Size = new Size(171, 18);
+            lblcuenta.Size = new Size(214, 23);
             lblcuenta.TabIndex = 0;
             lblcuenta.Text = "Crea una Cuenta Ahora";
             // 
@@ -102,9 +102,9 @@
             panel1.Controls.Add(lblnombreU);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnCreateUser);
-            panel1.Location = new Point(57, 96);
+            panel1.Location = new Point(71, 86);
             panel1.Name = "panel1";
-            panel1.Size = new Size(824, 342);
+            panel1.Size = new Size(824, 349);
             panel1.TabIndex = 4;
             // 
             // nmEdad
@@ -192,7 +192,7 @@
             // 
             // txtConfirmContraseña
             // 
-            txtConfirmContraseña.Location = new Point(550, 219);
+            txtConfirmContraseña.Location = new Point(550, 216);
             txtConfirmContraseña.Name = "txtConfirmContraseña";
             txtConfirmContraseña.Size = new Size(254, 23);
             txtConfirmContraseña.TabIndex = 13;
@@ -214,7 +214,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(422, 227);
+            label4.Location = new Point(422, 220);
             label4.Name = "label4";
             label4.Size = new Size(124, 15);
             label4.TabIndex = 10;
@@ -277,7 +277,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(943, 450);
+            ClientSize = new Size(968, 477);
             Controls.Add(panel1);
             Controls.Add(lblcuenta);
             FormBorderStyle = FormBorderStyle.FixedDialog;

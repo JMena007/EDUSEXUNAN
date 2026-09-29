@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            panel3 = new Panel();
+            PanelNav = new Panel();
             btnCloseSesion = new Button();
             btnSoporte = new Button();
             btnGuiaEdu = new Button();
@@ -39,7 +39,9 @@
             label3 = new Label();
             panel4 = new Panel();
             btnInicio = new Button();
-            panel3.SuspendLayout();
+            ImgEdusex = new PictureBox();
+            PanelNav.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)ImgEdusex).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -53,24 +55,24 @@
             label1.Text = "Bienvenidos a EDUSEX Nicaragua";
             label1.Click += label1_Click_1;
             // 
-            // panel3
+            // PanelNav
             // 
-            panel3.BackColor = Color.FromArgb(0, 0, 64);
-            panel3.Controls.Add(btnCloseSesion);
-            panel3.Controls.Add(btnSoporte);
-            panel3.Controls.Add(btnGuiaEdu);
-            panel3.Controls.Add(button3);
-            panel3.Controls.Add(btnCitas);
-            panel3.Controls.Add(btnHospitales);
-            panel3.Controls.Add(label3);
-            panel3.Controls.Add(panel4);
-            panel3.Controls.Add(btnInicio);
-            panel3.Dock = DockStyle.Left;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 518);
-            panel3.TabIndex = 12;
-            panel3.Paint += panel3_Paint;
+            PanelNav.BackColor = Color.FromArgb(0, 0, 64);
+            PanelNav.Controls.Add(btnCloseSesion);
+            PanelNav.Controls.Add(btnSoporte);
+            PanelNav.Controls.Add(btnGuiaEdu);
+            PanelNav.Controls.Add(button3);
+            PanelNav.Controls.Add(btnCitas);
+            PanelNav.Controls.Add(btnHospitales);
+            PanelNav.Controls.Add(label3);
+            PanelNav.Controls.Add(panel4);
+            PanelNav.Controls.Add(btnInicio);
+            PanelNav.Dock = DockStyle.Left;
+            PanelNav.Location = new Point(0, 0);
+            PanelNav.Name = "PanelNav";
+            PanelNav.Size = new Size(200, 518);
+            PanelNav.TabIndex = 12;
+            PanelNav.Paint += panel3_Paint;
             // 
             // btnCloseSesion
             // 
@@ -79,9 +81,9 @@
             btnCloseSesion.FlatStyle = FlatStyle.Flat;
             btnCloseSesion.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCloseSesion.ForeColor = SystemColors.Control;
-            btnCloseSesion.Location = new Point(0, 446);
+            btnCloseSesion.Location = new Point(3, 463);
             btnCloseSesion.Name = "btnCloseSesion";
-            btnCloseSesion.Size = new Size(194, 28);
+            btnCloseSesion.Size = new Size(194, 30);
             btnCloseSesion.TabIndex = 15;
             btnCloseSesion.Text = "Cerrar Sesion";
             btnCloseSesion.UseVisualStyleBackColor = false;
@@ -96,7 +98,7 @@
             btnSoporte.ForeColor = SystemColors.Control;
             btnSoporte.Location = new Point(3, 402);
             btnSoporte.Name = "btnSoporte";
-            btnSoporte.Size = new Size(194, 28);
+            btnSoporte.Size = new Size(194, 35);
             btnSoporte.TabIndex = 14;
             btnSoporte.Text = "Soporte IT";
             btnSoporte.UseVisualStyleBackColor = false;
@@ -111,7 +113,7 @@
             btnGuiaEdu.ForeColor = SystemColors.Control;
             btnGuiaEdu.Location = new Point(3, 312);
             btnGuiaEdu.Name = "btnGuiaEdu";
-            btnGuiaEdu.Size = new Size(194, 28);
+            btnGuiaEdu.Size = new Size(194, 35);
             btnGuiaEdu.TabIndex = 13;
             btnGuiaEdu.Text = "Guia Educativa";
             btnGuiaEdu.UseVisualStyleBackColor = false;
@@ -124,9 +126,9 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(3, 137);
+            button3.Location = new Point(3, 136);
             button3.Name = "button3";
-            button3.Size = new Size(194, 28);
+            button3.Size = new Size(194, 33);
             button3.TabIndex = 12;
             button3.Text = "Usuarios";
             button3.UseVisualStyleBackColor = false;
@@ -141,7 +143,7 @@
             btnCitas.ForeColor = SystemColors.Control;
             btnCitas.Location = new Point(3, 194);
             btnCitas.Name = "btnCitas";
-            btnCitas.Size = new Size(194, 28);
+            btnCitas.Size = new Size(194, 34);
             btnCitas.TabIndex = 11;
             btnCitas.Text = "Citas";
             btnCitas.UseVisualStyleBackColor = false;
@@ -156,7 +158,7 @@
             btnHospitales.ForeColor = SystemColors.Control;
             btnHospitales.Location = new Point(3, 250);
             btnHospitales.Name = "btnHospitales";
-            btnHospitales.Size = new Size(194, 28);
+            btnHospitales.Size = new Size(194, 33);
             btnHospitales.TabIndex = 10;
             btnHospitales.Text = "Hospitales";
             btnHospitales.UseVisualStyleBackColor = false;
@@ -177,7 +179,7 @@
             // 
             panel4.AutoScrollMargin = new Size(200, 1);
             panel4.BackColor = Color.LightSteelBlue;
-            panel4.Location = new Point(3, 369);
+            panel4.Location = new Point(3, 374);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 1);
             panel4.TabIndex = 7;
@@ -192,12 +194,22 @@
             btnInicio.Location = new Point(3, 79);
             btnInicio.Name = "btnInicio";
             btnInicio.RightToLeft = RightToLeft.Yes;
-            btnInicio.Size = new Size(194, 28);
+            btnInicio.Size = new Size(194, 33);
             btnInicio.TabIndex = 1;
             btnInicio.Text = "Inicio";
             btnInicio.TextImageRelation = TextImageRelation.TextBeforeImage;
             btnInicio.UseVisualStyleBackColor = false;
             btnInicio.Click += btnInicio_Click;
+            // 
+            // ImgEdusex
+            // 
+            ImgEdusex.Image = Properties.Resources.edusex_logo_redesign_4;
+            ImgEdusex.Location = new Point(336, 117);
+            ImgEdusex.Name = "ImgEdusex";
+            ImgEdusex.Size = new Size(501, 299);
+            ImgEdusex.SizeMode = PictureBoxSizeMode.Zoom;
+            ImgEdusex.TabIndex = 13;
+            ImgEdusex.TabStop = false;
             // 
             // FormPrincipal
             // 
@@ -205,20 +217,22 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(999, 518);
-            Controls.Add(panel3);
+            Controls.Add(ImgEdusex);
+            Controls.Add(PanelNav);
             Controls.Add(label1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "FormPrincipal";
             Text = "Form1";
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            PanelNav.ResumeLayout(false);
+            PanelNav.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)ImgEdusex).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Label label1;
-        private Panel panel3;
+        private Panel PanelNav;
         private Button btnGuiaEdu;
         private Button button3;
         private Button btnCitas;
@@ -228,6 +242,7 @@
         private Button btnInicio;
         private Button btnSoporte;
         private Button btnCloseSesion;
+        private PictureBox ImgEdusex;
     }
 }
 

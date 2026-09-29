@@ -28,9 +28,11 @@ namespace EDUSEX
             Controls.Add(panelContenido);
             panelContenido.BringToFront();
 
-            panel3.BringToFront();
+            PanelNav.BringToFront();
             label1.BringToFront();
+            ImgEdusex.BringToFront();
             btnSoporte.Visible = true;
+
 
             btnInicio.Click += (sender, e) => { MostrarInicio(); };
 
@@ -61,7 +63,6 @@ namespace EDUSEX
                 MostrarFormulario(new FrmGuiaEducativa());
             };
 
-            btnCloseSesion.Click += btnCloseSesion_Click;
 
             ConfigurarSidebarPorRol();
 
@@ -89,6 +90,8 @@ namespace EDUSEX
 
             label1.Visible = false;
 
+            ImgEdusex.Visible = false;
+
             panelContenido.Controls.Add(formulario);
 
             formulario.Show();
@@ -103,7 +106,10 @@ namespace EDUSEX
             label1.Visible = true;
             
             label1.BringToFront();
-            
+
+            ImgEdusex.Visible = true;
+            ImgEdusex.BringToFront();
+
         }
         private void LimpiarContenido()
         {
@@ -149,15 +155,26 @@ namespace EDUSEX
 
         private void btnSoporte_Click(object sender, EventArgs e)
         {
-            string telefono = "50586953946";
-            string mensaje = "Hola, Necesito apoyo con el sistema EDUSEX";
-            string url = $"https://wa.me/{telefono}?text={Uri.EscapeDataString(mensaje)}";
+             
+          DialogResult result = MessageBox.Show("Quieres Contactar a Soporte IT ?.", "Información", MessageBoxButtons.YesNo , MessageBoxIcon.Question);
 
-            Process.Start(new ProcessStartInfo
+            if (result == DialogResult.No)
             {
-                FileName = url,
-                UseShellExecute = true
-            });
+                return;
+            }
+            else
+            {
+                string telefono = "50586953946";
+                string mensaje = "Hola, Necesito apoyo con el sistema EDUSEX";
+                string url = $"https://wa.me/{telefono}?text={Uri.EscapeDataString(mensaje)}";
+
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true
+                });
+            }
+         
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -166,11 +183,22 @@ namespace EDUSEX
 
         private void btnCloseSesion_Click(object sender, EventArgs e)
         {
-            if (login is null)
+             
+            DialogResult result = MessageBox.Show("Seguro que quieres cerrar sesión?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.No)
             {
-                Application.Exit();
                 return;
             }
+            else
+            {
+                if (login is null)
+                {
+                    Application.Exit();
+                    return;
+                }
+            }
+            
 
             login.PrepararLogin();
             login.Show();
@@ -182,9 +210,6 @@ namespace EDUSEX
         {
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-        }
 
         private void btnGuiaEdu_Click(object sender, EventArgs e)
         {

@@ -63,16 +63,6 @@ namespace EDUSEX.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edusex {
-            get {
-                object obj = ResourceManager.GetObject("edusex", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap edusex_logo_redesign_4 {
             get {
                 object obj = ResourceManager.GetObject("edusex_logo_redesign 4", resourceCulture);
@@ -83,69 +73,9 @@ namespace EDUSEX.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap edusex_logo_redesign_6 {
+        internal static System.Drawing.Bitmap edusex_logo_redesign_41 {
             get {
-                object obj = ResourceManager.GetObject("edusex_logo_redesign 6", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap edusex_logo_redesign_61 {
-            get {
-                object obj = ResourceManager.GetObject("edusex_logo_redesign 61", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap edusex1 {
-            get {
-                object obj = ResourceManager.GetObject("edusex1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ESImagen {
-            get {
-                object obj = ResourceManager.GetObject("ESImagen", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ESImagen1 {
-            get {
-                object obj = ResourceManager.GetObject("ESImagen1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ESImagen2 {
-            get {
-                object obj = ResourceManager.GetObject("ESImagen2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_house_50 {
-            get {
-                object obj = ResourceManager.GetObject("icons8-house-50", resourceCulture);
+                object obj = ResourceManager.GetObject("edusex_logo_redesign 41", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

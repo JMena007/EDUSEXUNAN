@@ -24,6 +24,7 @@ namespace EDUSEX.Controllers
             using ( EDUSEX.conexion.EDUSEXContext context = new EDUSEX.conexion.EDUSEXContext())
             {
                 context.Citas.Update(cita);
+
                 context.SaveChanges();
             }
         }

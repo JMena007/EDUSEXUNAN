@@ -133,9 +133,10 @@ namespace EDUSEX.Views
 
             citasControl.InsertarCita(c);
 
+            MessageBox.Show("Su Cita ha Sido Agendada con Exito", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             CargarCitas(citasControl);
             LimpiarCampos();
-            MessageBox.Show("Cita guardada correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
 
@@ -288,6 +289,22 @@ namespace EDUSEX.Views
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+
+            if (idCita == 0)
+            {
+                MessageBox.Show("Busque o Seleccione una cita del listado para editar.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("¿Está seguro de que desea actualizar la cita seleccionada?", "Confirmar actualización", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            MessageBox.Show("La Cita ha Sido Actualizada con Exito");
+
             citasControl.EditarCita(new Citas
             {
                 IdCita = idCita,
@@ -299,6 +316,10 @@ namespace EDUSEX.Views
                 Estado = IpEstado.Text,
                 FechaRegistro = DateTime.Now
             });
+
+            CargarCitas(citasControl);
+            LimpiarCampos();
+
         }
     }
 }
