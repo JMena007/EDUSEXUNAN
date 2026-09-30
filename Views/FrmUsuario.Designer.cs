@@ -32,9 +32,9 @@ namespace EDUSEX.Views
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dvgUsuarios = new DataGridView();
             label1 = new Label();
             label3 = new Label();
@@ -57,6 +57,7 @@ namespace EDUSEX.Views
             boxsexo = new ComboBox();
             panel1 = new Panel();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            BtnActualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)dvgUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
             panel1.SuspendLayout();
@@ -64,14 +65,14 @@ namespace EDUSEX.Views
             // 
             // dvgUsuarios
             // 
-            dataGridViewCellStyle1.SelectionBackColor = Color.Purple;
-            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionBackColor = Color.Purple;
+            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             dvgUsuarios.BackgroundColor = SystemColors.Control;
             dvgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgUsuarios.GridColor = SystemColors.InactiveBorder;
-            dvgUsuarios.Location = new Point(250, 310);
+            dvgUsuarios.Location = new Point(250, 300);
             dvgUsuarios.Name = "dvgUsuarios";
-            dvgUsuarios.Size = new Size(546, 203);
+            dvgUsuarios.Size = new Size(563, 208);
             dvgUsuarios.TabIndex = 0;
             dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
             // 
@@ -88,7 +89,7 @@ namespace EDUSEX.Views
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(8, 16);
+            label3.Location = new Point(8, 21);
             label3.Name = "label3";
             label3.Size = new Size(51, 15);
             label3.TabIndex = 7;
@@ -97,7 +98,7 @@ namespace EDUSEX.Views
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 58);
+            label4.Location = new Point(8, 63);
             label4.Name = "label4";
             label4.Size = new Size(51, 15);
             label4.TabIndex = 8;
@@ -106,7 +107,7 @@ namespace EDUSEX.Views
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(10, 109);
+            label5.Location = new Point(10, 119);
             label5.Name = "label5";
             label5.Size = new Size(44, 15);
             label5.TabIndex = 9;
@@ -115,7 +116,7 @@ namespace EDUSEX.Views
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(366, 109);
+            label6.Location = new Point(354, 119);
             label6.Name = "label6";
             label6.Size = new Size(31, 15);
             label6.TabIndex = 10;
@@ -125,7 +126,7 @@ namespace EDUSEX.Views
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(10, 154);
+            label7.Location = new Point(496, 119);
             label7.Name = "label7";
             label7.Size = new Size(33, 15);
             label7.TabIndex = 11;
@@ -134,7 +135,7 @@ namespace EDUSEX.Views
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(354, 21);
+            label8.Location = new Point(347, 21);
             label8.Name = "label8";
             label8.Size = new Size(53, 15);
             label8.TabIndex = 12;
@@ -142,7 +143,7 @@ namespace EDUSEX.Views
             // 
             // txtnombre
             // 
-            txtnombre.Location = new Point(65, 8);
+            txtnombre.Location = new Point(65, 13);
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(239, 23);
             txtnombre.TabIndex = 13;
@@ -150,7 +151,7 @@ namespace EDUSEX.Views
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(65, 101);
+            txtCedula.Location = new Point(65, 111);
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(239, 23);
             txtCedula.TabIndex = 15;
@@ -158,7 +159,7 @@ namespace EDUSEX.Views
             // 
             // txtapellido
             // 
-            txtapellido.Location = new Point(65, 50);
+            txtapellido.Location = new Point(65, 55);
             txtapellido.Name = "txtapellido";
             txtapellido.Size = new Size(239, 23);
             txtapellido.TabIndex = 16;
@@ -169,9 +170,9 @@ namespace EDUSEX.Views
             btnGuardar.BackColor = Color.SteelBlue;
             btnGuardar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(264, 164);
+            btnGuardar.Location = new Point(141, 164);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(100, 30);
+            btnGuardar.Size = new Size(100, 38);
             btnGuardar.TabIndex = 19;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -181,9 +182,9 @@ namespace EDUSEX.Views
             // 
             btnEditar.BackColor = Color.FromArgb(128, 255, 255);
             btnEditar.ForeColor = Color.FromArgb(64, 64, 64);
-            btnEditar.Location = new Point(811, 351);
+            btnEditar.Location = new Point(819, 346);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(100, 30);
+            btnEditar.Size = new Size(100, 38);
             btnEditar.TabIndex = 20;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
@@ -193,9 +194,9 @@ namespace EDUSEX.Views
             // 
             btnEliminar.BackColor = Color.Tomato;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(811, 426);
+            btnEliminar.Location = new Point(819, 433);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(100, 30);
+            btnEliminar.Size = new Size(100, 37);
             btnEliminar.TabIndex = 21;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
@@ -205,9 +206,9 @@ namespace EDUSEX.Views
             // 
             btnLimpiar.BackColor = Color.Gray;
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
-            btnLimpiar.Location = new Point(410, 164);
+            btnLimpiar.Location = new Point(307, 164);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(100, 30);
+            btnLimpiar.Size = new Size(100, 38);
             btnLimpiar.TabIndex = 22;
             btnLimpiar.Text = "Limpiar ";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -216,7 +217,7 @@ namespace EDUSEX.Views
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(354, 58);
+            label9.Location = new Point(354, 63);
             label9.Name = "label9";
             label9.Size = new Size(43, 15);
             label9.TabIndex = 23;
@@ -241,10 +242,10 @@ namespace EDUSEX.Views
             // 
             // numEdad
             // 
-            numEdad.Location = new Point(49, 152);
+            numEdad.Location = new Point(535, 112);
             numEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
             numEdad.Name = "numEdad";
-            numEdad.Size = new Size(120, 23);
+            numEdad.Size = new Size(110, 23);
             numEdad.TabIndex = 26;
             numEdad.Value = new decimal(new int[] { 16, 0, 0, 0 });
             // 
@@ -253,15 +254,16 @@ namespace EDUSEX.Views
             boxsexo.DropDownStyle = ComboBoxStyle.DropDownList;
             boxsexo.FormattingEnabled = true;
             boxsexo.Items.AddRange(new object[] { "Seleccionar", "Masculino", "femenino", "No Binarie", "Otros" });
-            boxsexo.Location = new Point(410, 101);
+            boxsexo.Location = new Point(391, 111);
             boxsexo.Name = "boxsexo";
-            boxsexo.Size = new Size(121, 23);
+            boxsexo.Size = new Size(76, 23);
             boxsexo.TabIndex = 27;
             boxsexo.SelectedIndexChanged += boxsexo_SelectedIndexChanged;
             // 
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.Controls.Add(BtnActualizar);
             panel1.Controls.Add(txtnombre);
             panel1.Controls.Add(btnLimpiar);
             panel1.Controls.Add(boxsexo);
@@ -280,19 +282,33 @@ namespace EDUSEX.Views
             panel1.Controls.Add(label7);
             panel1.Location = new Point(250, 46);
             panel1.Name = "panel1";
-            panel1.Size = new Size(652, 222);
+            panel1.Size = new Size(669, 222);
             panel1.TabIndex = 28;
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.CustomizableEdges = customizableEdges3;
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(0, 0);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(180, 45);
             guna2Button1.TabIndex = 0;
+            // 
+            // BtnActualizar
+            // 
+            BtnActualizar.BackColor = Color.BlueViolet;
+            BtnActualizar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnActualizar.ForeColor = Color.White;
+            BtnActualizar.Location = new Point(477, 164);
+            BtnActualizar.Name = "BtnActualizar";
+            BtnActualizar.Size = new Size(100, 38);
+            BtnActualizar.TabIndex = 28;
+            BtnActualizar.Text = "Actualizar";
+            BtnActualizar.UseVisualStyleBackColor = false;
+            BtnActualizar.Click += BtnActualizar_Click;
+            BtnActualizar.Visible = false;
             // 
             // FrmUsuario
             // 
@@ -318,7 +334,10 @@ namespace EDUSEX.Views
 
         private void dvgUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            throw new NotImplementedException();
+            if (e.RowIndex < 0)
+                return;
+
+            dvgUsuarios.Rows[e.RowIndex].Selected = true;
         }
 
 
@@ -353,6 +372,15 @@ namespace EDUSEX.Views
             txtCedula.Clear();
             txtTelefono.Clear();
             txtCorreo.Clear();
+
+            numEdad.Value = numEdad.Minimum;
+            boxsexo.SelectedIndex = 0;
+
+            idUsuarioEditando = null;
+
+            BtnActualizar.Visible = false;
+            btnGuardar.Visible = true;
+            btnLimpiar.Text = "Limpiar";
         }
 
        
@@ -365,5 +393,6 @@ namespace EDUSEX.Views
         private ComboBox boxsexo;
         private Panel panel1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Button BtnActualizar;
     }
 }

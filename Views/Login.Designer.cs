@@ -28,14 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             label1 = new Label();
             label2 = new Label();
             panelLogin = new Panel();
             linkCreateCuenta = new LinkLabel();
             btnInicioSesion = new Button();
             inputContraseña = new TextBox();
+            usuariosBindingSource = new BindingSource(components);
             lnputUsertxt = new TextBox();
             panelLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)usuariosBindingSource).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -54,7 +57,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(180, 34);
+            label2.Location = new Point(200, 36);
             label2.Name = "label2";
             label2.Size = new Size(112, 21);
             label2.TabIndex = 1;
@@ -78,7 +81,7 @@
             // linkCreateCuenta
             // 
             linkCreateCuenta.AutoSize = true;
-            linkCreateCuenta.Location = new Point(133, 252);
+            linkCreateCuenta.Location = new Point(145, 252);
             linkCreateCuenta.Name = "linkCreateCuenta";
             linkCreateCuenta.Size = new Size(210, 15);
             linkCreateCuenta.TabIndex = 7;
@@ -90,7 +93,7 @@
             // 
             btnInicioSesion.BackColor = Color.RoyalBlue;
             btnInicioSesion.ForeColor = SystemColors.ButtonFace;
-            btnInicioSesion.Location = new Point(180, 201);
+            btnInicioSesion.Location = new Point(200, 201);
             btnInicioSesion.Name = "btnInicioSesion";
             btnInicioSesion.Size = new Size(110, 35);
             btnInicioSesion.TabIndex = 6;
@@ -101,23 +104,32 @@
             // inputContraseña
             // 
             inputContraseña.BorderStyle = BorderStyle.FixedSingle;
-            inputContraseña.Location = new Point(106, 152);
+            inputContraseña.DataBindings.Add(new Binding("DataContext", usuariosBindingSource, "", true));
+            inputContraseña.Font = new Font("Arial Narrow", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            inputContraseña.Location = new Point(120, 152);
             inputContraseña.Name = "inputContraseña";
             inputContraseña.PasswordChar = '.';
             inputContraseña.PlaceholderText = "Contraseña";
-            inputContraseña.Size = new Size(257, 23);
+            inputContraseña.Size = new Size(268, 22);
             inputContraseña.TabIndex = 3;
             inputContraseña.TextChanged += inputContraseña_TextChanged;
             inputContraseña.KeyDown += CampoTexto_KeyDown;
             // 
+            // usuariosBindingSource
+            // 
+            usuariosBindingSource.DataSource = typeof(Models.Usuarios);
+            // 
             // lnputUsertxt
             // 
             lnputUsertxt.BorderStyle = BorderStyle.FixedSingle;
-            lnputUsertxt.Location = new Point(106, 93);
+            lnputUsertxt.DataBindings.Add(new Binding("DataContext", usuariosBindingSource, "Correo", true));
+            lnputUsertxt.Font = new Font("Arial Narrow", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lnputUsertxt.Location = new Point(120, 93);
             lnputUsertxt.Name = "lnputUsertxt";
             lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
-            lnputUsertxt.Size = new Size(257, 23);
+            lnputUsertxt.Size = new Size(268, 22);
             lnputUsertxt.TabIndex = 2;
+            lnputUsertxt.UseWaitCursor = true;
             lnputUsertxt.TextChanged += lnputUsertxt_TextChanged;
             lnputUsertxt.KeyDown += CampoTexto_KeyDown;
             // 
@@ -136,6 +148,7 @@
             Load += Login_Load;
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)usuariosBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -151,5 +164,6 @@
         private TextBox lnputUsertxt;
         private Button btnInicioSesion;
         private LinkLabel linkCreateCuenta;
+        private BindingSource usuariosBindingSource;
     }
 }

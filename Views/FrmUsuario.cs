@@ -2,6 +2,7 @@
 using EDUSEX.Controllers;
 using EDUSEX.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -93,6 +94,14 @@ namespace EDUSEX.Views
             boxsexo.Text = usuario.Sexo;
             txtTelefono.Text = usuario.Telefono;
             txtCorreo.Text = usuario.Correo;
+
+            //Cuando se dispaar el evento de editar, se oculta el boton guardar y se muestra el boton actualizar
+            // para que esten truchas jaja
+
+            BtnActualizar.Visible = true;
+            btnGuardar.Visible = false;
+
+            btnLimpiar.Text = "Cancelar";
         }
 
         // Nombres
@@ -203,7 +212,7 @@ namespace EDUSEX.Views
             if (!ValidarCampos())
                 return;
 
-           
+
             if (idUsuarioEditando == null && usuarioControl.CedulaExiste(txtCedula.Text.Trim()))
             {
                 MessageBox.Show("Ya existe un usuario registrado con esta cédula.");
@@ -220,18 +229,8 @@ namespace EDUSEX.Views
                 u.Telefono = txtTelefono.Text;
                 u.Correo = txtCorreo.Text;
             }
-            ;
-
-            if (idUsuarioEditando == null)
-            {
-                usuarioControl.InsertarUsuario(u);
-            }
-
-            else
-            {
-                u.IdUsuario = idUsuarioEditando.Value;
-                usuarioControl.Editarusuario(u);
-            }
+            
+            usuarioControl.InsertarUsuario(u);
 
             MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             LimpiarCampos();
@@ -271,7 +270,55 @@ namespace EDUSEX.Views
 
         }
 
-        
+
+        private void BtnActualizar_Click(object sender, EventArgs e)
+        {
+            if (idUsuarioEditando == null)
+            {
+                MessageBox.Show("Seleccione un usuario para actualizar.");
+                return;
+            }
+
+            if (!ValidarCampos())
+                return;
+
+            Usuarios u = new Usuarios
+            {
+                IdUsuario = idUsuarioEditando.Value,
+                Nombres = txtnombre.Text,
+                Apellidos = txtapellido.Text,
+                Cedula = txtCedula.Text,
+                Edad = (int)numEdad.Value,
+                Sexo = boxsexo.Text,
+                Telefono = txtTelefono.Text,
+                Correo = txtCorreo.Text
+            };
+
+            usuarioControl.Editarusuario(u);
+
+            DialogResult confirmacion = MessageBox.Show(
+                $"¿Está seguro que desea actualizar a {u.Nombres} {u.Apellidos}?",
+                "Confirmar actualización",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (confirmacion != DialogResult.Yes)
+            {
+                return;
+            }
+
+            MessageBox.Show(
+                "Usuario actualizado correctamente.",
+                "EDUSEX",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
+            LimpiarCampos();
+            CargarUsuarios();
+
+            BtnActualizar.Visible = false;
+            btnGuardar.Visible = true;
+        }
     }
 
 }

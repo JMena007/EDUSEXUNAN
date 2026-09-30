@@ -65,6 +65,8 @@ namespace EDUSEX.Views
 
         private void FrmCitas_Load(object sender, EventArgs e)
         {
+            btnActualizar.Visible = false;
+
             using (var context = new EDUSEXContext())
             {
                 hospitalesBindingSource.DataSource = context.Hospitales.ToList();
@@ -180,7 +182,7 @@ namespace EDUSEX.Views
             comboBox2.Text = usuario.Sexo;
         }
 
-        private void btnCancelarcita_Click(object sender, EventArgs e)
+        private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
         }
@@ -188,7 +190,7 @@ namespace EDUSEX.Views
 
         private void dgwCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         //  Eliminar la cita seleccionada
@@ -216,9 +218,15 @@ namespace EDUSEX.Views
             }
         }
 
+
+        
+
+
         //  Guardar los cambios de la cita seleccionada 
         private void btnEditarcita_Click(object sender, EventArgs e)
         {
+
+
             if (dgwCitas.CurrentRow == null)
             {
                 MessageBox.Show("Seleccione una cita del listado para editar.");
@@ -256,6 +264,10 @@ namespace EDUSEX.Views
                 comboBox2.Text = usuario.Sexo;
             }
 
+            btnActualizar.Visible = true;
+          
+            btnCancelarcita.Text = "Cancelar";
+
             citasControl.EditarCita(citaSeleccionada);
         }
 
@@ -275,6 +287,8 @@ namespace EDUSEX.Views
             IpEstado.SelectedIndex = -1;
             IPFecha.Value = DateTime.Now;
             IPHoraCita.Value = DateTime.Now;
+
+           btnCancelarcita.Text = "Limpiar";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
