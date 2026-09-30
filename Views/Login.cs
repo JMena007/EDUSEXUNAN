@@ -29,7 +29,7 @@ namespace EDUSEX.Views
             lnputUsertxt.Clear();
             inputContraseña.Clear();
             lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
-            inputContraseña.PlaceholderText = "Contraseña";   
+            inputContraseña.PlaceholderText = "Contraseña";
             linkCreateCuenta.Visible = true;
         }
 
@@ -66,7 +66,7 @@ namespace EDUSEX.Views
 
         }
 
-        private void lnputUsertxt_KeyPress(object sender, KeyEventArgs e)
+        private void lnputUsertxt_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -114,7 +114,7 @@ namespace EDUSEX.Views
             this.Hide();
         }
 
-        private void inputContraseña_KeyPress(object sender, KeyEventArgs e)
+        private void inputContraseña_TextChanged(object sender, EventArgs e)
         {
 
         }
