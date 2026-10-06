@@ -105,6 +105,11 @@ namespace EDUSEX.Views
 
             RolesControl rolesControl = new RolesControl();
 
+//Asignamos mi shack
+SesionActual.IdUsuarioLogueado = credencial.IdUsuario;
+    SesionActual.NombreUsuario = credencial.NombreUsuario;
+    SesionActual.RolUsuario = rolesControl.ObtenerNombreRol(credencial.IdRol);
+
             // aqui se le da acceso de´pues de validacion a FrmPrincipal
             FormPrincipal formPrincipal = new FormPrincipal();
 
