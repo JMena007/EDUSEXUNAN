@@ -377,6 +377,7 @@ private void ConfigurarCamposSegunRol()
     btnActualizar.Visible = true;
     btnCancelarcita.Text = "Cancelar";
     }
+// cambios
 
    }
 }     
