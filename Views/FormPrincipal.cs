@@ -17,6 +17,9 @@ namespace EDUSEX
         public FormPrincipal(Login? login)
         {
             InitializeComponent();
+        
+            Idioma.IdiomaCambiado += AplicarIdioma;
+
             this.login = login;
 
             panelContenido = new Panel
