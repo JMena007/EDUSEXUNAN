@@ -21,17 +21,9 @@ namespace EDUSEX.Models
 
         public Citas()
         {
-            this.IdCita = 0;
-            this.IdUsuario = 1;
-            this.IdHospital = 1;
-            this.FechaCita = DateTime.Now;
-            this.HoraCita = DateTime.Now.TimeOfDay;
-            this.Motivo = string.Empty;
-            this.Estado = string.Empty;
-            this.FechaRegistro = DateTime.Now;
+            
         }
 
-        // --- Lógica de persistencia, movida desde CitasControl ---
 
         public void InsertarCita()
         {
