@@ -35,7 +35,7 @@ namespace EDUSEX.Models
         {
         }
 
-        // --- Lógica de persistencia, movida desde UsuarioControl ---
+   
 
         public void InsertarUsuario()
         {
