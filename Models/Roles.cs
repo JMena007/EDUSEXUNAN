@@ -1,9 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+using EDUSEX.conexion;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace EDUSEX.Models
 {
@@ -13,13 +11,25 @@ namespace EDUSEX.Models
         public int IdRol { get; set; }
         public string NombreRol { get; set; }
 
-        public Roles(int IdRol, String NombreRol) {
-            
-          this.IdRol = IdRol;
-          this.NombreRol = NombreRol;
-
+        public Roles(int IdRol, String NombreRol)
+        {
+            this.IdRol = IdRol;
+            this.NombreRol = NombreRol;
         }
 
         public Roles() { }
+
+       
+
+        public static string ObtenerNombreRol(int idRol)
+        {
+            using (var context = new EDUSEXContext())
+            {
+                return context.Roles
+                    .Where(r => r.IdRol == idRol)
+                    .Select(r => r.NombreRol)
+                    .FirstOrDefault();
+            }
+        }
     }
 }
