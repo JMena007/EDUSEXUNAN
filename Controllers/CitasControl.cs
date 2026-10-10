@@ -19,15 +19,22 @@ namespace EDUSEX.Controllers
             }
         } 
 
-        public void EditarCita(Models.Citas cita)
-        {
-            using ( EDUSEX.conexion.EDUSEXContext context = new EDUSEX.conexion.EDUSEXContext())
-            {
-                context.Citas.Update(cita);
 
-                context.SaveChanges();
-            }
+public void EditarCita(Models.Citas cita)
+{
+    using (var context = new EDUSEXContext())
+    {
+        var citaExistente = context.Citas.AsNoTracking().FirstOrDefault(c => c.IdCita == cita.IdCita);
+
+        if (citaExistente != null && SesionActual.RolUsuario == "Paciente")
+        {
+            cita.Estado = citaExistente.Estado;
         }
+
+        context.Citas.Update(cita);
+        context.SaveChanges();
+    }
+}
 
         public Citas ObtenerCitaPorId(int idCita)
         {
