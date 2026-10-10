@@ -1,94 +1,49 @@
-﻿using EDUSEX.conexion;
-using System;
-using System.Collections.Generic;
-using System.Linq; 
-using System.Text;
-using Microsoft.EntityFrameworkCore;
 using EDUSEX.Models;
+using System.Collections.Generic;
 
 namespace EDUSEX.Controllers
 {
     internal class UsuarioControl
     {
-        
-        public void InsertarUsuario(Models.Usuarios usuario)
+        public void InsertarUsuario(Usuarios usuario)
         {
-            using (EDUSEXContext context = new EDUSEXContext())
-            {          
-                context.Usuarios.Add(usuario);
-                context.SaveChanges();
-            }
-
+            usuario.InsertarUsuario();
         }
 
         public bool CedulaExiste(string cedula)
         {
-            using (var context = new EDUSEXContext())
-            {
-                return context.Usuarios.Any(u => u.Cedula == cedula);
-            }
+            return Usuarios.CedulaExiste(cedula);
         }
 
-        public List<Models.Usuarios> ObtenerUsuarios()
+        public List<Usuarios> ObtenerUsuarios()
         {
-            using (EDUSEXContext context = new EDUSEXContext())
-            {
-                return context.Usuarios.ToList();
-            }
+            return Usuarios.ObtenerUsuarios();
         }
 
-        
-        public void Editarusuario(Models.Usuarios usuario)
+        public void Editarusuario(Usuarios usuario)
         {
-            using (EDUSEXContext context = new EDUSEXContext())
-            {
-                context.Usuarios.Update(usuario);
-                context.SaveChanges();
-            }
+            usuario.EditarUsuario();
         }
 
-        
         public void EliminarUsuario(int idUsuario)
         {
-            using (EDUSEXContext context = new EDUSEXContext())
-            {
-                var usuario = context.Usuarios.Find(idUsuario);
-                if (usuario != null)
-                {
-                    context.Usuarios.Remove(usuario);
-                    context.SaveChanges();
-                }
-            }
+            Usuarios usuario = Usuarios.ObtenerUsuarioPorId(idUsuario);
+            usuario?.EliminarUsuario();
         }
 
-        
         public Usuarios BuscarPorCedula(string cedula)
         {
-            using (EDUSEXContext context = new EDUSEXContext())
-            {
-                return context.Usuarios.FirstOrDefault(u => u.Cedula == cedula);
-            }
+            return Usuarios.BuscarPorCedula(cedula);
         }
 
-        
         public Usuarios BuscarPorCedulaONombre(string valor)
         {
-            using (EDUSEXContext context = new EDUSEXContext())
-            {
-                return context.Usuarios.FirstOrDefault(u =>
-                    u.Cedula == valor ||
-                    u.Nombres.Contains(valor) ||
-                    u.Apellidos.Contains(valor));
-            }
-        }
-        public Usuarios ObtenerUsuarioPorId(int idUsuario) 
-        {
-            using (EDUSEXContext context = new EDUSEXContext()) 
-            {
-                return context.Usuarios.Find(idUsuario); 
-            } 
-        
+            return Usuarios.BuscarPorCedulaONombre(valor);
         }
 
+        public Usuarios ObtenerUsuarioPorId(int idUsuario)
+        {
+            return Usuarios.ObtenerUsuarioPorId(idUsuario);
+        }
     }
 }
