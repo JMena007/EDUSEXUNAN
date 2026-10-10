@@ -234,5 +234,17 @@ namespace EDUSEX
         {
 
         }
+
+private void AplicarIdioma()
+{
+    Idioma.Aplicar(this);
+
+    btnIdioma.Text = Idioma.Actual == "ES" ? "ES | EN" : "EN | ES";
+}
+
+private void btnIdioma_Click(object sender, EventArgs e)
+{
+    Idioma.CambiarIdioma();
+}
     }
 }
