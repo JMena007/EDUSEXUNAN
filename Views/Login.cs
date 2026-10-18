@@ -72,52 +72,38 @@ namespace EDUSEX.Views
         }
 
         private void btnInicioSesion_Click(object sender, EventArgs e)
-        {
+{
+    string usuario = lnputUsertxt.Text.Trim();
+    string password = inputContraseña.Text;
 
-            string usuario = lnputUsertxt.Text.Trim();
-            string password = inputContraseña.Text;
+    if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(password))
+    {
+        MessageBox.Show("Ingrese su usuario y contraseña.");
+        return;
+    }
 
-            if (string.IsNullOrWhiteSpace(usuario) ||
-                string.IsNullOrWhiteSpace(password))
-            {
-                MessageBox.Show("Ingrese su usuario y contraseña.");
-                return;
-            }
+    Credenciales credencial = credencialController.ValidarLogin(usuario, password);
 
+    if (credencial == null)
+    {
+        MessageBox.Show("Usuario o contraseña incorrectos.", "Inicio de sesión",
+            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        return;
+    }
 
-            // aqui validamos con la funcion del controlador de credenciales para validar el login
-            Credenciales credencial =
-                credencialController.ValidarLogin(usuario, password);
+    UsuarioControl usuarioControl = new UsuarioControl();
+    Usuarios usuarioLogueado = usuarioControl.ObtenerUsuarioPorId(credencial.IdUsuario);
 
+    RolesControl rolesControl = new RolesControl();
 
-            if (credencial == null)
-            {
-                MessageBox.Show(
-                    "Usuario o contraseña incorrectos.",
-                    "Inicio de sesión",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-
-                return;
-            }
-
-            MessageBox.Show("Inicio de sesión correcto.");
-
-            RolesControl rolesControl = new RolesControl();
-
-//Asignamos mi shack
-SesionActual.IdUsuarioLogueado = credencial.IdUsuario;
+    SesionActual.IdUsuarioLogueado = credencial.IdUsuario;
     SesionActual.NombreUsuario = credencial.NombreUsuario;
-    SesionActual.RolUsuario = rolesControl.ObtenerNombreRol(credencial.IdRol);
+    SesionActual.RolUsuario = rolesControl.ObtenerNombreRol(usuarioLogueado.IdRol); // ahora viene del Usuario
 
-            // aqui se le da acceso de´pues de validacion a FrmPrincipal
-            FormPrincipal formPrincipal = new FormPrincipal();
-
-
-            formPrincipal.Show();
-
-            this.Hide();
-        }
+    FormPrincipal formPrincipal = new FormPrincipal(this);
+    formPrincipal.Show();
+    this.Hide();
+}
 
         private void inputContraseña_TextChanged(object sender, EventArgs e)
         {
