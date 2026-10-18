@@ -13,7 +13,6 @@ namespace EDUSEX.Models
         public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string PasswordHash { get; set; }
-        public int IdRol { get; set; }
         public bool Activo { get; set; }
 
         public Credenciales(int IdCredencial, int IdUsuario, string NombreUsuario, string PasswordHash, int IdRol, bool Activo)
@@ -22,7 +21,6 @@ namespace EDUSEX.Models
             this.IdUsuario = IdUsuario;
             this.NombreUsuario = NombreUsuario;
             this.PasswordHash = PasswordHash;
-            this.IdRol = IdRol;
             this.Activo = Activo;
         }
 
