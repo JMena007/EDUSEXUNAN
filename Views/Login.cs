@@ -79,6 +79,11 @@ namespace EDUSEX.Views
     if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(password))
     {
         MessageBox.Show("Ingrese su usuario y contraseña.");
+
+    lineaUsuario.BackColor = Color.FromArgb(220, 53, 69);
+    lnputUsertxt.Focus();
+    return;
+}
         return;
     }
 
