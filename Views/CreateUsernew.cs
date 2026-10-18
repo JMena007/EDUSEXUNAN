@@ -63,7 +63,8 @@ namespace EDUSEX.Views
                 Edad = (int)nmEdad.Value,
                 Sexo = cmbSexo.Text,
                 Telefono = txtTelefono.Text.Trim(),
-                Correo = txtCorreo.Text.Trim()
+                Correo = txtCorreo.Text.Trim(),
+IdRol = 3
             };
 
             usuarioControl.InsertarUsuario(nuevoUsuario);
@@ -77,7 +78,6 @@ namespace EDUSEX.Views
                 IdUsuario = usuarioCreado.IdUsuario,
                 NombreUsuario = txtCorreo.Text.Trim(),
                 PasswordHash = txtContraseña.Text,
-                IdRol = 3,
                 Activo = true
             };
 
