@@ -279,12 +279,14 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumPurple;
-            ClientSize = new Size(968, 477);
+            ClientSize = new Size(934, 611);
             Controls.Add(panel1);
             Controls.Add(lblcuenta);
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "CreateUsernew";
-            Text = "CreateUsernew";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Crea un Usuario";
+            Load += CreateUsernew_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nmEdad).EndInit();

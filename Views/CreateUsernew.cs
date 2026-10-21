@@ -108,5 +108,10 @@ namespace EDUSEX.Views
         {
 
         }
+
+        private void CreateUsernew_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

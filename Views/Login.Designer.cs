@@ -207,9 +207,11 @@
             BackColor = Color.MediumPurple;
             ClientSize = new Size(934, 611);
             Controls.Add(panelLogin);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximumSize = new Size(950, 650);
+            MinimumSize = new Size(800, 650);
             Name = "Login";
             RightToLeft = RightToLeft.No;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             Load += Login_Load;
             panelLogin.ResumeLayout(false);

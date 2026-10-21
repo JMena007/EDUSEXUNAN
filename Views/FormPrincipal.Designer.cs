@@ -33,7 +33,7 @@
             btnCloseSesion = new Button();
             btnSoporte = new Button();
             btnGuiaEdu = new Button();
-            button3 = new Button();
+            btnUsuarios = new Button();
             btnCitas = new Button();
             btnHospitales = new Button();
             label3 = new Label();
@@ -61,7 +61,7 @@
             PanelNav.Controls.Add(btnCloseSesion);
             PanelNav.Controls.Add(btnSoporte);
             PanelNav.Controls.Add(btnGuiaEdu);
-            PanelNav.Controls.Add(button3);
+            PanelNav.Controls.Add(btnUsuarios);
             PanelNav.Controls.Add(btnCitas);
             PanelNav.Controls.Add(btnHospitales);
             PanelNav.Controls.Add(label3);
@@ -70,7 +70,7 @@
             PanelNav.Dock = DockStyle.Left;
             PanelNav.Location = new Point(0, 0);
             PanelNav.Name = "PanelNav";
-            PanelNav.Size = new Size(200, 518);
+            PanelNav.Size = new Size(200, 621);
             PanelNav.TabIndex = 12;
             PanelNav.Paint += panel3_Paint;
             // 
@@ -119,20 +119,20 @@
             btnGuiaEdu.UseVisualStyleBackColor = false;
             btnGuiaEdu.Click += btnGuiaEdu_Click;
             // 
-            // button3
+            // btnUsuarios
             // 
-            button3.BackColor = Color.DarkViolet;
-            button3.FlatAppearance.BorderColor = Color.Navy;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(3, 136);
-            button3.Name = "button3";
-            button3.Size = new Size(194, 33);
-            button3.TabIndex = 12;
-            button3.Text = "Usuarios";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += btnUsuario_Click;
+            btnUsuarios.BackColor = Color.DarkViolet;
+            btnUsuarios.FlatAppearance.BorderColor = Color.Navy;
+            btnUsuarios.FlatStyle = FlatStyle.Flat;
+            btnUsuarios.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUsuarios.ForeColor = SystemColors.Control;
+            btnUsuarios.Location = new Point(3, 136);
+            btnUsuarios.Name = "btnUsuarios";
+            btnUsuarios.Size = new Size(194, 33);
+            btnUsuarios.TabIndex = 12;
+            btnUsuarios.Text = "Usuarios";
+            btnUsuarios.UseVisualStyleBackColor = false;
+            btnUsuarios.Click += btnUsuario_Click;
             // 
             // btnCitas
             // 
@@ -216,13 +216,16 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(999, 518);
+            ClientSize = new Size(934, 621);
             Controls.Add(ImgEdusex);
             Controls.Add(PanelNav);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximumSize = new Size(1050, 750);
             Name = "FormPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            WindowState = FormWindowState.Maximized;
             PanelNav.ResumeLayout(false);
             PanelNav.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ImgEdusex).EndInit();
@@ -234,7 +237,7 @@
         private Label label1;
         private Panel PanelNav;
         private Button btnGuiaEdu;
-        private Button button3;
+        private Button btnUsuarios;
         private Button btnCitas;
         private Button btnHospitales;
         private Label label3;

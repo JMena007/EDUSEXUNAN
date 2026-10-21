@@ -38,7 +38,7 @@ namespace EDUSEX
 
             btnInicio.Click += (sender, e) => { MostrarInicio(); };
 
-            button3.Click += (sender, e) =>
+            btnUsuarios.Click += (sender, e) =>
             {
                 MostrarFormulario(new FrmUsuario());
             };
@@ -75,7 +75,7 @@ namespace EDUSEX
         {
             if (SesionActual.RolUsuario == "Paciente")
             {
-                button3.Visible = false;
+                btnUsuarios.Visible = false;
                 btnHospitales.Visible = false;
             }
         }
