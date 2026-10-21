@@ -26,10 +26,8 @@ namespace EDUSEX.Views
         //metodo de validacion 
         internal void PrepararLogin()
         {
-            lnputUsertxt.Clear();
-            inputContraseña.Clear();
-            lnputUsertxt.PlaceholderText = "Correo@EDUSEX";
-            inputContraseña.PlaceholderText = "Contraseña";
+            txtUsuario.Clear();
+            txtPassword.Clear();
             linkCreateCuenta.Visible = true;
         }
 
@@ -72,43 +70,39 @@ namespace EDUSEX.Views
         }
 
         private void btnInicioSesion_Click(object sender, EventArgs e)
-{
-    string usuario = lnputUsertxt.Text.Trim();
-    string password = inputContraseña.Text;
+        {
+            string usuario = txtUsuario.Text.Trim();
+            string password = txtPassword.Text;
 
-    if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(password))
-    {
-        MessageBox.Show("Ingrese su usuario y contraseña.");
+            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Ingrese su usuario y contraseña.");
+                txtUsuario.Focus();
+                return;
+            }
 
-    lineaUsuario.BackColor = Color.FromArgb(220, 53, 69);
-    lnputUsertxt.Focus();
-    return;
-}
-        return;
-    }
+            Credenciales credencial = credencialController.ValidarLogin(usuario, password);
 
-    Credenciales credencial = credencialController.ValidarLogin(usuario, password);
+            if (credencial == null)
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos.", "Inicio de sesión",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-    if (credencial == null)
-    {
-        MessageBox.Show("Usuario o contraseña incorrectos.", "Inicio de sesión",
-            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        return;
-    }
+            UsuarioControl usuarioControl = new UsuarioControl();
+            Usuarios usuarioLogueado = usuarioControl.ObtenerUsuarioPorId(credencial.IdUsuario);
 
-    UsuarioControl usuarioControl = new UsuarioControl();
-    Usuarios usuarioLogueado = usuarioControl.ObtenerUsuarioPorId(credencial.IdUsuario);
+            RolesControl rolesControl = new RolesControl();
 
-    RolesControl rolesControl = new RolesControl();
+            SesionActual.IdUsuarioLogueado = credencial.IdUsuario;
+            SesionActual.NombreUsuario = credencial.NombreUsuario;
+            SesionActual.RolUsuario = rolesControl.ObtenerNombreRol(usuarioLogueado.IdRol);
 
-    SesionActual.IdUsuarioLogueado = credencial.IdUsuario;
-    SesionActual.NombreUsuario = credencial.NombreUsuario;
-    SesionActual.RolUsuario = rolesControl.ObtenerNombreRol(usuarioLogueado.IdRol); // ahora viene del Usuario
-
-    FormPrincipal formPrincipal = new FormPrincipal(this);
-    formPrincipal.Show();
-    this.Hide();
-}
+            FormPrincipal formPrincipal = new FormPrincipal(this);
+            formPrincipal.Show();
+            this.Hide();
+        }
 
         private void inputContraseña_TextChanged(object sender, EventArgs e)
         {
@@ -120,6 +114,11 @@ namespace EDUSEX.Views
             CreateUsernew createUserForm = new CreateUsernew();
 
             createUserForm.ShowDialog();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

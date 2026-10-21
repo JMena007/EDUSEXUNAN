@@ -18,7 +18,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Buscadortxt = new TextBox();
             dgwCitas = new DataGridView();
             lbledad = new Label();
@@ -68,14 +68,14 @@
             // 
             dgwCitas.BackgroundColor = SystemColors.ButtonHighlight;
             dgwCitas.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgwCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwCitas.Location = new Point(217, 325);
             dgwCitas.Name = "dgwCitas";
@@ -153,7 +153,7 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.BackColor = Color.Fuchsia;
+            btnActualizar.BackColor = Color.MediumPurple;
             btnActualizar.ForeColor = SystemColors.Control;
             btnActualizar.Location = new Point(477, 183);
             btnActualizar.Name = "btnActualizar";
@@ -174,7 +174,7 @@
             // 
             // btnCancelarcita
             // 
-            btnCancelarcita.BackColor = Color.FromArgb(255, 128, 128);
+            btnCancelarcita.BackColor = Color.Gray;
             btnCancelarcita.ForeColor = SystemColors.ButtonFace;
             btnCancelarcita.Location = new Point(293, 183);
             btnCancelarcita.Name = "btnCancelarcita";
@@ -205,7 +205,7 @@
             // 
             // btnAgendarcita
             // 
-            btnAgendarcita.BackColor = Color.LightSeaGreen;
+            btnAgendarcita.BackColor = Color.DarkOrchid;
             btnAgendarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgendarcita.ForeColor = SystemColors.ControlLightLight;
             btnAgendarcita.Location = new Point(118, 183);

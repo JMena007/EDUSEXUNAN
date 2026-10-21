@@ -2,6 +2,7 @@ using EDUSEX.conexion;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 
 namespace EDUSEX.Models
 {

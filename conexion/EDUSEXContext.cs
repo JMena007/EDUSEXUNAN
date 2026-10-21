@@ -21,16 +21,22 @@ namespace EDUSEX.conexion
         public DbSet<Models.Citas> Citas { get; set; }
         public DbSet<Models.Hospitales> Hospitales { get; set; }
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
                 var config = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                    .AddJsonFile(
+                        "appsettings.json",
+                        optional: false,
+                        reloadOnChange: true
+                    )
                     .Build();
 
-                string connectionString = config.GetConnectionString("SupabaseConnection");
+                string connectionString =
+                    config.GetConnectionString("SupabaseConnection");
 
                 optionsBuilder.UseNpgsql(connectionString);
             }

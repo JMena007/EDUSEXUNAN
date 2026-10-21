@@ -222,55 +222,6 @@ namespace EDUSEX.Views
         
 
 
-        //  Guardar los cambios de la cita seleccionada 
-        private void btnEditarcita_Click(object sender, EventArgs e)
-        {
-
-
-            if (dgwCitas.CurrentRow == null)
-            {
-                MessageBox.Show("Seleccione una cita del listado para editar.");
-                return;
-            }
-
-            int id = Convert.ToInt32(
-                dgwCitas.CurrentRow.Cells["IdCita"].Value
-            );
-
-            Citas citaSeleccionada = citasControl.ObtenerCitaPorId(id);
-
-            if (citaSeleccionada == null)
-            {
-                MessageBox.Show("No se encontró la cita.");
-                return;
-            }
-
-            idCita = citaSeleccionada.IdCita;
-            idUsuarioSeleccionado = citaSeleccionada.IdUsuario;
-
-            IPFecha.Value = citaSeleccionada.FechaCita;
-            IPHoraCita.Value = DateTime.Today.Add(citaSeleccionada.HoraCita);
-            IPMotivocita.Text = citaSeleccionada.Motivo;
-            IpEstado.Text = citaSeleccionada.Estado;
-            IPHospitales.SelectedValue = citaSeleccionada.IdHospital;
-
-            Usuarios usuario = userControl.ObtenerUsuarioPorId(citaSeleccionada.IdUsuario);
-
-            if (usuario != null)
-            {
-                Nombretxt.Text = usuario.Nombres;
-                Apellidotxt.Text = usuario.Apellidos;
-                numEdad.Value = usuario.Edad;
-                comboBox2.Text = usuario.Sexo;
-            }
-
-            btnActualizar.Visible = true;
-          
-            btnCancelarcita.Text = "Cancelar";
-
-            citasControl.EditarCita(citaSeleccionada);
-        }
-
         private void IPHospitales_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void LimpiarCampos()
@@ -331,6 +282,29 @@ private void ConfigurarCamposSegunRol()
     IPHoraCita.Enabled = true;
     IPMotivocita.Enabled = true;
 }
+
+private void btnActualizar_Click(object sender, EventArgs e)
+{
+    Citas cita = citasControl.ObtenerCitaPorId(idCita);
+
+    if (cita == null)
+    {
+        MessageBox.Show("No se encontró la cita.");
+        return;
+    }
+
+    cita.IdUsuario = idUsuarioSeleccionado;
+    cita.IdHospital = Convert.ToInt32(IPHospitales.SelectedValue);
+    cita.FechaCita = IPFecha.Value.Date;
+    cita.HoraCita = IPHoraCita.Value.TimeOfDay;
+    cita.Motivo = IPMotivocita.Text;
+    cita.Estado = IpEstado.Text;
+
+    citasControl.EditarCita(cita);
+    CargarCitas(citasControl);
+    LimpiarCampos();
+}
+
     private void btnEditarcita_Click(object sender, EventArgs e)
 {
     if (dgwCitas.CurrentRow == null)
@@ -364,20 +338,21 @@ private void ConfigurarCamposSegunRol()
     IPHospitales.SelectedValue = citaSeleccionada.IdHospital;
 
     Usuarios usuario = userControl.ObtenerUsuarioPorId(citaSeleccionada.IdUsuario);
-    if (usuario != null)
-    {
+
+      if (usuario != null)
+      {
         Nombretxt.Text = usuario.Nombres;
         Apellidotxt.Text = usuario.Apellidos;
         numEdad.Value = usuario.Edad;
         comboBox2.Text = usuario.Sexo;
-    }
+      }
 
-    ConfigurarCamposSegunRol();
+      ConfigurarCamposSegunRol();
 
-    btnActualizar.Visible = true;
-    btnCancelarcita.Text = "Cancelar";
+      btnActualizar.Visible = true;
+      btnCancelarcita.Text = "Cancelar";
     }
 // cambios
 
    }
-}     
+}

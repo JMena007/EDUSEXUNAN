@@ -70,10 +70,11 @@
             // lblcuenta
             // 
             lblcuenta.AutoSize = true;
-            lblcuenta.Font = new Font("Arial Black", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblcuenta.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblcuenta.ForeColor = Color.White;
             lblcuenta.Location = new Point(376, 41);
             lblcuenta.Name = "lblcuenta";
-            lblcuenta.Size = new Size(214, 23);
+            lblcuenta.Size = new Size(185, 21);
             lblcuenta.TabIndex = 0;
             lblcuenta.Text = "Crea una Cuenta Ahora";
             // 
@@ -262,7 +263,7 @@
             // 
             // btnCreateUser
             // 
-            btnCreateUser.BackColor = Color.DodgerBlue;
+            btnCreateUser.BackColor = Color.DarkViolet;
             btnCreateUser.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreateUser.ForeColor = SystemColors.ControlLight;
             btnCreateUser.Location = new Point(270, 281);
@@ -277,6 +278,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumPurple;
             ClientSize = new Size(968, 477);
             Controls.Add(panel1);
             Controls.Add(lblcuenta);

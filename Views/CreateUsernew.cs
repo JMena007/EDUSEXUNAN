@@ -64,7 +64,7 @@ namespace EDUSEX.Views
                 Sexo = cmbSexo.Text,
                 Telefono = txtTelefono.Text.Trim(),
                 Correo = txtCorreo.Text.Trim(),
-IdRol = 3
+                IdRol = 3
             };
 
             usuarioControl.InsertarUsuario(nuevoUsuario);
@@ -101,6 +101,11 @@ IdRol = 3
             }
 
             this.Close();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

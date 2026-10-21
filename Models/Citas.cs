@@ -71,4 +71,12 @@ namespace EDUSEX.Models
             }
         }
 
-        public static List
+        public static List<Citas> CargarCitas()
+        {
+            using (var context = new EDUSEXContext())
+            {
+                return context.Citas.ToList();
+            }
+        }
+    }
+}

@@ -18,6 +18,7 @@ namespace EDUSEX.Models
         public string Sexo { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
+        public int IdRol { get; set; }
 
         public Usuarios(int IdUsuario, string Nombres, string Apellidos, string Cedula, int Edad, string Sexo, string Telefono, string Correo)
         {
@@ -33,6 +34,7 @@ namespace EDUSEX.Models
 
         public Usuarios()
         {
+
         }
 
    
