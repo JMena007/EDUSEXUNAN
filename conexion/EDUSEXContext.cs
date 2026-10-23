@@ -38,6 +38,11 @@ namespace EDUSEX.conexion
                 string connectionString =
                     config.GetConnectionString("SupabaseConnection");
 
+                if (string.IsNullOrWhiteSpace(connectionString))
+                {
+                    throw new InvalidOperationException(
+                        "No se encontró la conexión SupabaseConnection en appsettings.json.");
+                }
                 optionsBuilder.UseNpgsql(connectionString);
             }
         }

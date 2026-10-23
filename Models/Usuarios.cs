@@ -18,6 +18,9 @@ namespace EDUSEX.Models
         public string Sexo { get; set; }
         public string Telefono { get; set; }
         public string Correo { get; set; }
+        public string NombreUsuario { get; set; } = string.Empty;
+        public string PasswordHash { get; set; } = string.Empty;
+        public bool Activo { get; set; } = true;
         public int IdRol { get; set; }
 
         public Usuarios(int IdUsuario, string Nombres, string Apellidos, string Cedula, int Edad, string Sexo, string Telefono, string Correo)

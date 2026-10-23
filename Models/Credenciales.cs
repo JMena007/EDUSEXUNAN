@@ -15,7 +15,7 @@ namespace EDUSEX.Models
         public string PasswordHash { get; set; }
         public bool Activo { get; set; }
 
-        public Credenciales(int IdCredencial, int IdUsuario, string NombreUsuario, string PasswordHash, int IdRol, bool Activo)
+        public Credenciales(int IdCredencial, int IdUsuario, string NombreUsuario, string PasswordHash, bool Activo)
         {
             this.IdCredencial = IdCredencial;
             this.IdUsuario = IdUsuario;
@@ -26,7 +26,6 @@ namespace EDUSEX.Models
 
         public Credenciales() { }
 
-        // --- Lógica de persistencia, movida desde CredencialControl ---
 
         public void InsertarCredencial()
         {

@@ -32,6 +32,16 @@
             Label lblCedula;
             lblcuenta = new Label();
             panel1 = new Panel();
+            panel11 = new Panel();
+            panel10 = new Panel();
+            panel9 = new Panel();
+            panel8 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel2 = new Panel();
             nmEdad = new NumericUpDown();
             LblEdad = new Label();
             txtTelefono = new TextBox();
@@ -52,21 +62,11 @@
             btnCancelar = new Button();
             btnCreateUser = new Button();
             rolesBindingSource = new BindingSource(components);
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            panel7 = new Panel();
-            panel8 = new Panel();
-            panel9 = new Panel();
-            panel10 = new Panel();
-            panel11 = new Panel();
             lblCedula = new Label();
             panel1.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nmEdad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rolesBindingSource).BeginInit();
-            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // lblCedula
@@ -128,6 +128,87 @@
             panel1.Size = new Size(797, 417);
             panel1.TabIndex = 4;
             panel1.Paint += panel1_Paint_1;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.FromArgb(159, 89, 182);
+            panel11.Location = new Point(472, 146);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(254, 2);
+            panel11.TabIndex = 29;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(159, 89, 182);
+            panel10.Location = new Point(472, 302);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(254, 2);
+            panel10.TabIndex = 33;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(159, 89, 182);
+            panel9.Location = new Point(70, 328);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(254, 2);
+            panel9.TabIndex = 29;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(159, 89, 182);
+            panel8.Location = new Point(70, 281);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(254, 2);
+            panel8.TabIndex = 32;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(159, 89, 182);
+            panel7.Location = new Point(472, 220);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(254, 2);
+            panel7.TabIndex = 31;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(159, 89, 182);
+            panel6.Location = new Point(72, 220);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(254, 2);
+            panel6.TabIndex = 30;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(159, 89, 182);
+            panel5.Location = new Point(72, 146);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(254, 2);
+            panel5.TabIndex = 29;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(159, 89, 182);
+            panel3.Controls.Add(panel4);
+            panel3.Location = new Point(472, 64);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(254, 2);
+            panel3.TabIndex = 29;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(159, 89, 182);
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(254, 2);
+            panel4.TabIndex = 29;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(159, 89, 182);
+            panel2.Location = new Point(72, 64);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(254, 2);
+            panel2.TabIndex = 28;
             // 
             // nmEdad
             // 
@@ -271,9 +352,9 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.Crimson;
+            btnCancelar.BackColor = Color.LightSteelBlue;
             btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelar.ForeColor = SystemColors.ButtonFace;
+            btnCancelar.ForeColor = Color.Black;
             btnCancelar.Location = new Point(426, 356);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(97, 40);
@@ -295,87 +376,6 @@
             btnCreateUser.UseVisualStyleBackColor = false;
             btnCreateUser.Click += btnCreateUser_Click;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(159, 89, 182);
-            panel2.Location = new Point(72, 64);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(254, 2);
-            panel2.TabIndex = 28;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(159, 89, 182);
-            panel3.Controls.Add(panel4);
-            panel3.Location = new Point(472, 64);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(254, 2);
-            panel3.TabIndex = 29;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(159, 89, 182);
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(254, 2);
-            panel4.TabIndex = 29;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(159, 89, 182);
-            panel5.Location = new Point(72, 146);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(254, 2);
-            panel5.TabIndex = 29;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(159, 89, 182);
-            panel6.Location = new Point(72, 220);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(254, 2);
-            panel6.TabIndex = 30;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.FromArgb(159, 89, 182);
-            panel7.Location = new Point(472, 220);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(254, 2);
-            panel7.TabIndex = 31;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.FromArgb(159, 89, 182);
-            panel8.Location = new Point(70, 281);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(254, 2);
-            panel8.TabIndex = 32;
-            // 
-            // panel9
-            // 
-            panel9.BackColor = Color.FromArgb(159, 89, 182);
-            panel9.Location = new Point(70, 328);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(254, 2);
-            panel9.TabIndex = 29;
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.FromArgb(159, 89, 182);
-            panel10.Location = new Point(472, 302);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(254, 2);
-            panel10.TabIndex = 33;
-            // 
-            // panel11
-            // 
-            panel11.BackColor = Color.FromArgb(159, 89, 182);
-            panel11.Location = new Point(472, 146);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(254, 2);
-            panel11.TabIndex = 29;
-            // 
             // CreateUsernew
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -391,9 +391,9 @@
             Load += CreateUsernew_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nmEdad).EndInit();
             ((System.ComponentModel.ISupportInitialize)rolesBindingSource).EndInit();
-            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
