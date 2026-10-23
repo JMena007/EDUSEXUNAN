@@ -52,16 +52,27 @@
             btnCancelar = new Button();
             btnCreateUser = new Button();
             rolesBindingSource = new BindingSource(components);
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            panel9 = new Panel();
+            panel10 = new Panel();
+            panel11 = new Panel();
             lblCedula = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nmEdad).BeginInit();
             ((System.ComponentModel.ISupportInitialize)rolesBindingSource).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // lblCedula
             // 
             lblCedula.AutoSize = true;
-            lblCedula.Location = new Point(33, 155);
+            lblCedula.Location = new Point(70, 181);
             lblCedula.Name = "lblCedula";
             lblCedula.Size = new Size(44, 15);
             lblCedula.TabIndex = 18;
@@ -72,7 +83,7 @@
             lblcuenta.AutoSize = true;
             lblcuenta.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblcuenta.ForeColor = Color.White;
-            lblcuenta.Location = new Point(376, 41);
+            lblcuenta.Location = new Point(376, 28);
             lblcuenta.Name = "lblcuenta";
             lblcuenta.Size = new Size(185, 21);
             lblcuenta.TabIndex = 0;
@@ -83,6 +94,15 @@
             panel1.BackColor = SystemColors.ControlLightLight;
             panel1.BackgroundImageLayout = ImageLayout.None;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(panel11);
+            panel1.Controls.Add(panel10);
+            panel1.Controls.Add(panel9);
+            panel1.Controls.Add(panel8);
+            panel1.Controls.Add(panel7);
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(panel5);
+            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(nmEdad);
             panel1.Controls.Add(LblEdad);
             panel1.Controls.Add(txtTelefono);
@@ -103,24 +123,25 @@
             panel1.Controls.Add(lblnombreU);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnCreateUser);
-            panel1.Location = new Point(71, 86);
+            panel1.Location = new Point(76, 65);
             panel1.Name = "panel1";
-            panel1.Size = new Size(824, 349);
+            panel1.Size = new Size(797, 417);
             panel1.TabIndex = 4;
+            panel1.Paint += panel1_Paint_1;
             // 
             // nmEdad
             // 
-            nmEdad.Location = new Point(252, 212);
+            nmEdad.Location = new Point(68, 307);
             nmEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
             nmEdad.Name = "nmEdad";
-            nmEdad.Size = new Size(120, 23);
+            nmEdad.Size = new Size(254, 23);
             nmEdad.TabIndex = 27;
             nmEdad.Value = new decimal(new int[] { 16, 0, 0, 0 });
             // 
             // LblEdad
             // 
             LblEdad.AutoSize = true;
-            LblEdad.Location = new Point(213, 219);
+            LblEdad.Location = new Point(68, 289);
             LblEdad.Name = "LblEdad";
             LblEdad.Size = new Size(33, 15);
             LblEdad.TabIndex = 25;
@@ -128,14 +149,14 @@
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(550, 22);
+            txtTelefono.Location = new Point(72, 125);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(254, 23);
             txtTelefono.TabIndex = 24;
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(550, 88);
+            txtCorreo.Location = new Point(472, 125);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(254, 23);
             txtCorreo.TabIndex = 23;
@@ -143,7 +164,7 @@
             // lblcorreo
             // 
             lblcorreo.AutoSize = true;
-            lblcorreo.Location = new Point(474, 96);
+            lblcorreo.Location = new Point(472, 107);
             lblcorreo.Name = "lblcorreo";
             lblcorreo.Size = new Size(43, 15);
             lblcorreo.TabIndex = 22;
@@ -152,7 +173,7 @@
             // lblTelefono
             // 
             lblTelefono.AutoSize = true;
-            lblTelefono.Location = new Point(474, 30);
+            lblTelefono.Location = new Point(70, 107);
             lblTelefono.Name = "lblTelefono";
             lblTelefono.Size = new Size(53, 15);
             lblTelefono.TabIndex = 21;
@@ -162,15 +183,15 @@
             // 
             cmbSexo.FormattingEnabled = true;
             cmbSexo.Items.AddRange(new object[] { "Masculino", "Femenino", "Otros" });
-            cmbSexo.Location = new Point(89, 211);
+            cmbSexo.Location = new Point(70, 261);
             cmbSexo.Name = "cmbSexo";
-            cmbSexo.Size = new Size(80, 23);
+            cmbSexo.Size = new Size(254, 23);
             cmbSexo.TabIndex = 20;
             // 
             // lblSexo
             // 
             lblSexo.AutoSize = true;
-            lblSexo.Location = new Point(33, 219);
+            lblSexo.Location = new Point(70, 243);
             lblSexo.Name = "lblSexo";
             lblSexo.Size = new Size(31, 15);
             lblSexo.TabIndex = 19;
@@ -179,35 +200,35 @@
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(113, 152);
+            txtCedula.Location = new Point(72, 199);
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(254, 23);
             txtCedula.TabIndex = 17;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(113, 85);
+            txtApellido.Location = new Point(472, 43);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(254, 23);
             txtApellido.TabIndex = 14;
             // 
             // txtConfirmContraseña
             // 
-            txtConfirmContraseña.Location = new Point(550, 216);
+            txtConfirmContraseña.Location = new Point(472, 281);
             txtConfirmContraseña.Name = "txtConfirmContraseña";
             txtConfirmContraseña.Size = new Size(254, 23);
             txtConfirmContraseña.TabIndex = 13;
             // 
             // txtContraseña
             // 
-            txtContraseña.Location = new Point(550, 155);
+            txtContraseña.Location = new Point(472, 199);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(254, 23);
             txtContraseña.TabIndex = 12;
             // 
             // txtNombres
             // 
-            txtNombres.Location = new Point(113, 22);
+            txtNombres.Location = new Point(72, 43);
             txtNombres.Name = "txtNombres";
             txtNombres.Size = new Size(254, 23);
             txtNombres.TabIndex = 11;
@@ -215,7 +236,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(422, 220);
+            label4.Location = new Point(472, 261);
             label4.Name = "label4";
             label4.Size = new Size(124, 15);
             label4.TabIndex = 10;
@@ -224,7 +245,7 @@
             // lblapellido
             // 
             lblapellido.AutoSize = true;
-            lblapellido.Location = new Point(33, 88);
+            lblapellido.Location = new Point(472, 25);
             lblapellido.Name = "lblapellido";
             lblapellido.Size = new Size(51, 15);
             lblapellido.TabIndex = 9;
@@ -233,7 +254,7 @@
             // lblpassword
             // 
             lblpassword.AutoSize = true;
-            lblpassword.Location = new Point(460, 158);
+            lblpassword.Location = new Point(472, 181);
             lblpassword.Name = "lblpassword";
             lblpassword.Size = new Size(67, 15);
             lblpassword.TabIndex = 8;
@@ -242,7 +263,7 @@
             // lblnombreU
             // 
             lblnombreU.AutoSize = true;
-            lblnombreU.Location = new Point(33, 25);
+            lblnombreU.Location = new Point(72, 25);
             lblnombreU.Name = "lblnombreU";
             lblnombreU.Size = new Size(51, 15);
             lblnombreU.TabIndex = 7;
@@ -253,7 +274,7 @@
             btnCancelar.BackColor = Color.Crimson;
             btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = SystemColors.ButtonFace;
-            btnCancelar.Location = new Point(449, 281);
+            btnCancelar.Location = new Point(426, 356);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(97, 40);
             btnCancelar.TabIndex = 6;
@@ -266,13 +287,94 @@
             btnCreateUser.BackColor = Color.DarkViolet;
             btnCreateUser.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreateUser.ForeColor = SystemColors.ControlLight;
-            btnCreateUser.Location = new Point(270, 281);
+            btnCreateUser.Location = new Point(254, 356);
             btnCreateUser.Name = "btnCreateUser";
             btnCreateUser.Size = new Size(109, 40);
             btnCreateUser.TabIndex = 5;
             btnCreateUser.Text = "Crear Cuenta";
             btnCreateUser.UseVisualStyleBackColor = false;
             btnCreateUser.Click += btnCreateUser_Click;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(159, 89, 182);
+            panel2.Location = new Point(72, 64);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(254, 2);
+            panel2.TabIndex = 28;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(159, 89, 182);
+            panel3.Controls.Add(panel4);
+            panel3.Location = new Point(472, 64);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(254, 2);
+            panel3.TabIndex = 29;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(159, 89, 182);
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(254, 2);
+            panel4.TabIndex = 29;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(159, 89, 182);
+            panel5.Location = new Point(72, 146);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(254, 2);
+            panel5.TabIndex = 29;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(159, 89, 182);
+            panel6.Location = new Point(72, 220);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(254, 2);
+            panel6.TabIndex = 30;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(159, 89, 182);
+            panel7.Location = new Point(472, 220);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(254, 2);
+            panel7.TabIndex = 31;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(159, 89, 182);
+            panel8.Location = new Point(70, 281);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(254, 2);
+            panel8.TabIndex = 32;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(159, 89, 182);
+            panel9.Location = new Point(70, 328);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(254, 2);
+            panel9.TabIndex = 29;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(159, 89, 182);
+            panel10.Location = new Point(472, 302);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(254, 2);
+            panel10.TabIndex = 33;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.FromArgb(159, 89, 182);
+            panel11.Location = new Point(472, 146);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(254, 2);
+            panel11.TabIndex = 29;
             // 
             // CreateUsernew
             // 
@@ -291,6 +393,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nmEdad).EndInit();
             ((System.ComponentModel.ISupportInitialize)rolesBindingSource).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -319,5 +422,15 @@
         private TextBox txtTelefono;
         private Label LblEdad;
         private NumericUpDown nmEdad;
+        private Panel panel2;
+        private Panel panel10;
+        private Panel panel9;
+        private Panel panel8;
+        private Panel panel7;
+        private Panel panel6;
+        private Panel panel5;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel11;
     }
 }

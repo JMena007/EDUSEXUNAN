@@ -57,7 +57,7 @@
             // 
             // PanelNav
             // 
-            PanelNav.BackColor = Color.DarkViolet;
+            PanelNav.BackColor = Color.SlateBlue;
             PanelNav.Controls.Add(btnCloseSesion);
             PanelNav.Controls.Add(btnSoporte);
             PanelNav.Controls.Add(btnGuiaEdu);
@@ -76,7 +76,7 @@
             // 
             // btnCloseSesion
             // 
-            btnCloseSesion.BackColor = Color.DarkViolet;
+            btnCloseSesion.BackColor = Color.SlateBlue;
             btnCloseSesion.FlatAppearance.BorderColor = Color.Navy;
             btnCloseSesion.FlatStyle = FlatStyle.Flat;
             btnCloseSesion.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -91,7 +91,7 @@
             // 
             // btnSoporte
             // 
-            btnSoporte.BackColor = Color.DarkViolet;
+            btnSoporte.BackColor = Color.SlateBlue;
             btnSoporte.FlatAppearance.BorderColor = Color.Navy;
             btnSoporte.FlatStyle = FlatStyle.Flat;
             btnSoporte.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -106,7 +106,7 @@
             // 
             // btnGuiaEdu
             // 
-            btnGuiaEdu.BackColor = Color.DarkViolet;
+            btnGuiaEdu.BackColor = Color.SlateBlue;
             btnGuiaEdu.FlatAppearance.BorderColor = Color.Navy;
             btnGuiaEdu.FlatStyle = FlatStyle.Flat;
             btnGuiaEdu.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -121,7 +121,7 @@
             // 
             // btnUsuarios
             // 
-            btnUsuarios.BackColor = Color.DarkViolet;
+            btnUsuarios.BackColor = Color.SlateBlue;
             btnUsuarios.FlatAppearance.BorderColor = Color.Navy;
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -136,7 +136,7 @@
             // 
             // btnCitas
             // 
-            btnCitas.BackColor = Color.DarkViolet;
+            btnCitas.BackColor = Color.SlateBlue;
             btnCitas.FlatAppearance.BorderColor = Color.Navy;
             btnCitas.FlatStyle = FlatStyle.Flat;
             btnCitas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -151,7 +151,7 @@
             // 
             // btnHospitales
             // 
-            btnHospitales.BackColor = Color.DarkViolet;
+            btnHospitales.BackColor = Color.SlateBlue;
             btnHospitales.FlatAppearance.BorderColor = Color.Navy;
             btnHospitales.FlatStyle = FlatStyle.Flat;
             btnHospitales.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -186,7 +186,7 @@
             // 
             // btnInicio
             // 
-            btnInicio.BackColor = Color.DarkViolet;
+            btnInicio.BackColor = Color.SlateBlue;
             btnInicio.FlatAppearance.BorderColor = Color.Navy;
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
