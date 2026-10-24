@@ -81,7 +81,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Transparent;
+            panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(txtUsuario);
             panel1.Location = new Point(43, 263);
@@ -173,7 +173,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.Transparent;
+            panel3.BackColor = Color.WhiteSmoke;
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(txtPassword);
             panel3.Location = new Point(44, 356);

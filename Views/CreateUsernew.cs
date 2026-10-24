@@ -21,7 +21,7 @@ namespace EDUSEX.Views
 
         UsuarioControl usuarioControl = new UsuarioControl();
 
-        CredencialControl CredencialControl = new CredencialControl();
+        
 
 
         private void lblSexo_Click(object sender, EventArgs e)
@@ -73,16 +73,12 @@ namespace EDUSEX.Views
             Usuarios usuarioCreado = usuarioControl.BuscarPorCedulaONombre(nuevoUsuario.Cedula);
 
             // Crea el acceso — SIEMPRE rol Paciente (IdRol = 3), nunca elegido por el usuario (RF-02)
-            Credenciales nuevaCredencial = new Credenciales()
+            Usuarios nuevaCredencial = new Usuarios
             {
                 IdUsuario = usuarioCreado.IdUsuario,
-                NombreUsuario = txtCorreo.Text.Trim(),
                 PasswordHash = txtContraseña.Text,
                 Activo = true
             };
-
-            CredencialControl c = new CredencialControl();
-            c.InsertarCredencial(nuevaCredencial);
 
             MessageBox.Show("Cuenta creada exitosamente. Ya puede iniciar sesión.");
             this.Close();

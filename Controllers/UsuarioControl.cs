@@ -45,5 +45,18 @@ namespace EDUSEX.Controllers
         {
             return Usuarios.ObtenerUsuarioPorId(idUsuario);
         }
+
+        public Usuarios ValidarLogin (string correo, string password)
+        {
+            if (string.IsNullOrWhiteSpace(correo) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Ingrese su correo y contraseña.");
+                return null;
+            }
+            return Usuarios.ValidarLogin(correo, password);
+        } 
+        
+            
+        
     }
 }

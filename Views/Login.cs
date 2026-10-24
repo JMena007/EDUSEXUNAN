@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using EDUSEX.Controllers;
 using EDUSEX.Models;
+using Microsoft.VisualBasic.ApplicationServices;
 
 
 namespace EDUSEX.Views
@@ -14,8 +15,6 @@ namespace EDUSEX.Views
     public partial class Login : Form
     {
         private FormPrincipal? formPrincipal;
-
-        private CredencialControl credencialController = new CredencialControl();
 
         public Login()
         {
@@ -81,7 +80,8 @@ namespace EDUSEX.Views
                 return;
             }
 
-            Credenciales credencial = credencialController.ValidarLogin(usuario, password);
+            UsuarioControl User = new UsuarioControl();
+            Usuarios credencial = User.ValidarLogin(usuario, password);
 
             if (credencial == null)
             {
@@ -96,7 +96,6 @@ namespace EDUSEX.Views
             RolesControl rolesControl = new RolesControl();
 
             SesionActual.IdUsuarioLogueado = credencial.IdUsuario;
-            SesionActual.NombreUsuario = credencial.NombreUsuario;
             SesionActual.RolUsuario = rolesControl.ObtenerNombreRol(usuarioLogueado.IdRol);
 
             FormPrincipal formPrincipal = new FormPrincipal(this);

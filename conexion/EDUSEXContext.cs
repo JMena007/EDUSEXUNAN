@@ -15,7 +15,6 @@ namespace EDUSEX.conexion
         {
         }
 
-        public DbSet<Models.Credenciales> Credenciales { get; set; }
         public DbSet<Models.Roles> Roles { get; set; }
         public DbSet<Models.Usuarios> Usuarios { get; set; }
         public DbSet<Models.Citas> Citas { get; set; }
@@ -26,24 +25,11 @@ namespace EDUSEX.conexion
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var config = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile(
-                        "appsettings.json",
-                        optional: false,
-                        reloadOnChange: true
-                    )
-                    .Build();
-
-                string connectionString =
-                    config.GetConnectionString("SupabaseConnection");
-
-                if (string.IsNullOrWhiteSpace(connectionString))
-                {
-                    throw new InvalidOperationException(
-                        "No se encontró la conexión SupabaseConnection en appsettings.json.");
-                }
-                optionsBuilder.UseNpgsql(connectionString);
+                optionsBuilder.UseSqlServer(
+                "Data Source=(localdb)\\MSSQLLocalDB;" +
+                "Initial Catalog=EDUSEX_Proyect_Db;" +
+                "Integrated Security=True;" +
+                "TrustServerCertificate=True;");
             }
         }
     }
