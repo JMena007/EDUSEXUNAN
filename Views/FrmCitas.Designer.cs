@@ -18,7 +18,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Buscadortxt = new TextBox();
             dgwCitas = new DataGridView();
             hospitalesBindingSource = new BindingSource(components);
@@ -49,6 +49,14 @@
             btnActualizar = new Button();
             panel1 = new Panel();
             panelcita = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            panel9 = new Panel();
+            panel10 = new Panel();
+            panel11 = new Panel();
+            panel12 = new Panel();
+            panel13 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgwCitas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)hospitalesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
@@ -57,27 +65,27 @@
             // 
             // Buscadortxt
             // 
-            Buscadortxt.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             Buscadortxt.Location = new Point(217, 23);
             Buscadortxt.Multiline = true;
             Buscadortxt.Name = "Buscadortxt";
             Buscadortxt.PlaceholderText = "Buscar pacientes";
-            Buscadortxt.Size = new Size(359, 26);
+            Buscadortxt.Size = new Size(491, 35);
             Buscadortxt.TabIndex = 8;
             Buscadortxt.TextChanged += Buscadortxt_TextChanged;
             // 
             // dgwCitas
             // 
+            dgwCitas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgwCitas.BackgroundColor = SystemColors.ButtonHighlight;
             dgwCitas.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgwCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwCitas.Location = new Point(217, 352);
             dgwCitas.Name = "dgwCitas";
@@ -97,6 +105,7 @@
             // 
             // btnEditarcita
             // 
+            btnEditarcita.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEditarcita.BackColor = Color.DarkOrchid;
             btnEditarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEditarcita.ForeColor = SystemColors.ButtonFace;
@@ -110,6 +119,7 @@
             // 
             // btnEliminarcita
             // 
+            btnEliminarcita.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEliminarcita.BackColor = Color.FromArgb(255, 128, 128);
             btnEliminarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminarcita.ForeColor = SystemColors.ButtonFace;
@@ -126,9 +136,9 @@
             btnBuscar.BackColor = Color.FromArgb(0, 0, 180);
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = Color.White;
-            btnBuscar.Location = new Point(600, 23);
+            btnBuscar.Location = new Point(748, 23);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(86, 26);
+            btnBuscar.Size = new Size(86, 35);
             btnBuscar.TabIndex = 29;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = false;
@@ -357,6 +367,14 @@
             // 
             panelcita.BackColor = SystemColors.ButtonFace;
             panelcita.BorderStyle = BorderStyle.Fixed3D;
+            panelcita.Controls.Add(panel13);
+            panelcita.Controls.Add(panel12);
+            panelcita.Controls.Add(panel11);
+            panelcita.Controls.Add(panel10);
+            panelcita.Controls.Add(panel9);
+            panelcita.Controls.Add(panel8);
+            panelcita.Controls.Add(panel7);
+            panelcita.Controls.Add(panel6);
             panelcita.Controls.Add(panel1);
             panelcita.Controls.Add(btnActualizar);
             panelcita.Controls.Add(numEdad);
@@ -383,6 +401,70 @@
             panelcita.Name = "panelcita";
             panelcita.Size = new Size(732, 264);
             panelcita.TabIndex = 18;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(159, 89, 182);
+            panel6.Location = new Point(69, 58);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(247, 2);
+            panel6.TabIndex = 32;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(159, 89, 182);
+            panel7.Location = new Point(429, 55);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(247, 2);
+            panel7.TabIndex = 33;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(159, 89, 182);
+            panel8.Location = new Point(429, 124);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(247, 2);
+            panel8.TabIndex = 34;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.FromArgb(159, 89, 182);
+            panel9.Location = new Point(40, 191);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(69, 2);
+            panel9.TabIndex = 35;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(159, 89, 182);
+            panel10.Location = new Point(293, 191);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(88, 2);
+            panel10.TabIndex = 36;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.FromArgb(159, 89, 182);
+            panel11.Location = new Point(159, 191);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(80, 2);
+            panel11.TabIndex = 37;
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.FromArgb(159, 89, 182);
+            panel12.Location = new Point(445, 193);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(69, 2);
+            panel12.TabIndex = 38;
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.FromArgb(159, 89, 182);
+            panel13.Location = new Point(581, 193);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(75, 2);
+            panel13.TabIndex = 39;
             // 
             // FrmCitas
             // 
@@ -455,5 +537,13 @@
         private Panel panel2;
         private Panel panel5;
         private Panel panel4;
+        private Panel panel13;
+        private Panel panel12;
+        private Panel panel11;
+        private Panel panel10;
+        private Panel panel9;
+        private Panel panel8;
+        private Panel panel7;
+        private Panel panel6;
     }
 }
