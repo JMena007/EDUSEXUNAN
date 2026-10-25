@@ -9,7 +9,6 @@ namespace EDUSEX
     {
         private readonly Panel panelContenido;
         private readonly Login? login;
-
         public FormPrincipal() : this(Application.OpenForms.OfType<Login>().FirstOrDefault())
         {
         }
@@ -17,7 +16,7 @@ namespace EDUSEX
         public FormPrincipal(Login? login)
         {
             InitializeComponent();
-        
+
 
             this.login = login;
 
@@ -98,15 +97,16 @@ namespace EDUSEX
 
             formulario.Show();
 
-            formulario.BringToFront();
+            formulario.BringToFront();  
         }
+        
 
         private void MostrarInicio()
         {
             LimpiarContenido();
 
             label1.Visible = true;
-            
+
             label1.BringToFront();
 
             ImgEdusex.Visible = true;
@@ -119,8 +119,7 @@ namespace EDUSEX
             {
                 control.Dispose();
             }
-
-            panelContenido.Controls.Clear();
+                
         }
 
         private static void OcultarMenuInterno(Form formulario)
@@ -157,8 +156,8 @@ namespace EDUSEX
 
         private void btnSoporte_Click(object sender, EventArgs e)
         {
-             
-          DialogResult result = MessageBox.Show("Quieres Contactar a Soporte IT ?.", "Información", MessageBoxButtons.YesNo , MessageBoxIcon.Question);
+
+            DialogResult result = MessageBox.Show("Quieres Contactar a Soporte IT ?.", "Información", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.No)
             {
@@ -176,7 +175,7 @@ namespace EDUSEX
                     UseShellExecute = true
                 });
             }
-         
+
         }
 
         private void button11_Click(object sender, EventArgs e)
@@ -185,7 +184,7 @@ namespace EDUSEX
 
         private void btnCloseSesion_Click(object sender, EventArgs e)
         {
-             
+
             DialogResult result = MessageBox.Show("Seguro que quieres cerrar sesión?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.No)
@@ -200,7 +199,7 @@ namespace EDUSEX
                     return;
                 }
             }
-            
+
 
             login.PrepararLogin();
             login.Show();
@@ -234,5 +233,9 @@ namespace EDUSEX
 
         }
 
+        private void FormPrincipal_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -19,6 +19,9 @@ namespace EDUSEX.Views
         public Login()
         {
             InitializeComponent();
+            txtUsuario.KeyDown += CampoTexto_KeyDown;
+            txtPassword.KeyDown += CampoTexto_KeyDown;
+
             PrepararLogin();
         }
 
@@ -90,6 +93,9 @@ namespace EDUSEX.Views
                 return;
             }
 
+            MessageBox.Show($"Bienvenido {credencial.Nombres} {credencial.Apellidos}", "Inicio de sesión",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             UsuarioControl usuarioControl = new UsuarioControl();
             Usuarios usuarioLogueado = usuarioControl.ObtenerUsuarioPorId(credencial.IdUsuario);
 
@@ -117,6 +123,11 @@ namespace EDUSEX.Views
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelLogin_Paint(object sender, PaintEventArgs e)
         {
 
         }

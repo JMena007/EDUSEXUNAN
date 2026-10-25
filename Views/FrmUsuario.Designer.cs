@@ -32,10 +32,10 @@ namespace EDUSEX.Views
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dvgUsuarios = new DataGridView();
             label1 = new Label();
             label3 = new Label();
@@ -57,15 +57,15 @@ namespace EDUSEX.Views
             numEdad = new NumericUpDown();
             boxsexo = new ComboBox();
             panel1 = new Panel();
+            panel8 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            panel4 = new Panel();
+            panel3 = new Panel();
+            panel2 = new Panel();
             BtnActualizar = new Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            panel7 = new Panel();
-            panel8 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dvgUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
             panel1.SuspendLayout();
@@ -73,22 +73,23 @@ namespace EDUSEX.Views
             // 
             // dvgUsuarios
             // 
-            dataGridViewCellStyle11.SelectionBackColor = Color.Purple;
-            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Purple;
+            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dvgUsuarios.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dvgUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dvgUsuarios.BackgroundColor = SystemColors.Control;
             dvgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgUsuarios.GridColor = SystemColors.InactiveBorder;
-            dvgUsuarios.Location = new Point(250, 300);
+            dvgUsuarios.Location = new Point(229, 298);
             dvgUsuarios.Name = "dvgUsuarios";
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle12.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle12.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle12.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = Color.DarkSlateBlue;
-            dataGridViewCellStyle12.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.True;
-            dvgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dvgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dvgUsuarios.Size = new Size(598, 208);
             dvgUsuarios.TabIndex = 0;
             dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
@@ -203,10 +204,11 @@ namespace EDUSEX.Views
             // 
             // btnEditar
             // 
+            btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEditar.BackColor = Color.DarkOrchid;
             btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEditar.ForeColor = Color.White;
-            btnEditar.Location = new Point(854, 347);
+            btnEditar.Location = new Point(843, 344);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(100, 38);
             btnEditar.TabIndex = 20;
@@ -216,9 +218,10 @@ namespace EDUSEX.Views
             // 
             // btnEliminar
             // 
+            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEliminar.BackColor = Color.Tomato;
             btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(854, 436);
+            btnEliminar.Location = new Point(843, 425);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(100, 37);
             btnEliminar.TabIndex = 21;
@@ -288,6 +291,7 @@ namespace EDUSEX.Views
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BorderStyle = BorderStyle.Fixed3D;
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
@@ -313,10 +317,66 @@ namespace EDUSEX.Views
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
-            panel1.Location = new Point(250, 30);
+            panel1.Location = new Point(229, 30);
             panel1.Name = "panel1";
             panel1.Size = new Size(669, 250);
             panel1.TabIndex = 28;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(159, 89, 182);
+            panel8.Location = new Point(535, 177);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(104, 2);
+            panel8.TabIndex = 34;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.FromArgb(159, 89, 182);
+            panel7.Location = new Point(407, 177);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(102, 2);
+            panel7.TabIndex = 33;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(159, 89, 182);
+            panel6.Location = new Point(407, 55);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(238, 2);
+            panel6.TabIndex = 30;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(159, 89, 182);
+            panel5.Location = new Point(407, 117);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(238, 2);
+            panel5.TabIndex = 32;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(159, 89, 182);
+            panel4.Location = new Point(47, 179);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(238, 2);
+            panel4.TabIndex = 31;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(159, 89, 182);
+            panel3.Location = new Point(47, 117);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(238, 2);
+            panel3.TabIndex = 30;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(159, 89, 182);
+            panel2.Location = new Point(46, 55);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(238, 2);
+            panel2.TabIndex = 29;
             // 
             // BtnActualizar
             // 
@@ -334,70 +394,14 @@ namespace EDUSEX.Views
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges11;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(0, 0);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(180, 45);
             guna2Button1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(159, 89, 182);
-            panel2.Location = new Point(46, 55);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(238, 2);
-            panel2.TabIndex = 29;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(159, 89, 182);
-            panel3.Location = new Point(47, 117);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(238, 2);
-            panel3.TabIndex = 30;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(159, 89, 182);
-            panel4.Location = new Point(47, 179);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(238, 2);
-            panel4.TabIndex = 31;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(159, 89, 182);
-            panel5.Location = new Point(407, 117);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(238, 2);
-            panel5.TabIndex = 32;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(159, 89, 182);
-            panel6.Location = new Point(407, 55);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(238, 2);
-            panel6.TabIndex = 30;
-            // 
-            // panel7
-            // 
-            panel7.BackColor = Color.FromArgb(159, 89, 182);
-            panel7.Location = new Point(407, 177);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(102, 2);
-            panel7.TabIndex = 33;
-            // 
-            // panel8
-            // 
-            panel8.BackColor = Color.FromArgb(159, 89, 182);
-            panel8.Location = new Point(535, 177);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(104, 2);
-            panel8.TabIndex = 34;
             // 
             // FrmUsuario
             // 

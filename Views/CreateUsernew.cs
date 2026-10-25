@@ -17,11 +17,26 @@ namespace EDUSEX.Views
         public CreateUsernew()
         {
             InitializeComponent();
+            txtNombres.KeyDown += CampoTexto_KeyDown;
+            txtApellido.KeyDown += CampoTexto_KeyDown;
+            txtCedula.KeyDown += CampoTexto_KeyDown;
+            txtTelefono.KeyDown += CampoTexto_KeyDown;
+            txtCorreo.KeyDown += CampoTexto_KeyDown;
+            txtContraseña.KeyDown += CampoTexto_KeyDown;
+            txtConfirmContraseña.KeyDown += CampoTexto_KeyDown;
         }
 
         UsuarioControl usuarioControl = new UsuarioControl();
 
-        
+        private void CampoTexto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SelectNextControl((Control)sender, true, true, true, true);
+            }
+        }
+
 
 
         private void lblSexo_Click(object sender, EventArgs e)
