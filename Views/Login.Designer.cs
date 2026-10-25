@@ -208,6 +208,8 @@
             guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.MaximumSize = new Size(934, 640);
+            guna2Panel1.MinimumSize = new Size(934, 640);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel1.Size = new Size(934, 640);

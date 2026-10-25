@@ -62,7 +62,7 @@
             Buscadortxt.Multiline = true;
             Buscadortxt.Name = "Buscadortxt";
             Buscadortxt.PlaceholderText = "Buscar pacientes";
-            Buscadortxt.Size = new Size(332, 23);
+            Buscadortxt.Size = new Size(359, 26);
             Buscadortxt.TabIndex = 8;
             Buscadortxt.TextChanged += Buscadortxt_TextChanged;
             // 
@@ -79,7 +79,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgwCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwCitas.Location = new Point(217, 341);
+            dgwCitas.Location = new Point(217, 352);
             dgwCitas.Name = "dgwCitas";
             dgwCitas.Size = new Size(617, 191);
             dgwCitas.TabIndex = 13;
@@ -89,7 +89,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(226, 320);
+            label3.Location = new Point(226, 331);
             label3.Name = "label3";
             label3.Size = new Size(125, 18);
             label3.TabIndex = 20;
@@ -100,7 +100,7 @@
             btnEditarcita.BackColor = Color.DarkOrchid;
             btnEditarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEditarcita.ForeColor = SystemColors.ButtonFace;
-            btnEditarcita.Location = new Point(840, 371);
+            btnEditarcita.Location = new Point(840, 384);
             btnEditarcita.Name = "btnEditarcita";
             btnEditarcita.Size = new Size(100, 43);
             btnEditarcita.TabIndex = 27;
@@ -113,7 +113,7 @@
             btnEliminarcita.BackColor = Color.FromArgb(255, 128, 128);
             btnEliminarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminarcita.ForeColor = SystemColors.ButtonFace;
-            btnEliminarcita.Location = new Point(840, 447);
+            btnEliminarcita.Location = new Point(840, 453);
             btnEliminarcita.Name = "btnEliminarcita";
             btnEliminarcita.Size = new Size(100, 42);
             btnEliminarcita.TabIndex = 28;
@@ -126,7 +126,7 @@
             btnBuscar.BackColor = Color.FromArgb(0, 0, 180);
             btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnBuscar.ForeColor = Color.White;
-            btnBuscar.Location = new Point(574, 23);
+            btnBuscar.Location = new Point(600, 23);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(86, 26);
             btnBuscar.TabIndex = 29;
@@ -379,16 +379,16 @@
             panelcita.Controls.Add(lblHospital);
             panelcita.Controls.Add(IPHospitales);
             panelcita.Controls.Add(lblhora);
-            panelcita.Location = new Point(217, 54);
+            panelcita.Location = new Point(217, 64);
             panelcita.Name = "panelcita";
-            panelcita.Size = new Size(732, 253);
+            panelcita.Size = new Size(732, 264);
             panelcita.TabIndex = 18;
             // 
             // FrmCitas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1003, 530);
+            ClientSize = new Size(1030, 530);
             Controls.Add(btnBuscar);
             Controls.Add(btnEliminarcita);
             Controls.Add(btnEditarcita);
