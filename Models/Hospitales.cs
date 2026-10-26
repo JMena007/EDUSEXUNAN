@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Linq;
+using EDUSEX.conexion;
 
 namespace EDUSEX.Models
 {
@@ -17,6 +19,31 @@ namespace EDUSEX.Models
         public string Telefono { get; set; }
         public string especialidad { get; set; }
         public bool Estado { get; set; }
-        public Hospitales() { }
+
+        public Hospitales(int IdHospital, string NombreHospital, string Distrito, string Direccion, string Telefono, string especialidad, bool Estado)
+        {
+            this.IdHospital = IdHospital;
+            this.NombreHospital = NombreHospital;
+            this.Distrito = Distrito;
+            this.Direccion = Direccion;
+            this.Telefono = Telefono;
+            this.especialidad = especialidad;
+            this.Estado = Estado;
+        }
+
+        public Hospitales()
+        {
+
+        }
+
+
+        //aqui mostraremos citas de cada hospital
+        public void MostrarCitasHospitales ( Citas citas)
+        {
+            using (var context = new EDUSEXContext())
+            {
+                
+            }
+        }
     }
 }

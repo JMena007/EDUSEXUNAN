@@ -80,7 +80,7 @@ namespace EDUSEX.Views
             dvgUsuarios.BackgroundColor = SystemColors.Control;
             dvgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgUsuarios.GridColor = SystemColors.InactiveBorder;
-            dvgUsuarios.Location = new Point(229, 298);
+            dvgUsuarios.Location = new Point(229, 316);
             dvgUsuarios.Name = "dvgUsuarios";
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle2.BackColor = SystemColors.ButtonFace;
@@ -90,7 +90,7 @@ namespace EDUSEX.Views
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dvgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dvgUsuarios.Size = new Size(598, 208);
+            dvgUsuarios.Size = new Size(598, 213);
             dvgUsuarios.TabIndex = 0;
             dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
             // 
@@ -108,7 +108,7 @@ namespace EDUSEX.Views
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(46, 16);
+            label3.Location = new Point(38, 16);
             label3.Name = "label3";
             label3.Size = new Size(53, 15);
             label3.TabIndex = 7;
@@ -149,7 +149,7 @@ namespace EDUSEX.Views
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(535, 140);
+            label7.Location = new Point(543, 140);
             label7.Name = "label7";
             label7.Size = new Size(33, 15);
             label7.TabIndex = 11;
@@ -159,7 +159,7 @@ namespace EDUSEX.Views
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(46, 78);
+            label8.Location = new Point(40, 78);
             label8.Name = "label8";
             label8.Size = new Size(56, 15);
             label8.TabIndex = 12;
@@ -167,9 +167,9 @@ namespace EDUSEX.Views
             // 
             // txtnombre
             // 
-            txtnombre.Location = new Point(46, 34);
+            txtnombre.Location = new Point(40, 34);
             txtnombre.Name = "txtnombre";
-            txtnombre.Size = new Size(239, 23);
+            txtnombre.Size = new Size(247, 23);
             txtnombre.TabIndex = 13;
             txtnombre.KeyPress += txtnombre_KeyPress;
             // 
@@ -177,15 +177,15 @@ namespace EDUSEX.Views
             // 
             txtCedula.Location = new Point(406, 96);
             txtCedula.Name = "txtCedula";
-            txtCedula.Size = new Size(239, 23);
+            txtCedula.Size = new Size(247, 23);
             txtCedula.TabIndex = 15;
             txtCedula.KeyPress += txtCedula_KeyPress;
             // 
             // txtapellido
             // 
-            txtapellido.Location = new Point(406, 34);
+            txtapellido.Location = new Point(410, 34);
             txtapellido.Name = "txtapellido";
-            txtapellido.Size = new Size(239, 23);
+            txtapellido.Size = new Size(247, 23);
             txtapellido.TabIndex = 16;
             txtapellido.KeyPress += txtapellido_KeyPress;
             // 
@@ -194,7 +194,7 @@ namespace EDUSEX.Views
             btnGuardar.BackColor = Color.FromArgb(159, 89, 182);
             btnGuardar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(138, 196);
+            btnGuardar.Location = new Point(139, 207);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 38);
             btnGuardar.TabIndex = 19;
@@ -234,7 +234,7 @@ namespace EDUSEX.Views
             btnLimpiar.BackColor = Color.Gray;
             btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
-            btnLimpiar.Location = new Point(297, 196);
+            btnLimpiar.Location = new Point(300, 207);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 38);
             btnLimpiar.TabIndex = 22;
@@ -246,7 +246,7 @@ namespace EDUSEX.Views
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(46, 140);
+            label9.Location = new Point(40, 140);
             label9.Name = "label9";
             label9.Size = new Size(45, 15);
             label9.TabIndex = 23;
@@ -255,23 +255,23 @@ namespace EDUSEX.Views
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(46, 158);
+            txtCorreo.Location = new Point(41, 157);
             txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(239, 23);
+            txtCorreo.Size = new Size(247, 23);
             txtCorreo.TabIndex = 24;
             txtCorreo.Validating += txtCorreo_Validating;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(46, 96);
+            txtTelefono.Location = new Point(40, 96);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(239, 23);
+            txtTelefono.Size = new Size(247, 23);
             txtTelefono.TabIndex = 25;
             txtTelefono.KeyPress += txtTelefono_keyPress;
             // 
             // numEdad
             // 
-            numEdad.Location = new Point(535, 156);
+            numEdad.Location = new Point(543, 158);
             numEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
             numEdad.Name = "numEdad";
             numEdad.Size = new Size(110, 23);
@@ -283,7 +283,7 @@ namespace EDUSEX.Views
             boxsexo.DropDownStyle = ComboBoxStyle.DropDownList;
             boxsexo.FormattingEnabled = true;
             boxsexo.Items.AddRange(new object[] { "Seleccionar", "Masculino", "femenino", "No Binarie", "Otros" });
-            boxsexo.Location = new Point(406, 156);
+            boxsexo.Location = new Point(403, 158);
             boxsexo.Name = "boxsexo";
             boxsexo.Size = new Size(103, 23);
             boxsexo.TabIndex = 27;
@@ -319,13 +319,13 @@ namespace EDUSEX.Views
             panel1.Controls.Add(label7);
             panel1.Location = new Point(229, 30);
             panel1.Name = "panel1";
-            panel1.Size = new Size(669, 250);
+            panel1.Size = new Size(714, 262);
             panel1.TabIndex = 28;
             // 
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(159, 89, 182);
-            panel8.Location = new Point(535, 177);
+            panel8.Location = new Point(547, 179);
             panel8.Name = "panel8";
             panel8.Size = new Size(104, 2);
             panel8.TabIndex = 34;
@@ -333,7 +333,7 @@ namespace EDUSEX.Views
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(159, 89, 182);
-            panel7.Location = new Point(407, 177);
+            panel7.Location = new Point(403, 177);
             panel7.Name = "panel7";
             panel7.Size = new Size(102, 2);
             panel7.TabIndex = 33;
@@ -341,9 +341,9 @@ namespace EDUSEX.Views
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(159, 89, 182);
-            panel6.Location = new Point(407, 55);
+            panel6.Location = new Point(410, 55);
             panel6.Name = "panel6";
-            panel6.Size = new Size(238, 2);
+            panel6.Size = new Size(244, 2);
             panel6.TabIndex = 30;
             // 
             // panel5
@@ -351,31 +351,31 @@ namespace EDUSEX.Views
             panel5.BackColor = Color.FromArgb(159, 89, 182);
             panel5.Location = new Point(407, 117);
             panel5.Name = "panel5";
-            panel5.Size = new Size(238, 2);
+            panel5.Size = new Size(244, 2);
             panel5.TabIndex = 32;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(159, 89, 182);
-            panel4.Location = new Point(47, 179);
+            panel4.Location = new Point(41, 179);
             panel4.Name = "panel4";
-            panel4.Size = new Size(238, 2);
+            panel4.Size = new Size(244, 2);
             panel4.TabIndex = 31;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(159, 89, 182);
-            panel3.Location = new Point(47, 117);
+            panel3.Location = new Point(41, 117);
             panel3.Name = "panel3";
-            panel3.Size = new Size(238, 2);
+            panel3.Size = new Size(244, 2);
             panel3.TabIndex = 30;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(159, 89, 182);
-            panel2.Location = new Point(46, 55);
+            panel2.Location = new Point(43, 55);
             panel2.Name = "panel2";
-            panel2.Size = new Size(238, 2);
+            panel2.Size = new Size(244, 2);
             panel2.TabIndex = 29;
             // 
             // BtnActualizar
@@ -383,7 +383,7 @@ namespace EDUSEX.Views
             BtnActualizar.BackColor = SystemColors.MenuHighlight;
             BtnActualizar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnActualizar.ForeColor = Color.White;
-            BtnActualizar.Location = new Point(477, 196);
+            BtnActualizar.Location = new Point(476, 207);
             BtnActualizar.Name = "BtnActualizar";
             BtnActualizar.Size = new Size(100, 38);
             BtnActualizar.TabIndex = 28;

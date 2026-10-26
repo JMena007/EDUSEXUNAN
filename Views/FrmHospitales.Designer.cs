@@ -45,6 +45,7 @@
             // 
             // dgwHospitales
             // 
+            dgwHospitales.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgwHospitales.BackgroundColor = SystemColors.ButtonFace;
             dgwHospitales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwHospitales.Location = new Point(241, 288);

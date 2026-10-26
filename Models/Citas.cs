@@ -29,6 +29,21 @@ namespace EDUSEX.Models
         {
             using (var context = new EDUSEXContext())
             {
+                try
+                {
+                    var citaExistente = context.Citas.FirstOrDefault(c => c.IdUsuario == this.IdUsuario && c.FechaCita.Date == this.FechaCita.Date && c.HoraCita == this.HoraCita);
+                    if (citaExistente != null)
+                    {
+                        throw new InvalidOperationException("Ya existe una cita para este usuario en la misma fecha y hora.");
+                    }
+                    context.Citas.Add(this);
+                    context.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw new Exception("Error al insertar la cita: " + ex.Message);
+                }   
                 context.Citas.Add(this);
                 context.SaveChanges();
             }
@@ -52,15 +67,23 @@ namespace EDUSEX.Models
 
         public void EliminarCita()
         {
-            using (var context = new EDUSEXContext())
+            try
             {
-                var cita = context.Citas.Find(this.IdCita);
-                if (cita != null)
+                using (var context = new EDUSEXContext())
                 {
-                    context.Citas.Remove(cita);
-                    context.SaveChanges();
+                    var cita = context.Citas.Find(this.IdCita);
+                    if (cita != null)
+                    {
+                        context.Citas.Remove(cita);
+                        context.SaveChanges();
+                    }
                 }
             }
+            catch (Exception)
+            {
+               MessageBox.Show("No se puede eliminar la cita porque está siendo utilizada en otra parte del sistema.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
 
         public static Citas ObtenerCitaPorId(int idCita)

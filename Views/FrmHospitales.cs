@@ -31,10 +31,7 @@ namespace EDUSEX.Views
         
         private void dgwHospitales_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            using(var context = new EDUSEXContext())
-            {
-                
-            }
+            
         }
     }   
 }
