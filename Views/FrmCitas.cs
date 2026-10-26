@@ -145,8 +145,17 @@ namespace EDUSEX.Views
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e) { }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e) { }
 
+private void buscadorrtxt_KeyDown(object sender, KeyEventArgs e)
+{
+    if (e.KeyCode == Keys.Enter)
+    {
+        e.SuppressKeyPress = true;
+
+        BuscarUsuario();
+    }
+}
         //  Buscar usuario por cédula o nombre 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        private void buscadortxt_Keydown(object sender, EventArgs e)
         {
             string buscarValue = Buscadortxt.Text.Trim();
 
