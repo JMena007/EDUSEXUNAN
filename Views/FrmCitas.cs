@@ -76,25 +76,12 @@ namespace EDUSEX.Views
             IPHospitales.DisplayMember = "NombreHospital";
             IPHospitales.ValueMember = "IdHospital";
 
-            ConfigurarPorRol();
             CargarCitas(citasControl);
         }
 
         private void ConfigurarPorRol()
         {
-            if (SesionActual.RolUsuario == "Paciente")
-            {
-                Buscadortxt.Visible = false;
-                btnBuscar.Visible = false;
-
-
-                idUsuarioSeleccionado = SesionActual.IdUsuarioLogueado;
-            }
-            else
-            {
-                Buscadortxt.Visible = true;
-                btnBuscar.Visible = true;
-            }
+            // pendiente para 28/10
         }
 
         private void label1_Click(object sender, EventArgs e) { }
@@ -145,15 +132,7 @@ namespace EDUSEX.Views
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e) { }
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e) { }
 
-private void buscadorrtxt_KeyDown(object sender, KeyEventArgs e)
-{
-    if (e.KeyCode == Keys.Enter)
-    {
-        e.SuppressKeyPress = true;
 
-        BuscarUsuario();
-    }
-}
         //  Buscar usuario por cédula o nombre 
         private void buscadortxt_Keydown(object sender, EventArgs e)
         {

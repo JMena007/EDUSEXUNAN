@@ -56,6 +56,7 @@
             panel8 = new Panel();
             panel7 = new Panel();
             panel6 = new Panel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)dgwCitas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)hospitalesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
@@ -64,11 +65,11 @@
             // 
             // Buscadortxt
             // 
-            Buscadortxt.Location = new Point(217, 23);
+            Buscadortxt.Location = new Point(325, 23);
             Buscadortxt.Multiline = true;
             Buscadortxt.Name = "Buscadortxt";
             Buscadortxt.PlaceholderText = "Buscar Usuario o Paciente";
-            Buscadortxt.Size = new Size(491, 35);
+            Buscadortxt.Size = new Size(491, 24);
             Buscadortxt.TabIndex = 8;
             Buscadortxt.TextChanged += Buscadortxt_TextChanged;
             // 
@@ -130,19 +131,6 @@
             btnEliminarcita.Text = "Eliminar";
             btnEliminarcita.UseVisualStyleBackColor = false;
             btnEliminarcita.Click += btnEliminarcita_Click;
-            // 
-            // btnBuscar
-            // 
-            btnBuscar.BackColor = Color.FromArgb(0, 0, 180);
-            btnBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBuscar.ForeColor = Color.White;
-            btnBuscar.Location = new Point(748, 23);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(100, 35);
-            btnBuscar.TabIndex = 29;
-            btnBuscar.Text = "Buscar";
-            btnBuscar.UseVisualStyleBackColor = false;
-            btnBuscar.Click += btnBuscar_Click;
             // 
             // lblhora
             // 
@@ -463,12 +451,22 @@
             panel6.Size = new Size(247, 2);
             panel6.TabIndex = 32;
             // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.Location = new Point(255, 23);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(53, 23);
+            guna2HtmlLabel1.TabIndex = 29;
+            guna2HtmlLabel1.Text = "Buscar";
+            // 
             // FrmCitas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(981, 541);
-            Controls.Add(btnBuscar);
+            Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnEliminarcita);
             Controls.Add(btnEditarcita);
             Controls.Add(label3);
@@ -542,5 +540,6 @@
         private Panel panel8;
         private Panel panel7;
         private Panel panel6;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }
