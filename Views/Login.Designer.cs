@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
             panelLogin = new Panel();
             panel1 = new Panel();
@@ -201,15 +201,16 @@
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(325, 16);
             txtPassword.TabIndex = 20;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // guna2Panel1
             // 
-            guna2Panel1.BackColor = Color.BlueViolet;
-            guna2Panel1.CustomizableEdges = customizableEdges1;
+            guna2Panel1.BackColor = Color.MediumPurple;
+            guna2Panel1.CustomizableEdges = customizableEdges3;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Panel1.Size = new Size(934, 640);
             guna2Panel1.TabIndex = 5;
             // 

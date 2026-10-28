@@ -32,10 +32,10 @@ namespace EDUSEX.Views
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dvgUsuarios = new DataGridView();
             label1 = new Label();
             label3 = new Label();
@@ -73,8 +73,8 @@ namespace EDUSEX.Views
             // 
             // dvgUsuarios
             // 
-            dataGridViewCellStyle1.SelectionBackColor = Color.Purple;
-            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Purple;
+            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             dvgUsuarios.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dvgUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dvgUsuarios.BackgroundColor = SystemColors.Control;
@@ -82,14 +82,14 @@ namespace EDUSEX.Views
             dvgUsuarios.GridColor = SystemColors.InactiveBorder;
             dvgUsuarios.Location = new Point(229, 316);
             dvgUsuarios.Name = "dvgUsuarios";
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSlateBlue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dvgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSlateBlue;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dvgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dvgUsuarios.Size = new Size(598, 213);
             dvgUsuarios.TabIndex = 0;
             dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
@@ -292,7 +292,7 @@ namespace EDUSEX.Views
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BorderStyle = BorderStyle.Fixed3D;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel6);
@@ -317,9 +317,9 @@ namespace EDUSEX.Views
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
-            panel1.Location = new Point(229, 30);
+            panel1.Location = new Point(229, 41);
             panel1.Name = "panel1";
-            panel1.Size = new Size(714, 262);
+            panel1.Size = new Size(714, 251);
             panel1.TabIndex = 28;
             // 
             // panel8
@@ -394,12 +394,12 @@ namespace EDUSEX.Views
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges1;
+            guna2Button1.CustomizableEdges = customizableEdges3;
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(0, 0);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(180, 45);
             guna2Button1.TabIndex = 0;
             // 

@@ -89,8 +89,8 @@
             guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             guna2PictureBox6 = new Guna.UI2.WinForms.Guna2PictureBox();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2Panel7 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
+            PanelGE1 = new Guna.UI2.WinForms.Guna2Panel();
+            panelGE2 = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             guna2Panel3.SuspendLayout();
@@ -103,15 +103,15 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).BeginInit();
             guna2Panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).BeginInit();
-            guna2Panel7.SuspendLayout();
-            guna2Panel8.SuspendLayout();
+            PanelGE1.SuspendLayout();
+            panelGE2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Narrow", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(523, 25);
+            label1.Location = new Point(526, 33);
             label1.Name = "label1";
             label1.Size = new Size(114, 22);
             label1.TabIndex = 12;
@@ -120,6 +120,7 @@
             // 
             // guna2Panel1
             // 
+            guna2Panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel1.BackColor = SystemColors.Menu;
             guna2Panel1.BorderRadius = 10;
             guna2Panel1.Controls.Add(guna2Button1);
@@ -170,6 +171,7 @@
             // 
             // guna2Panel3
             // 
+            guna2Panel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel3.BackColor = SystemColors.MenuBar;
             guna2Panel3.BorderRadius = 10;
             guna2Panel3.Controls.Add(guna2Button4);
@@ -214,6 +216,7 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel2.BackColor = SystemColors.MenuBar;
             guna2Panel2.BorderRadius = 10;
             guna2Panel2.Controls.Add(guna2Button2);
@@ -260,6 +263,7 @@
             // 
             // guna2Panel4
             // 
+            guna2Panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel4.BackColor = SystemColors.MenuBar;
             guna2Panel4.BorderRadius = 10;
             guna2Panel4.Controls.Add(guna2Button5);
@@ -304,6 +308,7 @@
             // 
             // guna2Panel5
             // 
+            guna2Panel5.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel5.BackColor = SystemColors.MenuBar;
             guna2Panel5.Controls.Add(guna2Button3);
             guna2Panel5.Controls.Add(guna2PictureBox3);
@@ -348,6 +353,7 @@
             // 
             // guna2Panel6
             // 
+            guna2Panel6.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2Panel6.BackColor = SystemColors.MenuBar;
             guna2Panel6.BorderRadius = 10;
             guna2Panel6.Controls.Add(guna2Button6);
@@ -400,37 +406,39 @@
             guna2HtmlLabel1.TabIndex = 3;
             guna2HtmlLabel1.Text = "Sitios Web Interactivos";
             // 
-            // guna2Panel7
+            // PanelGE1
             // 
-            guna2Panel7.AutoRoundedCorners = true;
-            guna2Panel7.BackColor = Color.White;
-            guna2Panel7.BorderColor = Color.Black;
-            guna2Panel7.BorderRadius = 117;
-            guna2Panel7.Controls.Add(guna2Panel5);
-            guna2Panel7.Controls.Add(guna2Panel2);
-            guna2Panel7.Controls.Add(guna2Panel1);
-            guna2Panel7.CustomizableEdges = customizableEdges37;
-            guna2Panel7.Location = new Point(257, 50);
-            guna2Panel7.Name = "guna2Panel7";
-            guna2Panel7.ShadowDecoration.CustomizableEdges = customizableEdges38;
-            guna2Panel7.Size = new Size(664, 236);
-            guna2Panel7.TabIndex = 3;
+            PanelGE1.AutoRoundedCorners = true;
+            PanelGE1.BackColor = Color.White;
+            PanelGE1.BorderColor = Color.Black;
+            PanelGE1.BorderRadius = 117;
+            PanelGE1.Controls.Add(guna2Panel5);
+            PanelGE1.Controls.Add(guna2Panel2);
+            PanelGE1.Controls.Add(guna2Panel1);
+            PanelGE1.Cursor = Cursors.Hand;
+            PanelGE1.CustomizableEdges = customizableEdges37;
+            PanelGE1.Location = new Point(257, 72);
+            PanelGE1.Name = "PanelGE1";
+            PanelGE1.ShadowDecoration.CustomizableEdges = customizableEdges38;
+            PanelGE1.Size = new Size(664, 236);
+            PanelGE1.TabIndex = 3;
             // 
-            // guna2Panel8
+            // panelGE2
             // 
-            guna2Panel8.AutoRoundedCorners = true;
-            guna2Panel8.BackColor = Color.White;
-            guna2Panel8.BorderColor = Color.Black;
-            guna2Panel8.BorderRadius = 117;
-            guna2Panel8.Controls.Add(guna2Panel3);
-            guna2Panel8.Controls.Add(guna2Panel6);
-            guna2Panel8.Controls.Add(guna2Panel4);
-            guna2Panel8.CustomizableEdges = customizableEdges39;
-            guna2Panel8.Location = new Point(257, 350);
-            guna2Panel8.Name = "guna2Panel8";
-            guna2Panel8.ShadowDecoration.CustomizableEdges = customizableEdges40;
-            guna2Panel8.Size = new Size(664, 236);
-            guna2Panel8.TabIndex = 19;
+            panelGE2.AutoRoundedCorners = true;
+            panelGE2.BackColor = Color.White;
+            panelGE2.BorderColor = Color.Black;
+            panelGE2.BorderRadius = 117;
+            panelGE2.Controls.Add(guna2Panel3);
+            panelGE2.Controls.Add(guna2Panel6);
+            panelGE2.Controls.Add(guna2Panel4);
+            panelGE2.Cursor = Cursors.Hand;
+            panelGE2.CustomizableEdges = customizableEdges39;
+            panelGE2.Location = new Point(257, 350);
+            panelGE2.Name = "panelGE2";
+            panelGE2.ShadowDecoration.CustomizableEdges = customizableEdges40;
+            panelGE2.Size = new Size(664, 236);
+            panelGE2.TabIndex = 19;
             // 
             // FrmGuiaEducativa
             // 
@@ -439,8 +447,8 @@
             ClientSize = new Size(950, 650);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(label1);
-            Controls.Add(guna2Panel7);
-            Controls.Add(guna2Panel8);
+            Controls.Add(PanelGE1);
+            Controls.Add(panelGE2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmGuiaEducativa";
             Text = "Guia Educativa";
@@ -457,8 +465,8 @@
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox3).EndInit();
             guna2Panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox6).EndInit();
-            guna2Panel7.ResumeLayout(false);
-            guna2Panel8.ResumeLayout(false);
+            PanelGE1.ResumeLayout(false);
+            panelGE2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -484,7 +492,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
         private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
+        private Guna.UI2.WinForms.Guna2Panel PanelGE1;
+        private Guna.UI2.WinForms.Guna2Panel panelGE2;
     }
 }

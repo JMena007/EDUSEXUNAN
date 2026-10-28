@@ -299,6 +299,7 @@
             txtConfirmContraseña.Name = "txtConfirmContraseña";
             txtConfirmContraseña.Size = new Size(254, 23);
             txtConfirmContraseña.TabIndex = 13;
+            txtConfirmContraseña.UseSystemPasswordChar = true;
             // 
             // txtContraseña
             // 
@@ -306,6 +307,7 @@
             txtContraseña.Name = "txtContraseña";
             txtContraseña.Size = new Size(254, 23);
             txtContraseña.TabIndex = 12;
+            txtContraseña.UseSystemPasswordChar = true;
             // 
             // txtNombres
             // 

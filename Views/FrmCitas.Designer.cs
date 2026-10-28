@@ -89,7 +89,7 @@
             dgwCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwCitas.Location = new Point(217, 352);
             dgwCitas.Name = "dgwCitas";
-            dgwCitas.Size = new Size(600, 180);
+            dgwCitas.Size = new Size(599, 213);
             dgwCitas.TabIndex = 13;
             dgwCitas.CellContentClick += dgwCitas_CellContentClick;
             // 
@@ -110,7 +110,7 @@
             btnEditarcita.BackColor = Color.DarkOrchid;
             btnEditarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEditarcita.ForeColor = SystemColors.ButtonFace;
-            btnEditarcita.Location = new Point(840, 384);
+            btnEditarcita.Location = new Point(822, 380);
             btnEditarcita.Name = "btnEditarcita";
             btnEditarcita.Size = new Size(100, 43);
             btnEditarcita.TabIndex = 27;
@@ -124,7 +124,7 @@
             btnEliminarcita.BackColor = Color.FromArgb(255, 128, 128);
             btnEliminarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminarcita.ForeColor = SystemColors.ButtonFace;
-            btnEliminarcita.Location = new Point(840, 453);
+            btnEliminarcita.Location = new Point(822, 452);
             btnEliminarcita.Name = "btnEliminarcita";
             btnEliminarcita.Size = new Size(100, 42);
             btnEliminarcita.TabIndex = 28;
@@ -158,7 +158,7 @@
             // 
             IPHospitales.DataSource = hospitalesBindingSource;
             IPHospitales.FormattingEnabled = true;
-            IPHospitales.Location = new Point(429, 103);
+            IPHospitales.Location = new Point(404, 103);
             IPHospitales.Name = "IPHospitales";
             IPHospitales.Size = new Size(247, 23);
             IPHospitales.TabIndex = 21;
@@ -167,7 +167,7 @@
             // lblHospital
             // 
             lblHospital.AutoSize = true;
-            lblHospital.Location = new Point(429, 85);
+            lblHospital.Location = new Point(404, 85);
             lblHospital.Name = "lblHospital";
             lblHospital.Size = new Size(51, 15);
             lblHospital.TabIndex = 15;
@@ -186,7 +186,7 @@
             // 
             // IPFecha
             // 
-            IPFecha.Location = new Point(429, 34);
+            IPFecha.Location = new Point(404, 34);
             IPFecha.Name = "IPFecha";
             IPFecha.Size = new Size(247, 23);
             IPFecha.TabIndex = 21;
@@ -195,7 +195,7 @@
             // llbfecha
             // 
             llbfecha.AutoSize = true;
-            llbfecha.Location = new Point(429, 16);
+            llbfecha.Location = new Point(404, 16);
             llbfecha.Name = "llbfecha";
             llbfecha.Size = new Size(38, 15);
             llbfecha.TabIndex = 16;
@@ -205,7 +205,7 @@
             // llbapellidos
             // 
             llbapellidos.AutoSize = true;
-            llbapellidos.Location = new Point(67, 85);
+            llbapellidos.Location = new Point(40, 85);
             llbapellidos.Name = "llbapellidos";
             llbapellidos.Size = new Size(51, 15);
             llbapellidos.TabIndex = 16;
@@ -223,7 +223,6 @@
             // 
             // lbledad
             // 
-            lbledad.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             lbledad.AutoSize = true;
             lbledad.Location = new Point(39, 152);
             lbledad.Name = "lbledad";
@@ -235,7 +234,7 @@
             // lblnombre
             // 
             lblnombre.AutoSize = true;
-            lblnombre.Location = new Point(67, 19);
+            lblnombre.Location = new Point(39, 19);
             lblnombre.Name = "lblnombre";
             lblnombre.Size = new Size(51, 15);
             lblnombre.TabIndex = 15;
@@ -261,7 +260,7 @@
             // 
             // Nombretxt
             // 
-            Nombretxt.Location = new Point(67, 37);
+            Nombretxt.Location = new Point(40, 37);
             Nombretxt.Name = "Nombretxt";
             Nombretxt.Size = new Size(249, 23);
             Nombretxt.TabIndex = 18;
@@ -269,7 +268,7 @@
             // 
             // Apellidotxt
             // 
-            Apellidotxt.Location = new Point(67, 103);
+            Apellidotxt.Location = new Point(40, 103);
             Apellidotxt.Name = "Apellidotxt";
             Apellidotxt.Size = new Size(249, 23);
             Apellidotxt.TabIndex = 19;
@@ -356,7 +355,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(159, 89, 182);
-            panel1.Location = new Point(67, 124);
+            panel1.Location = new Point(39, 124);
             panel1.Name = "panel1";
             panel1.Size = new Size(247, 2);
             panel1.TabIndex = 31;
@@ -365,7 +364,7 @@
             // 
             panelcita.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelcita.BackColor = SystemColors.ButtonFace;
-            panelcita.BorderStyle = BorderStyle.Fixed3D;
+            panelcita.BorderStyle = BorderStyle.FixedSingle;
             panelcita.Controls.Add(panel13);
             panelcita.Controls.Add(panel12);
             panelcita.Controls.Add(panel11);
@@ -398,8 +397,8 @@
             panelcita.Controls.Add(lblhora);
             panelcita.Location = new Point(217, 64);
             panelcita.Name = "panelcita";
-            panelcita.Size = new Size(711, 264);
-            panelcita.TabIndex = 18;
+            panelcita.Size = new Size(714, 264);
+            panelcita.TabIndex = 28;
             // 
             // panel13
             // 
@@ -444,7 +443,7 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(159, 89, 182);
-            panel8.Location = new Point(429, 124);
+            panel8.Location = new Point(404, 124);
             panel8.Name = "panel8";
             panel8.Size = new Size(247, 2);
             panel8.TabIndex = 34;
@@ -452,7 +451,7 @@
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(159, 89, 182);
-            panel7.Location = new Point(429, 55);
+            panel7.Location = new Point(404, 55);
             panel7.Name = "panel7";
             panel7.Size = new Size(247, 2);
             panel7.TabIndex = 33;
@@ -460,7 +459,7 @@
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(159, 89, 182);
-            panel6.Location = new Point(69, 58);
+            panel6.Location = new Point(42, 58);
             panel6.Name = "panel6";
             panel6.Size = new Size(247, 2);
             panel6.TabIndex = 32;
@@ -469,7 +468,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1030, 530);
+            ClientSize = new Size(981, 541);
             Controls.Add(btnBuscar);
             Controls.Add(btnEliminarcita);
             Controls.Add(btnEditarcita);

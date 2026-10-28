@@ -114,7 +114,7 @@
             btnGuiaEdu.FlatStyle = FlatStyle.Flat;
             btnGuiaEdu.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuiaEdu.ForeColor = SystemColors.Control;
-            btnGuiaEdu.Location = new Point(3, 340);
+            btnGuiaEdu.Location = new Point(3, 335);
             btnGuiaEdu.Name = "btnGuiaEdu";
             btnGuiaEdu.Size = new Size(194, 35);
             btnGuiaEdu.TabIndex = 13;
@@ -130,7 +130,7 @@
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUsuarios.ForeColor = SystemColors.Control;
-            btnUsuarios.Location = new Point(3, 158);
+            btnUsuarios.Location = new Point(3, 150);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(194, 33);
             btnUsuarios.TabIndex = 12;
@@ -146,7 +146,7 @@
             btnCitas.FlatStyle = FlatStyle.Flat;
             btnCitas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCitas.ForeColor = SystemColors.Control;
-            btnCitas.Location = new Point(3, 221);
+            btnCitas.Location = new Point(3, 214);
             btnCitas.Name = "btnCitas";
             btnCitas.Size = new Size(194, 34);
             btnCitas.TabIndex = 11;
@@ -162,7 +162,7 @@
             btnHospitales.FlatStyle = FlatStyle.Flat;
             btnHospitales.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHospitales.ForeColor = SystemColors.Control;
-            btnHospitales.Location = new Point(3, 286);
+            btnHospitales.Location = new Point(3, 275);
             btnHospitales.Name = "btnHospitales";
             btnHospitales.Size = new Size(194, 33);
             btnHospitales.TabIndex = 10;
@@ -185,7 +185,7 @@
             // 
             panel4.AutoScrollMargin = new Size(200, 1);
             panel4.BackColor = Color.LightSteelBlue;
-            panel4.Location = new Point(3, 395);
+            panel4.Location = new Point(0, 406);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 1);
             panel4.TabIndex = 7;
@@ -198,7 +198,7 @@
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicio.ForeColor = SystemColors.Control;
-            btnInicio.Location = new Point(3, 89);
+            btnInicio.Location = new Point(3, 85);
             btnInicio.Name = "btnInicio";
             btnInicio.RightToLeft = RightToLeft.Yes;
             btnInicio.Size = new Size(194, 33);
