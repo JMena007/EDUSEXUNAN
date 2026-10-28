@@ -25,7 +25,6 @@
             label3 = new Label();
             btnEditarcita = new Button();
             btnEliminarcita = new Button();
-            btnBuscar = new Button();
             lblhora = new Label();
             IPHospitales = new ComboBox();
             lblHospital = new Label();
