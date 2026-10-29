@@ -40,17 +40,19 @@
             panel4 = new Panel();
             btnInicio = new Button();
             ImgEdusex = new PictureBox();
+            lblName = new Guna.UI2.WinForms.Guna2HtmlLabel();
             PanelNav.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ImgEdusex).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Narrow", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(437, 25);
+            label1.Font = new Font("Arial Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(410, 29);
             label1.Name = "label1";
-            label1.Size = new Size(242, 22);
+            label1.Size = new Size(367, 27);
             label1.TabIndex = 2;
             label1.Text = "Bienvenidos a EDUSEX Nicaragua";
             label1.Click += label1_Click_1;
@@ -219,12 +221,24 @@
             ImgEdusex.TabIndex = 13;
             ImgEdusex.TabStop = false;
             // 
+            // lblName
+            // 
+            lblName.BackColor = Color.Transparent;
+            lblName.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName.Location = new Point(537, 70);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(52, 27);
+            lblName.TabIndex = 14;
+            lblName.Text = "name";
+            lblName.Click += lblName_Click;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
             ClientSize = new Size(934, 611);
+            Controls.Add(lblName);
             Controls.Add(ImgEdusex);
             Controls.Add(PanelNav);
             Controls.Add(label1);
@@ -255,6 +269,7 @@
         private Button btnSoporte;
         private Button btnCloseSesion;
         private PictureBox ImgEdusex;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblName;
     }
 }
 

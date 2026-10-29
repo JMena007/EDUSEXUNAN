@@ -2,6 +2,7 @@ using EDUSEX.Views;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using EDUSEX.Models;
 
 namespace EDUSEX
 {
@@ -97,9 +98,9 @@ namespace EDUSEX
 
             formulario.Show();
 
-            formulario.BringToFront();  
+            formulario.BringToFront();
         }
-        
+
 
         private void MostrarInicio()
         {
@@ -119,7 +120,7 @@ namespace EDUSEX
             {
                 control.Dispose();
             }
-                
+
         }
 
         private static void OcultarMenuInterno(Form formulario)
@@ -236,6 +237,12 @@ namespace EDUSEX
         private void FormPrincipal_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+            // aqui quiero que reenderice el nombre del usuario logueado en el label de la parte superior del menu lateral
+            lblName.Text = SesionActual.NombreUsuario;
         }
     }
 }

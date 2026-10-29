@@ -50,7 +50,7 @@
             dgwHospitales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwHospitales.Location = new Point(241, 288);
             dgwHospitales.Name = "dgwHospitales";
-            dgwHospitales.Size = new Size(703, 205);
+            dgwHospitales.Size = new Size(703, 241);
             dgwHospitales.TabIndex = 13;
             dgwHospitales.CellContentClick += dgwHospitales_CellContentClick;
             // 
@@ -58,6 +58,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumPurple;
             ClientSize = new Size(991, 551);
             Controls.Add(dgwHospitales);
             Controls.Add(label1);

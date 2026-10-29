@@ -32,10 +32,10 @@ namespace EDUSEX.Views
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dvgUsuarios = new DataGridView();
             label1 = new Label();
             label3 = new Label();
@@ -73,23 +73,23 @@ namespace EDUSEX.Views
             // 
             // dvgUsuarios
             // 
-            dataGridViewCellStyle3.SelectionBackColor = Color.Purple;
-            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Purple;
+            dvgUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dvgUsuarios.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dvgUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dvgUsuarios.BackgroundColor = SystemColors.Control;
+            dvgUsuarios.BackgroundColor = Color.WhiteSmoke;
             dvgUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dvgUsuarios.GridColor = SystemColors.InactiveBorder;
             dvgUsuarios.Location = new Point(229, 316);
             dvgUsuarios.Name = "dvgUsuarios";
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = SystemColors.ButtonFace;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSlateBlue;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dvgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.ButtonFace;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dvgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dvgUsuarios.Size = new Size(598, 213);
             dvgUsuarios.TabIndex = 0;
             dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
@@ -167,6 +167,7 @@ namespace EDUSEX.Views
             // 
             // txtnombre
             // 
+            txtnombre.Cursor = Cursors.IBeam;
             txtnombre.Location = new Point(40, 34);
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(247, 23);
@@ -192,6 +193,7 @@ namespace EDUSEX.Views
             // btnGuardar
             // 
             btnGuardar.BackColor = Color.FromArgb(159, 89, 182);
+            btnGuardar.Cursor = Cursors.Hand;
             btnGuardar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
             btnGuardar.Location = new Point(139, 207);
@@ -206,6 +208,7 @@ namespace EDUSEX.Views
             // 
             btnEditar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEditar.BackColor = Color.DarkOrchid;
+            btnEditar.Cursor = Cursors.Hand;
             btnEditar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEditar.ForeColor = Color.White;
             btnEditar.Location = new Point(843, 344);
@@ -220,6 +223,7 @@ namespace EDUSEX.Views
             // 
             btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEliminar.BackColor = Color.Tomato;
+            btnEliminar.Cursor = Cursors.Hand;
             btnEliminar.ForeColor = Color.White;
             btnEliminar.Location = new Point(843, 425);
             btnEliminar.Name = "btnEliminar";
@@ -232,6 +236,7 @@ namespace EDUSEX.Views
             // btnLimpiar
             // 
             btnLimpiar.BackColor = Color.Gray;
+            btnLimpiar.Cursor = Cursors.Hand;
             btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
             btnLimpiar.Location = new Point(300, 207);
@@ -263,6 +268,7 @@ namespace EDUSEX.Views
             // 
             // txtTelefono
             // 
+            txtTelefono.Cursor = Cursors.IBeam;
             txtTelefono.Location = new Point(40, 96);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(247, 23);
@@ -292,6 +298,7 @@ namespace EDUSEX.Views
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel1.BackColor = Color.WhiteSmoke;
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
@@ -381,6 +388,7 @@ namespace EDUSEX.Views
             // BtnActualizar
             // 
             BtnActualizar.BackColor = SystemColors.MenuHighlight;
+            BtnActualizar.Cursor = Cursors.Hand;
             BtnActualizar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnActualizar.ForeColor = Color.White;
             BtnActualizar.Location = new Point(476, 207);
@@ -394,12 +402,12 @@ namespace EDUSEX.Views
             // 
             // guna2Button1
             // 
-            guna2Button1.CustomizableEdges = customizableEdges3;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.White;
             guna2Button1.Location = new Point(0, 0);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(180, 45);
             guna2Button1.TabIndex = 0;
             // 
@@ -407,6 +415,7 @@ namespace EDUSEX.Views
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumPurple;
             ClientSize = new Size(981, 541);
             Controls.Add(panel1);
             Controls.Add(btnEliminar);

@@ -173,6 +173,7 @@
             // 
             // IPFecha
             // 
+            IPFecha.Cursor = Cursors.Hand;
             IPFecha.Location = new Point(404, 34);
             IPFecha.Name = "IPFecha";
             IPFecha.Size = new Size(247, 23);
@@ -465,6 +466,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumPurple;
             ClientSize = new Size(981, 541);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnEliminarcita);

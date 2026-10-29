@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label2 = new Label();
             panelLogin = new Panel();
             panel1 = new Panel();
@@ -106,6 +106,7 @@
             // 
             txtUsuario.BackColor = Color.WhiteSmoke;
             txtUsuario.BorderStyle = BorderStyle.None;
+            txtUsuario.Cursor = Cursors.IBeam;
             txtUsuario.Location = new Point(3, 17);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(325, 16);
@@ -154,6 +155,7 @@
             // linkCreateCuenta
             // 
             linkCreateCuenta.AutoSize = true;
+            linkCreateCuenta.Cursor = Cursors.Hand;
             linkCreateCuenta.Location = new Point(110, 505);
             linkCreateCuenta.Name = "linkCreateCuenta";
             linkCreateCuenta.Size = new Size(210, 15);
@@ -165,6 +167,7 @@
             // btnInicioSesion
             // 
             btnInicioSesion.BackColor = Color.DarkViolet;
+            btnInicioSesion.Cursor = Cursors.Hand;
             btnInicioSesion.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicioSesion.ForeColor = SystemColors.ButtonFace;
             btnInicioSesion.Location = new Point(43, 436);
@@ -197,6 +200,7 @@
             // 
             txtPassword.BackColor = Color.WhiteSmoke;
             txtPassword.BorderStyle = BorderStyle.None;
+            txtPassword.Cursor = Cursors.IBeam;
             txtPassword.Location = new Point(1, 17);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(325, 16);
@@ -206,11 +210,11 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.MediumPurple;
-            guna2Panel1.CustomizableEdges = customizableEdges3;
+            guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.Location = new Point(0, 0);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel1.Size = new Size(934, 640);
             guna2Panel1.TabIndex = 5;
             // 
