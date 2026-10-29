@@ -34,18 +34,23 @@ namespace EDUSEX.Models
                     var citaExistente = context.Citas.FirstOrDefault(c => c.IdUsuario == this.IdUsuario && c.FechaCita.Date == this.FechaCita.Date && c.HoraCita == this.HoraCita);
                     if (citaExistente != null)
                     {
-                        throw new InvalidOperationException("Ya existe una cita para este usuario en la misma fecha y hora.");
+                        Dialogresult result = MessageBox.Show("Ya existe una cita para este usuario en la misma fecha y hora. ¿Desea continuar?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (result == DialogResult.No)
+                        {
+                            return;
+                        }
+
+                        context.Citas.Add(this);
+                        context.SaveChanges();
+
                     }
-                    context.Citas.Add(this);
-                    context.SaveChanges();
                 }
                 catch (Exception ex)
                 {
                     
                     throw new Exception("Error al insertar la cita: " + ex.Message);
                 }   
-                context.Citas.Add(this);
-                context.SaveChanges();
+                
             }
         }
 
