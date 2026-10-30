@@ -84,9 +84,9 @@
             btnCloseSesion.FlatStyle = FlatStyle.Flat;
             btnCloseSesion.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCloseSesion.ForeColor = SystemColors.Control;
-            btnCloseSesion.Location = new Point(3, 490);
+            btnCloseSesion.Location = new Point(0, 490);
             btnCloseSesion.Name = "btnCloseSesion";
-            btnCloseSesion.Size = new Size(194, 30);
+            btnCloseSesion.Size = new Size(200, 30);
             btnCloseSesion.TabIndex = 15;
             btnCloseSesion.Text = "Cerrar Sesion";
             btnCloseSesion.UseVisualStyleBackColor = false;
@@ -100,9 +100,9 @@
             btnSoporte.FlatStyle = FlatStyle.Flat;
             btnSoporte.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSoporte.ForeColor = SystemColors.Control;
-            btnSoporte.Location = new Point(3, 431);
+            btnSoporte.Location = new Point(0, 431);
             btnSoporte.Name = "btnSoporte";
-            btnSoporte.Size = new Size(194, 35);
+            btnSoporte.Size = new Size(200, 35);
             btnSoporte.TabIndex = 14;
             btnSoporte.Text = "Soporte IT";
             btnSoporte.UseVisualStyleBackColor = false;
@@ -116,9 +116,9 @@
             btnGuiaEdu.FlatStyle = FlatStyle.Flat;
             btnGuiaEdu.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuiaEdu.ForeColor = SystemColors.Control;
-            btnGuiaEdu.Location = new Point(3, 335);
+            btnGuiaEdu.Location = new Point(0, 347);
             btnGuiaEdu.Name = "btnGuiaEdu";
-            btnGuiaEdu.Size = new Size(194, 35);
+            btnGuiaEdu.Size = new Size(200, 35);
             btnGuiaEdu.TabIndex = 13;
             btnGuiaEdu.Text = "Guia Educativa";
             btnGuiaEdu.UseVisualStyleBackColor = false;
@@ -132,9 +132,9 @@
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUsuarios.ForeColor = SystemColors.Control;
-            btnUsuarios.Location = new Point(3, 150);
+            btnUsuarios.Location = new Point(0, 150);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(194, 33);
+            btnUsuarios.Size = new Size(200, 33);
             btnUsuarios.TabIndex = 12;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = false;
@@ -148,9 +148,9 @@
             btnCitas.FlatStyle = FlatStyle.Flat;
             btnCitas.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCitas.ForeColor = SystemColors.Control;
-            btnCitas.Location = new Point(3, 214);
+            btnCitas.Location = new Point(0, 214);
             btnCitas.Name = "btnCitas";
-            btnCitas.Size = new Size(194, 34);
+            btnCitas.Size = new Size(200, 34);
             btnCitas.TabIndex = 11;
             btnCitas.Text = "Citas";
             btnCitas.UseVisualStyleBackColor = false;
@@ -164,11 +164,11 @@
             btnHospitales.FlatStyle = FlatStyle.Flat;
             btnHospitales.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnHospitales.ForeColor = SystemColors.Control;
-            btnHospitales.Location = new Point(3, 275);
+            btnHospitales.Location = new Point(0, 282);
             btnHospitales.Name = "btnHospitales";
-            btnHospitales.Size = new Size(194, 33);
+            btnHospitales.Size = new Size(200, 33);
             btnHospitales.TabIndex = 10;
-            btnHospitales.Text = "Hospitales";
+            btnHospitales.Text = "Reportes";
             btnHospitales.UseVisualStyleBackColor = false;
             btnHospitales.Click += btnHospitales_Click;
             // 
@@ -200,10 +200,10 @@
             btnInicio.FlatStyle = FlatStyle.Flat;
             btnInicio.Font = new Font("Arial", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicio.ForeColor = SystemColors.Control;
-            btnInicio.Location = new Point(3, 85);
+            btnInicio.Location = new Point(0, 85);
             btnInicio.Name = "btnInicio";
             btnInicio.RightToLeft = RightToLeft.Yes;
-            btnInicio.Size = new Size(194, 33);
+            btnInicio.Size = new Size(200, 33);
             btnInicio.TabIndex = 1;
             btnInicio.Text = "Inicio";
             btnInicio.TextImageRelation = TextImageRelation.TextBeforeImage;
@@ -227,9 +227,8 @@
             lblName.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblName.Location = new Point(537, 70);
             lblName.Name = "lblName";
-            lblName.Size = new Size(52, 27);
+            lblName.Size = new Size(3, 2);
             lblName.TabIndex = 14;
-            lblName.Text = "name";
             lblName.Click += lblName_Click;
             // 
             // FormPrincipal

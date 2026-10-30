@@ -28,10 +28,16 @@ namespace EDUSEX.Views
 
         }
 
-        
+
         private void dgwHospitales_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
-    }   
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            //inprimir reporte de citas de hospitales
+
+        }
+    }
 }

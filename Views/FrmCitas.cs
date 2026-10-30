@@ -87,7 +87,15 @@ namespace EDUSEX.Views
         private void label1_Click(object sender, EventArgs e) { }
         private void panel2_Paint(object sender, PaintEventArgs e) { }
         private void button12_Click(object sender, EventArgs e) { }
-        private void Buscadortxt_TextChanged(object sender, EventArgs e) { }
+        private void Buscadortxt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+
+
+            }
+        }
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e) { }
         private void label5_Click(object sender, EventArgs e) { }
         private void label10_Click(object sender, EventArgs e) { }
@@ -345,7 +353,6 @@ namespace EDUSEX.Views
         {
 
         }
-        // cambios
 
     }
 }

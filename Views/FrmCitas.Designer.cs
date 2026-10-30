@@ -29,7 +29,6 @@
             IPHospitales = new ComboBox();
             lblHospital = new Label();
             IPHoraCita = new DateTimePicker();
-            IPFecha = new DateTimePicker();
             llbfecha = new Label();
             llbapellidos = new Label();
             label6 = new Label();
@@ -56,6 +55,7 @@
             panel8 = new Panel();
             panel7 = new Panel();
             panel6 = new Panel();
+            IPFecha = new DateTimePicker();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)dgwCitas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)hospitalesBindingSource).BeginInit();
@@ -71,7 +71,7 @@
             Buscadortxt.PlaceholderText = "Buscar Usuario o Paciente";
             Buscadortxt.Size = new Size(491, 24);
             Buscadortxt.TabIndex = 8;
-            Buscadortxt.TextChanged += Buscadortxt_TextChanged;
+            Buscadortxt.KeyDown += Buscadortxt_KeyDown;
             // 
             // dgwCitas
             // 
@@ -170,15 +170,6 @@
             IPHoraCita.TabIndex = 22;
             IPHoraCita.Value = new DateTime(2026, 9, 25, 23, 39, 13, 0);
             IPHoraCita.ValueChanged += dateTimePicker2_ValueChanged;
-            // 
-            // IPFecha
-            // 
-            IPFecha.Cursor = Cursors.Hand;
-            IPFecha.Location = new Point(404, 34);
-            IPFecha.Name = "IPFecha";
-            IPFecha.Size = new Size(247, 23);
-            IPFecha.TabIndex = 21;
-            IPFecha.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // llbfecha
             // 
@@ -452,6 +443,15 @@
             panel6.Size = new Size(247, 2);
             panel6.TabIndex = 32;
             // 
+            // IPFecha
+            // 
+            IPFecha.Cursor = Cursors.Hand;
+            IPFecha.Location = new Point(404, 34);
+            IPFecha.Name = "IPFecha";
+            IPFecha.Size = new Size(247, 23);
+            IPFecha.TabIndex = 21;
+            IPFecha.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
@@ -515,7 +515,6 @@
         private ComboBox comboBox2;
         private TextBox Apellidotxt;
         private TextBox Nombretxt;
-        private DateTimePicker IPFecha;
         private ComboBox IPHospitales;
         private Label label4;
         private ComboBox IPMotivocita;
@@ -543,5 +542,6 @@
         private Panel panel7;
         private Panel panel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
+        private DateTimePicker IPFecha;
     }
 }
