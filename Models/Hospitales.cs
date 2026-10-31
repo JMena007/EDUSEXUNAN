@@ -36,6 +36,13 @@ namespace EDUSEX.Models
 
         }
 
+        public static List<Hospitales> ObtenerHospitales()
+        {
+            using (var context = new EDUSEXContext())
+            {
+                return context.Hospitales.ToList();
+            }
+        }
 
         //aqui mostraremos citas de cada hospital
         public void MostrarCitasHospitales ( Citas citas)

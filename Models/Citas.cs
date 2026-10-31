@@ -98,6 +98,31 @@ namespace EDUSEX.Models
             }
         }
 
+        // reporte de cita
+        public static List<CitaReporte> CargarReportePorHospital(int idHospital)
+        {
+            using (var context = new EDUSEXContext())
+            {
+                return (from c in context.Citas
+                        join u in context.Usuarios on c.IdUsuario equals u.IdUsuario
+                        join h in context.Hospitales on c.IdHospital equals h.IdHospital
+                        where c.IdHospital == idHospital
+                        orderby c.FechaCita, c.HoraCita
+                        select new CitaReporte
+                        {
+                            IdCita = c.IdCita,
+                            Paciente = u.Nombres + " " + u.Apellidos,
+                            Cedula = u.Cedula,
+                            Hospital = h.NombreHospital,
+                            FechaCita = c.FechaCita,
+                            HoraCita = c.HoraCita,
+                            Motivo = c.Motivo,
+                            Estado = c.Estado
+                        }).ToList();
+            }
+        }
+
+
         public static List<Citas> CargarCitas()
         {
             using (var context = new EDUSEXContext())

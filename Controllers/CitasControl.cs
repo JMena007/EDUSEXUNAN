@@ -26,6 +26,15 @@ namespace EDUSEX.Controllers
             return Citas.ObtenerCitaPorId(idCita);
         }
 
+        public List<CitaReporte> ObtenerCitasPorUsuario(int idUsuario)
+        {
+            return Citas.CargarReportePorHospital(idUsuario);
+        }
+
+        public List<CitaReporte> CargarReportePorHospital(int idHospital)
+        {
+            return Citas.CargarReportePorHospital(idHospital);
+        }
         public List<Citas> CargarCitas()
         {
             return Citas.CargarCitas();

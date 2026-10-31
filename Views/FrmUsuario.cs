@@ -38,7 +38,7 @@ namespace EDUSEX.Views
 
         private void button8_Click(object sender, EventArgs e)
         {
-            NavigationHelper.Open<FrmHospitales>(this);
+            NavigationHelper.Open<FrmReportes>(this);
         }
 
         private void button9_Click(object sender, EventArgs e)

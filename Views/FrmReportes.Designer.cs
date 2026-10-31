@@ -1,6 +1,6 @@
 ﻿namespace EDUSEX.Views
 {
-    partial class FrmHospitales
+    partial class FrmReportes
     {
         /// <summary>
         /// Required designer variable.
@@ -54,12 +54,12 @@
             // 
             // dgwHospitales
             // 
-            dgwHospitales.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dgwHospitales.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgwHospitales.BackgroundColor = SystemColors.ButtonFace;
             dgwHospitales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwHospitales.Location = new Point(241, 257);
+            dgwHospitales.Location = new Point(241, 230);
             dgwHospitales.Name = "dgwHospitales";
-            dgwHospitales.Size = new Size(600, 260);
+            dgwHospitales.Size = new Size(559, 359);
             dgwHospitales.TabIndex = 13;
             dgwHospitales.CellContentClick += dgwHospitales_CellContentClick;
             // 
@@ -77,7 +77,7 @@
             btnReport.FillColor = Color.Fuchsia;
             btnReport.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReport.ForeColor = Color.White;
-            btnReport.Location = new Point(847, 300);
+            btnReport.Location = new Point(806, 296);
             btnReport.Name = "btnReport";
             btnReport.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnReport.Size = new Size(119, 42);
@@ -118,7 +118,7 @@
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = Color.White;
-            guna2HtmlLabel2.Location = new Point(260, 224);
+            guna2HtmlLabel2.Location = new Point(241, 197);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(148, 27);
             guna2HtmlLabel2.TabIndex = 17;
@@ -129,7 +129,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumPurple;
-            ClientSize = new Size(991, 551);
+            ClientSize = new Size(950, 650);
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(cmbHospitales);
             Controls.Add(guna2HtmlLabel1);

@@ -57,7 +57,7 @@ namespace EDUSEX
 
             btnHospitales.Click += (sender, e) =>
             {
-                MostrarFormulario(new FrmHospitales());
+                MostrarFormulario(new FrmReportes());
             };
 
             btnGuiaEdu.Click += (sender, e) =>
