@@ -24,6 +24,8 @@ namespace EDUSEX.Views
             txtCorreo.KeyDown += CampoTexto_KeyDown;
             txtContraseña.KeyDown += CampoTexto_KeyDown;
             txtConfirmContraseña.KeyDown += CampoTexto_KeyDown;
+            cmbSexo.KeyDown += CampoTexto_KeyDown;
+            nmEdad.KeyDown += CampoTexto_KeyDown;
         }
 
         UsuarioControl usuarioControl = new UsuarioControl();
@@ -33,8 +35,24 @@ namespace EDUSEX.Views
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-                SelectNextControl((Control)sender, true, true, true, true);
+                Control siguiente = ObtenerSiguienteCampo((Control)sender);
+                siguiente?.Focus();
             }
+        }
+
+        private Control ObtenerSiguienteCampo(Control campoActual)
+        {
+            if (campoActual == txtNombres) return txtApellido;
+            if (campoActual == txtApellido) return txtTelefono;
+            if (campoActual == txtTelefono) return txtCorreo;
+            if (campoActual == txtCorreo) return txtCedula;
+            if (campoActual == txtCedula) return txtContraseña;
+            if (campoActual == txtContraseña) return cmbSexo;
+            if (campoActual == cmbSexo) return txtConfirmContraseña;
+            if (campoActual == txtConfirmContraseña) return nmEdad;
+            if (campoActual == nmEdad) return btnCreateUser;
+
+            return null;
         }
 
 

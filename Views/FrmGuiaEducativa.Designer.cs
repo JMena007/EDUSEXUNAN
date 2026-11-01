@@ -201,7 +201,7 @@
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button4.Size = new Size(91, 35);
             guna2Button4.TabIndex = 2;
-            guna2Button4.Text = "Leer Mas";
+            guna2Button4.Text = "Ir a la Web";
             guna2Button4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // guna2PictureBox4
@@ -294,7 +294,7 @@
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges20;
             guna2Button5.Size = new Size(91, 35);
             guna2Button5.TabIndex = 2;
-            guna2Button5.Text = "Leer Mas";
+            guna2Button5.Text = "Ir a la Web";
             guna2Button5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // guna2PictureBox5
@@ -385,7 +385,7 @@
             guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2Button6.Size = new Size(91, 35);
             guna2Button6.TabIndex = 2;
-            guna2Button6.Text = "Leer Mas";
+            guna2Button6.Text = "Ir a la Web";
             guna2Button6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
             // 
             // guna2PictureBox6

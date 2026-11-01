@@ -1,12 +1,5 @@
-﻿using EDUSEX;
-using EDUSEX.conexion;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using EDUSEX.Models;
 using EDUSEX.Controllers;
@@ -23,11 +16,7 @@ namespace EDUSEX.Views
         {
             InitializeComponent();
             ConfigurarGrid();
-            CargarHospitales();
-            MostrarMensaje("Seleccione un hospital para ver sus citas.");
-
-            // Se conecta acá, después de llenar el combo, para que no se dispare al cargarlo
-            cmbhos.SelectedIndexChanged += cmbHospital_SelectedIndexChanged;
+            cmbHospitales.SelectedIndexChanged += cmbHospitales_SelectedIndexChanged;
         }
 
         private void ConfigurarGrid()
@@ -48,42 +37,46 @@ namespace EDUSEX.Views
 
             lista.Insert(0, new Hospitales { IdHospital = 0, NombreHospital = "-- Seleccione un hospital --" });
 
-            cmbHospital.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbHospital.DataSource = lista;
-            cmbHospital.DisplayMember = "NombreHospital";
-            cmbHospital.ValueMember = "IdHospital";
+            cmbHospitales.DataSource = lista;
+            cmbHospitales.DisplayMember = "NombreHospital";
+            cmbHospitales.ValueMember = "IdHospital";
         }
 
-        private void cmbHospital_SelectedIndexChanged(object sender, EventArgs e)
+        private void FrmReporte_Load(object sender, EventArgs e)
         {
-            if (!(cmbHospital.SelectedValue is int idHospital) || idHospital == 0)
+            CargarHospitales();
+        }
+
+        private void cmbHospitales_SelectedIndexChanged(object? sender, EventArgs e)
+        {
+            if (cmbHospitales.SelectedValue is not int idHospital || idHospital == 0)
             {
-                MostrarMensaje("Seleccione un hospital para ver sus citas.");
+                dgwReporte.DataSource = null;
                 return;
             }
 
+            CargarReporte(idHospital);
+        }
+
+       
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            if (cmbHospitales.SelectedValue is not int idHospital || idHospital == 0)
+            {
+                MessageBox.Show("Seleccione un hospital para generar el reporte.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            CargarReporte(idHospital);
+        }
+
+        private void CargarReporte(int idHospital)
+        {
             List<CitaReporte> citas = citasControl.CargarReportePorHospital(idHospital);
 
-            if (citas.Count == 0)
-            {
-                MostrarMensaje("Este hospital no tiene citas agendadas.");
-                return;
-            }
-
-            lblMensaje.Text = "";
             dgwReporte.DataSource = citas;
             FormatearColumnas();
-
-            int confirmadas = citas.Count(c => string.Equals(c.Estado, "Confirmado", StringComparison.OrdinalIgnoreCase));
-            int pendientes = citas.Count(c => string.Equals(c.Estado, "Pendiente", StringComparison.OrdinalIgnoreCase));
-            lblResumen.Text = $"Total: {citas.Count}   |   Confirmadas: {confirmadas}   |   Pendientes: {pendientes}";
-        }
-
-        private void MostrarMensaje(string texto)
-        {
-            dgwReporte.DataSource = null;
-            lblMensaje.Text = texto;
-            lblResumen.Text = "";
         }
 
         private void FormatearColumnas()
@@ -96,5 +89,11 @@ namespace EDUSEX.Views
             dgwReporte.Columns["HoraCita"].HeaderText = "Hora";
             dgwReporte.Columns["HoraCita"].DefaultCellStyle.Format = @"hh\:mm";
         }
+
+        private void dgwReporte_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+       
     }
 }

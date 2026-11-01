@@ -101,12 +101,22 @@ namespace EDUSEX.Models
         // reporte de cita
         public static List<CitaReporte> CargarReportePorHospital(int idHospital)
         {
+            return CargarReportePorHospital(idHospital, null);
+        }
+
+        public static List<CitaReporte> CargarReportePorHospital(int idHospital, DateTime? fecha)
+        {
             using (var context = new EDUSEXContext())
             {
+                DateTime? fechaInicio = fecha?.Date;
+                DateTime? fechaFin = fechaInicio?.AddDays(1);
+
                 return (from c in context.Citas
                         join u in context.Usuarios on c.IdUsuario equals u.IdUsuario
                         join h in context.Hospitales on c.IdHospital equals h.IdHospital
-                        where c.IdHospital == idHospital
+                        where c.IdHospital == idHospital &&
+                              (!fechaInicio.HasValue ||
+                               (c.FechaCita >= fechaInicio.Value && c.FechaCita < fechaFin.Value))
                         orderby c.FechaCita, c.HoraCita
                         select new CitaReporte
                         {

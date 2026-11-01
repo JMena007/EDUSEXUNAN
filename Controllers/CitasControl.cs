@@ -35,6 +35,11 @@ namespace EDUSEX.Controllers
         {
             return Citas.CargarReportePorHospital(idHospital);
         }
+
+        public List<CitaReporte> CargarReportePorHospital(int idHospital, DateTime fecha)
+        {
+            return Citas.CargarReportePorHospital(idHospital, fecha);
+        }
         public List<Citas> CargarCitas()
         {
             return Citas.CargarCitas();

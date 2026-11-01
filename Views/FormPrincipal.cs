@@ -67,6 +67,7 @@ namespace EDUSEX
 
 
             ConfigurarSidebarPorRol();
+            PanelNav.Resize += PanelNav_Resize;
 
             MostrarInicio();
         }
@@ -77,6 +78,45 @@ namespace EDUSEX
             {
                 btnUsuarios.Visible = false;
                 btnHospitales.Visible = false;
+                AjustarSidebarPaciente();
+            }
+        }
+
+        private void PanelNav_Resize(object? sender, EventArgs e)
+        {
+            if (SesionActual.RolUsuario == "Paciente")
+            {
+                AjustarSidebarPaciente();
+            }
+        }
+
+        private void AjustarSidebarPaciente()
+        {
+            Button[] botones =
+            {
+                btnInicio,
+                btnCitas,
+                btnGuiaEdu,
+                btnSoporte,
+                btnCloseSesion
+            };
+
+            const int margenSuperior = 82;
+            const int margenInferior = 10;
+            const int separacion = 6;
+            int espacioDisponible = PanelNav.ClientSize.Height - margenSuperior - margenInferior;
+            int altoBoton = Math.Max(35, (espacioDisponible - separacion * (botones.Length - 1)) / botones.Length);
+            int siguienteY = margenSuperior;
+
+            panel4.Visible = false;
+
+            foreach (Button boton in botones)
+            {
+                boton.Left = 0;
+                boton.Width = PanelNav.ClientSize.Width;
+                boton.Height = altoBoton;
+                boton.Top = siguienteY;
+                siguienteY += altoBoton + separacion;
             }
         }
 

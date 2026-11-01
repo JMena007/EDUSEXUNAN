@@ -92,10 +92,10 @@ namespace EDUSEX.Views
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-
-
+                BuscarUsuario();
             }
         }
+        private void Buscadortxt_TextChanged(object sender, EventArgs e) { }
         private void txtBuscar_KeyDown(object sender, KeyEventArgs e) { }
         private void label5_Click(object sender, EventArgs e) { }
         private void label10_Click(object sender, EventArgs e) { }
@@ -141,41 +141,53 @@ namespace EDUSEX.Views
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e) { }
 
 
-        //  Buscar usuario por cédula o nombre 
-        private void buscadortxt_Keydown(object sender, EventArgs e)
+        // Buscar usuario por cédula o nombre.
+        private void BuscarUsuario()
         {
-            string buscarValue = Buscadortxt.Text.Trim();
-
-            if (string.IsNullOrEmpty(buscarValue))
+            try
             {
-                MessageBox.Show("Ingrese cédula o nombre para buscar.");
-                return;
-            }
+                string buscarValue = Buscadortxt.Text.Trim();
 
-            Usuarios usuario = userControl.BuscarPorCedulaONombre(buscarValue);
-
-            if (usuario == null)
-            {
-                DialogResult respuesta = MessageBox.Show(
-                    "Usuario no encontrado. ¿Desea registrarlo ahora?",
-                    "Usuario no encontrado",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-
-                if (respuesta == DialogResult.Yes)
+                if (string.IsNullOrWhiteSpace(buscarValue))
                 {
-                    SolicitudIrAUsuarios?.Invoke();
+                    MessageBox.Show("Ingrese cédula o nombre para buscar.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Buscadortxt.Focus();
+                    return;
                 }
 
-                idUsuarioSeleccionado = 0;
-                return;
-            }
+                Usuarios usuario = userControl.BuscarPorCedulaONombre(buscarValue);
 
-            idUsuarioSeleccionado = usuario.IdUsuario;
-            Nombretxt.Text = usuario.Nombres;
-            Apellidotxt.Text = usuario.Apellidos;
-            numEdad.Value = usuario.Edad;
-            comboBox2.Text = usuario.Sexo;
+                if (usuario == null)
+                {
+                    DialogResult respuesta = MessageBox.Show(
+                        "Usuario no encontrado. ¿Desea registrarlo ahora?",
+                        "Usuario no encontrado",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        SolicitudIrAUsuarios?.Invoke();
+                    }
+
+                    idUsuarioSeleccionado = 0;
+                    return;
+                }
+
+                idUsuarioSeleccionado = usuario.IdUsuario;
+                Nombretxt.Text = usuario.Nombres;
+                Apellidotxt.Text = usuario.Apellidos;
+                numEdad.Value = Math.Clamp(usuario.Edad, (int)numEdad.Minimum, (int)numEdad.Maximum);
+                comboBox2.Text = usuario.Sexo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"No se pudo buscar el usuario.\nDetalle: {ex.Message}",
+                    "Error de búsqueda",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
@@ -281,24 +293,42 @@ namespace EDUSEX.Views
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Citas cita = citasControl.ObtenerCitaPorId(idCita);
-
-            if (cita == null)
+            try
             {
-                MessageBox.Show("No se encontró la cita.");
-                return;
+                Citas cita = citasControl.ObtenerCitaPorId(idCita);
+
+                if (cita == null)
+                {
+                    MessageBox.Show("No se encontró la cita.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (IPHospitales.SelectedValue == null)
+                {
+                    MessageBox.Show("Seleccione un hospital.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                cita.IdUsuario = idUsuarioSeleccionado;
+                cita.IdHospital = Convert.ToInt32(IPHospitales.SelectedValue);
+                cita.FechaCita = IPFecha.Value.Date;
+                cita.HoraCita = IPHoraCita.Value.TimeOfDay;
+                cita.Motivo = IPMotivocita.Text;
+                cita.Estado = IpEstado.Text;
+
+                citasControl.EditarCita(cita);
+                MessageBox.Show("Cita actualizada correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarCitas(citasControl);
+                LimpiarCampos();
             }
-
-            cita.IdUsuario = idUsuarioSeleccionado;
-            cita.IdHospital = Convert.ToInt32(IPHospitales.SelectedValue);
-            cita.FechaCita = IPFecha.Value.Date;
-            cita.HoraCita = IPHoraCita.Value.TimeOfDay;
-            cita.Motivo = IPMotivocita.Text;
-            cita.Estado = IpEstado.Text;
-
-            citasControl.EditarCita(cita);
-            CargarCitas(citasControl);
-            LimpiarCampos();
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"No se pudo actualizar la cita.\nDetalle: {ex.Message}",
+                    "Error al actualizar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         private void btnEditarcita_Click(object sender, EventArgs e)

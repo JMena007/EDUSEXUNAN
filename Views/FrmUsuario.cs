@@ -273,51 +273,60 @@ namespace EDUSEX.Views
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-            if (idUsuarioEditando == null)
+            try
             {
-                MessageBox.Show("Seleccione un usuario para actualizar.");
-                return;
+                if (idUsuarioEditando == null)
+                {
+                    MessageBox.Show("Seleccione un usuario para actualizar.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;             
+                }
+
+                if (!ValidarCampos())
+                    return;
+
+                Usuarios u = new Usuarios
+                {
+                    IdUsuario = idUsuarioEditando.Value,
+                    Nombres = txtnombre.Text,
+                    Apellidos = txtapellido.Text,
+                    Cedula = txtCedula.Text,
+                    Edad = (int)numEdad.Value,
+                    Sexo = boxsexo.Text,
+                    Telefono = txtTelefono.Text,
+                    Correo = txtCorreo.Text
+                };
+
+                DialogResult confirmacion = MessageBox.Show(
+                    $"¿Está seguro que desea actualizar a {u.Nombres} {u.Apellidos}?",
+                    "Confirmar actualización",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (confirmacion != DialogResult.Yes)
+                    return;
+
+                usuarioControl.Editarusuario(u);
+
+                MessageBox.Show(
+                    "Usuario actualizado correctamente.",
+                    "EDUSEX",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                LimpiarCampos();
+                CargarUsuarios();
+
+                BtnActualizar.Visible = false;
+                btnGuardar.Visible = true;
             }
-
-            if (!ValidarCampos())
-                return;
-
-            Usuarios u = new Usuarios
+            catch (Exception ex)
             {
-                IdUsuario = idUsuarioEditando.Value,
-                Nombres = txtnombre.Text,
-                Apellidos = txtapellido.Text,
-                Cedula = txtCedula.Text,
-                Edad = (int)numEdad.Value,
-                Sexo = boxsexo.Text,
-                Telefono = txtTelefono.Text,
-                Correo = txtCorreo.Text
-            };
-
-            usuarioControl.Editarusuario(u);
-
-            DialogResult confirmacion = MessageBox.Show(
-                $"¿Está seguro que desea actualizar a {u.Nombres} {u.Apellidos}?",
-                "Confirmar actualización",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-            if (confirmacion != DialogResult.Yes)
-            {
-                return;
+                MessageBox.Show(
+                    $"No se pudo actualizar el usuario.\nDetalle: {ex.Message}",
+                    "Error al actualizar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-
-            MessageBox.Show(
-                "Usuario actualizado correctamente.",
-                "EDUSEX",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-
-            LimpiarCampos();
-            CargarUsuarios();
-
-            BtnActualizar.Visible = false;
-            btnGuardar.Visible = true;
         }
     }
 

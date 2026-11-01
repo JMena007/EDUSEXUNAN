@@ -71,6 +71,7 @@
             Buscadortxt.PlaceholderText = "Buscar Usuario o Paciente";
             Buscadortxt.Size = new Size(491, 24);
             Buscadortxt.TabIndex = 8;
+            Buscadortxt.TextChanged += Buscadortxt_TextChanged;
             Buscadortxt.KeyDown += Buscadortxt_KeyDown;
             // 
             // dgwCitas

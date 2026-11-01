@@ -15,6 +15,17 @@ namespace EDUSEX.Views
         public FrmGuiaEducativa()
         {
             InitializeComponent();
+            CargarImagenesEducativas();
+        }
+
+        private void CargarImagenesEducativas()
+        {
+            guna2PictureBox1.Image = Properties.Resources.cartilla_1;
+            guna2PictureBox2.Image = Properties.Resources.Cartilla2;
+            guna2PictureBox3.Image = Properties.Resources._3;
+            guna2PictureBox4.Image = Properties.Resources.cartilla_1;
+            guna2PictureBox5.Image = Properties.Resources.Cartilla2;
+            guna2PictureBox6.Image = Properties.Resources._3;
         }
 
 

@@ -33,16 +33,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
-            dgwHospitales = new DataGridView();
+            dgwReporte = new DataGridView();
             btnReport = new Guna.UI2.WinForms.Guna2Button();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             cmbHospitales = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            ((System.ComponentModel.ISupportInitialize)dgwHospitales).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgwReporte).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label1.AutoSize = true;
             label1.Font = new Font("Arial Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
@@ -52,16 +53,16 @@
             label1.TabIndex = 12;
             label1.Text = "Reportes por Hospitales";
             // 
-            // dgwHospitales
+            // dgwReporte
             // 
-            dgwHospitales.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgwHospitales.BackgroundColor = SystemColors.ButtonFace;
-            dgwHospitales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgwHospitales.Location = new Point(241, 230);
-            dgwHospitales.Name = "dgwHospitales";
-            dgwHospitales.Size = new Size(559, 359);
-            dgwHospitales.TabIndex = 13;
-            dgwHospitales.CellContentClick += dgwHospitales_CellContentClick;
+            dgwReporte.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgwReporte.BackgroundColor = SystemColors.ButtonFace;
+            dgwReporte.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgwReporte.Location = new Point(241, 230);
+            dgwReporte.Name = "dgwReporte";
+            dgwReporte.Size = new Size(559, 359);
+            dgwReporte.TabIndex = 13;
+            dgwReporte.CellContentClick += dgwReporte_CellContentClick;
             // 
             // btnReport
             // 
@@ -77,7 +78,7 @@
             btnReport.FillColor = Color.Fuchsia;
             btnReport.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReport.ForeColor = Color.White;
-            btnReport.Location = new Point(806, 296);
+            btnReport.Location = new Point(806, 337);
             btnReport.Name = "btnReport";
             btnReport.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnReport.Size = new Size(119, 42);
@@ -87,6 +88,7 @@
             // 
             // guna2HtmlLabel1
             // 
+            guna2HtmlLabel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel1.ForeColor = Color.White;
@@ -98,6 +100,7 @@
             // 
             // cmbHospitales
             // 
+            cmbHospitales.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             cmbHospitales.BackColor = Color.Transparent;
             cmbHospitales.CustomizableEdges = customizableEdges3;
             cmbHospitales.DrawMode = DrawMode.OwnerDrawFixed;
@@ -124,7 +127,7 @@
             guna2HtmlLabel2.TabIndex = 17;
             guna2HtmlLabel2.Text = "Citas registradas";
             // 
-            // FrmHospitales
+            // FrmReportes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -134,13 +137,13 @@
             Controls.Add(cmbHospitales);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnReport);
-            Controls.Add(dgwHospitales);
+            Controls.Add(dgwReporte);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmHospitales";
+            Name = "FrmReportes";
             Text = "Hospitales";
-            Load += FrmHospitales_Load;
-            ((System.ComponentModel.ISupportInitialize)dgwHospitales).EndInit();
+            Load += FrmReporte_Load;
+            ((System.ComponentModel.ISupportInitialize)dgwReporte).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -148,7 +151,7 @@
 
         #endregion
         private Label label1;
-        private DataGridView dgwHospitales;
+        private DataGridView dgwReporte;
         private Guna.UI2.WinForms.Guna2Button btnReport;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2ComboBox cmbHospitales;
