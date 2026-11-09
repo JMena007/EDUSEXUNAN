@@ -102,6 +102,7 @@ namespace EDUSEX.Views
             RolesControl rolesControl = new RolesControl();
 
             SesionActual.IdUsuarioLogueado = credencial.IdUsuario;
+            SesionActual.NombreUsuario = $"{credencial.Nombres} {credencial.Apellidos}";
             SesionActual.RolUsuario = rolesControl.ObtenerNombreRol(usuarioLogueado.IdRol);
 
             FormPrincipal formPrincipal = new FormPrincipal(this);

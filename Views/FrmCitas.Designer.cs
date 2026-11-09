@@ -18,7 +18,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             Buscadortxt = new TextBox();
             dgwCitas = new DataGridView();
             hospitalesBindingSource = new BindingSource(components);
@@ -57,6 +57,7 @@
             panel6 = new Panel();
             IPFecha = new DateTimePicker();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            panel14 = new Panel();
             ((System.ComponentModel.ISupportInitialize)dgwCitas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)hospitalesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
@@ -77,16 +78,18 @@
             // dgwCitas
             // 
             dgwCitas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dgwCitas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgwCitas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgwCitas.BackgroundColor = SystemColors.ButtonHighlight;
             dgwCitas.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgwCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwCitas.Location = new Point(217, 352);
             dgwCitas.Name = "dgwCitas";
@@ -99,11 +102,13 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Arial", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
             label3.Location = new Point(226, 331);
             label3.Name = "label3";
             label3.Size = new Size(125, 18);
             label3.TabIndex = 20;
             label3.Text = "Citas Agendadas";
+            label3.Click += label3_Click_1;
             // 
             // btnEditarcita
             // 
@@ -163,10 +168,11 @@
             // 
             // IPHoraCita
             // 
-            IPHoraCita.CustomFormat = " tt";
+            IPHoraCita.CustomFormat = " h: mm tt";
             IPHoraCita.Format = DateTimePickerFormat.Custom;
             IPHoraCita.Location = new Point(293, 170);
             IPHoraCita.Name = "IPHoraCita";
+            IPHoraCita.ShowUpDown = true;
             IPHoraCita.Size = new Size(87, 23);
             IPHoraCita.TabIndex = 22;
             IPHoraCita.Value = new DateTime(2026, 9, 25, 23, 39, 13, 0);
@@ -457,11 +463,20 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.White;
             guna2HtmlLabel1.Location = new Point(255, 23);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(53, 23);
             guna2HtmlLabel1.TabIndex = 29;
             guna2HtmlLabel1.Text = "Buscar";
+            // 
+            // panel14
+            // 
+            panel14.BackColor = Color.FromArgb(159, 89, 182);
+            panel14.Location = new Point(325, 44);
+            panel14.Name = "panel14";
+            panel14.Size = new Size(491, 2);
+            panel14.TabIndex = 33;
             // 
             // FrmCitas
             // 
@@ -469,6 +484,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumPurple;
             ClientSize = new Size(981, 541);
+            Controls.Add(panel14);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnEliminarcita);
             Controls.Add(btnEditarcita);
@@ -544,5 +560,6 @@
         private Panel panel6;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private DateTimePicker IPFecha;
+        private Panel panel14;
     }
 }

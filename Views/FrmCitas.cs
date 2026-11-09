@@ -66,6 +66,7 @@ namespace EDUSEX.Views
         private void FrmCitas_Load(object sender, EventArgs e)
         {
             btnActualizar.Visible = false;
+            ConfigurarPorRol();
 
             using (var context = new EDUSEXContext())
             {
@@ -81,7 +82,10 @@ namespace EDUSEX.Views
 
         private void ConfigurarPorRol()
         {
-            // pendiente para 28/10
+            bool esPaciente = string.Equals(SesionActual.RolUsuario, "Paciente", StringComparison.OrdinalIgnoreCase);
+
+            Buscadortxt.Visible = !esPaciente;
+            guna2HtmlLabel1.Visible = !esPaciente;
         }
 
         private void label1_Click(object sender, EventArgs e) { }
@@ -384,5 +388,9 @@ namespace EDUSEX.Views
 
         }
 
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

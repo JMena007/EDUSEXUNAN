@@ -65,15 +65,20 @@ namespace EDUSEX.Models
 
         public void EliminarUsuario()
         {
-            // verificar antes de eliminar usuario si tiene citas asociadas 
-            // en tal caso hacer un dialog y que el admin decida si eliminarlo o no
-
-
             using (var context = new EDUSEXContext())
             {
                 var usuario = context.Usuarios.Find(this.IdUsuario);
                 if (usuario != null)
                 {
+                    var citasUsuario = context.Citas
+                        .Where(c => c.IdUsuario == this.IdUsuario)
+                        .ToList();
+
+                    if (citasUsuario.Count > 0)
+                    {
+                        context.Citas.RemoveRange(citasUsuario);
+                    }
+
                     context.Usuarios.Remove(usuario);
                     context.SaveChanges();
                 }

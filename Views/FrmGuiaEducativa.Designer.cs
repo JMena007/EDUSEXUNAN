@@ -111,10 +111,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Arial Narrow", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Arial Black", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(523, 20);
             label1.Name = "label1";
-            label1.Size = new Size(140, 25);
+            label1.Size = new Size(187, 30);
             label1.TabIndex = 12;
             label1.Text = "Guia Educativa";
             label1.Click += label1_Click;

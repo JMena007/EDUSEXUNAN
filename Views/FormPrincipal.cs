@@ -69,6 +69,7 @@ namespace EDUSEX
             ConfigurarSidebarPorRol();
             PanelNav.Resize += PanelNav_Resize;
 
+            lblName.Visible = false;
             MostrarInicio();
         }
 
@@ -124,6 +125,8 @@ namespace EDUSEX
         {
             LimpiarContenido();
 
+            lblName.Visible = false;
+
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
@@ -146,6 +149,11 @@ namespace EDUSEX
         {
             LimpiarContenido();
 
+            string nombre = string.IsNullOrWhiteSpace(SesionActual.NombreUsuario)
+                ? "Usuario"
+                : SesionActual.NombreUsuario;
+
+            label1.Text = $"Bienvenidos {nombre} a EDUSEX Nicaragua";
             label1.Visible = true;
 
             label1.BringToFront();
@@ -281,8 +289,6 @@ namespace EDUSEX
 
         private void lblName_Click(object sender, EventArgs e)
         {
-            // aqui quiero que reenderice el nombre del usuario logueado en el label de la parte superior del menu lateral
-            lblName.Text = SesionActual.NombreUsuario;
         }
     }
 }

@@ -22,7 +22,22 @@ namespace EDUSEX.Controllers
 
         public void Editarusuario(Usuarios usuario)
         {
-            usuario.EditarUsuario();
+            Usuarios usuarioExistente = Usuarios.ObtenerUsuarioPorId(usuario.IdUsuario);
+
+            if (usuarioExistente == null)
+            {
+                throw new InvalidOperationException("No se encontró el usuario que se desea actualizar.");
+            }
+
+            usuarioExistente.Nombres = usuario.Nombres;
+            usuarioExistente.Apellidos = usuario.Apellidos;
+            usuarioExistente.Cedula = usuario.Cedula;
+            usuarioExistente.Edad = usuario.Edad;
+            usuarioExistente.Sexo = usuario.Sexo;
+            usuarioExistente.Telefono = usuario.Telefono;
+            usuarioExistente.Correo = usuario.Correo;
+
+            usuarioExistente.EditarUsuario();
         }
 
         public void EliminarUsuario(int idUsuario)
