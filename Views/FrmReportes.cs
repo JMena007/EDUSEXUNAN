@@ -141,7 +141,7 @@ namespace EDUSEX.Views
                 Trimming = StringTrimming.EllipsisCharacter
             };
 
-            e.Graphics.DrawString("Reporte de citas por hospital", titulo, Brushes.Black, e.MarginBounds.Left, posicionY);
+            e.Graphics.DrawString("Reporte de Citas", titulo, Brushes.Black, e.MarginBounds.Left, posicionY);
             posicionY += 28;
             e.Graphics.DrawString($"Hospital: {cmbHospitales.Text}", texto, Brushes.Black, e.MarginBounds.Left, posicionY);
             posicionY += 18;
