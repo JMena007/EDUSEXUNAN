@@ -39,11 +39,10 @@ namespace EDUSEX.Models
                         {
                             return;
                         }
-
-                        context.Citas.Add(this);
-                        context.SaveChanges();
-
                     }
+
+                    context.Citas.Add(this);
+                    context.SaveChanges();
                 }
                 catch (Exception ex)
                 {

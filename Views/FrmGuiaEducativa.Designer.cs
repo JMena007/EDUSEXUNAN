@@ -204,6 +204,7 @@
             guna2Button4.TabIndex = 2;
             guna2Button4.Text = "Ir a la Web";
             guna2Button4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // guna2PictureBox4
             // 
@@ -297,6 +298,7 @@
             guna2Button5.TabIndex = 2;
             guna2Button5.Text = "Ir a la Web";
             guna2Button5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // guna2PictureBox5
             // 

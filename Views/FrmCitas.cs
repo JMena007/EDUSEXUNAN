@@ -86,6 +86,11 @@ namespace EDUSEX.Views
 
             Buscadortxt.Visible = !esPaciente;
             guna2HtmlLabel1.Visible = !esPaciente;
+
+            if (esPaciente)
+            {
+                idUsuarioSeleccionado = SesionActual.IdUsuarioLogueado;
+            }
         }
 
         private void label1_Click(object sender, EventArgs e) { }

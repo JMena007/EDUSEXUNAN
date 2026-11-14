@@ -60,5 +60,27 @@ namespace EDUSEX.Views
                 UseShellExecute = true
             });
         }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            string url = "https://www.who.int/es/news-room/fact-sheets/detail/comprehensive-sexuality-education";
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            string url = "https://www.unesco.org/es/health-education/cse";
+
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
     }
 }

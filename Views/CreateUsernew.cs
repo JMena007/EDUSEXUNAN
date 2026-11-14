@@ -97,21 +97,12 @@ namespace EDUSEX.Views
                 Sexo = cmbSexo.Text,
                 Telefono = txtTelefono.Text.Trim(),
                 Correo = txtCorreo.Text.Trim(),
+                PasswordHash = txtContraseña.Text,
+                Activo = true,
                 IdRol = 3
             };
 
             usuarioControl.InsertarUsuario(nuevoUsuario);
-
-            // Trae el Id recién generado, para vincularlo a Credenciales
-            Usuarios usuarioCreado = usuarioControl.BuscarPorCedulaONombre(nuevoUsuario.Cedula);
-
-            // Crea el acceso — SIEMPRE rol Paciente (IdRol = 3), nunca elegido por el usuario (RF-02)
-            Usuarios nuevaCredencial = new Usuarios
-            {
-                IdUsuario = usuarioCreado.IdUsuario,
-                PasswordHash = txtContraseña.Text,
-                Activo = true
-            };
 
             MessageBox.Show("Cuenta creada exitosamente. Ya puede iniciar sesión.");
             this.Close();

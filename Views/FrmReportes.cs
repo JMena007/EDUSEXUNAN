@@ -80,15 +80,18 @@ namespace EDUSEX.Views
                 documento.BeginPrint += Documento_BeginPrint;
                 documento.PrintPage += Documento_PrintPage;
 
-                using PrintPreviewDialog vistaPrevia = new PrintPreviewDialog
+                using PrintDialog dialogoImpresion = new PrintDialog
                 {
                     Document = documento,
-                    Width = 1100,
-                    Height = 750,
-                    UseAntiAlias = true
+                    UseEXDialog = true,
+                    AllowSomePages = true,
+                    AllowSelection = false
                 };
 
-                vistaPrevia.ShowDialog(this);
+                if (dialogoImpresion.ShowDialog(this) == DialogResult.OK)
+                {
+                    documento.Print();
+                }
             }
             catch (Exception ex)
             {
