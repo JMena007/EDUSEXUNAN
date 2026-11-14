@@ -18,7 +18,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             Buscadortxt = new TextBox();
             dgwCitas = new DataGridView();
             hospitalesBindingSource = new BindingSource(components);
@@ -47,6 +47,7 @@
             btnActualizar = new Button();
             panel1 = new Panel();
             panelcita = new Panel();
+            btnRelleno = new Button();
             panel13 = new Panel();
             panel12 = new Panel();
             panel11 = new Panel();
@@ -82,14 +83,14 @@
             dgwCitas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgwCitas.BackgroundColor = SystemColors.ButtonHighlight;
             dgwCitas.BorderStyle = BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Control;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.ControlLightLight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgwCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgwCitas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgwCitas.Location = new Point(217, 352);
             dgwCitas.Name = "dgwCitas";
@@ -352,6 +353,7 @@
             panelcita.BackColor = SystemColors.ButtonFace;
             panelcita.BorderStyle = BorderStyle.FixedSingle;
             panelcita.Controls.Add(panel13);
+            panelcita.Controls.Add(btnRelleno);
             panelcita.Controls.Add(panel12);
             panelcita.Controls.Add(panel11);
             panelcita.Controls.Add(panel10);
@@ -383,8 +385,23 @@
             panelcita.Controls.Add(lblhora);
             panelcita.Location = new Point(217, 64);
             panelcita.Name = "panelcita";
-            panelcita.Size = new Size(714, 264);
+            panelcita.Size = new Size(752, 264);
             panelcita.TabIndex = 28;
+            // 
+            // btnRelleno
+            // 
+            btnRelleno.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnRelleno.BackColor = Color.Blue;
+            btnRelleno.Cursor = Cursors.Hand;
+            btnRelleno.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRelleno.ForeColor = Color.White;
+            btnRelleno.Location = new Point(659, 4);
+            btnRelleno.Name = "btnRelleno";
+            btnRelleno.Size = new Size(88, 27);
+            btnRelleno.TabIndex = 41;
+            btnRelleno.Text = "Autorellenar";
+            btnRelleno.UseVisualStyleBackColor = false;
+            btnRelleno.Click += btnRelleno_Click;
             // 
             // panel13
             // 
@@ -561,5 +578,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private DateTimePicker IPFecha;
         private Panel panel14;
+        private Button btnRelleno;
     }
 }

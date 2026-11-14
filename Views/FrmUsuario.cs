@@ -83,6 +83,10 @@ namespace EDUSEX.Views
                 return;
             }
 
+            txtpass.Visible = false;
+            lblpass.Visible = false;
+            panelpass.Visible = false;
+
             Usuarios usuario = (Usuarios)dvgUsuarios.CurrentRow.DataBoundItem;
 
             idUsuarioEditando = usuario.IdUsuario;
@@ -153,7 +157,7 @@ namespace EDUSEX.Views
 
         private void boxsexo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Sin alertas en tiempo real
+
         }
 
         // Validación centralizada: se llama SOLO al guardar/insertar/editar
@@ -209,32 +213,45 @@ namespace EDUSEX.Views
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (!ValidarCampos())
-                return;
-
-
-            if (idUsuarioEditando == null && usuarioControl.CedulaExiste(txtCedula.Text.Trim()))
+            try
             {
-                MessageBox.Show("Ya existe un usuario registrado con esta cédula.");
-                return;
-            }
+                if (!ValidarCampos())
+                    return;
 
-            Usuarios u = new Usuarios();
+                if (idUsuarioEditando == null && usuarioControl.CedulaExiste(txtCedula.Text.Trim()))
+                {
+                    MessageBox.Show("Ya existe un usuario registrado con esta cédula.");
+                    return;
+                }
+
+                Usuarios u = new Usuarios
+                {
+                    Nombres = txtnombre.Text.Trim(),
+                    Apellidos = txtapellido.Text.Trim(),
+                    Cedula = txtCedula.Text.Trim(),
+                    Edad = (int)numEdad.Value,
+                    Sexo = boxsexo.Text.Trim(),
+                    Telefono = txtTelefono.Text.Trim(),
+                    Correo = txtCorreo.Text.Trim(),
+                    PasswordHash = txtpass.Text.Trim(),
+                    Activo = true,
+                    IdRol = 3
+                };
+
+                usuarioControl.InsertarUsuario(u);
+
+                MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimpiarCampos();
+                CargarUsuarios();
+            }
+            catch (Exception ex)
             {
-                u.Nombres = txtnombre.Text;
-                u.Apellidos = txtapellido.Text;
-                u.Cedula = txtCedula.Text;
-                u.Edad = (int)numEdad.Value;
-                u.Sexo = boxsexo.Text;
-                u.Telefono = txtTelefono.Text;
-                u.Correo = txtCorreo.Text;
+                MessageBox.Show(
+                    $"No se pudo guardar el usuario.\nDetalle: {ex.Message}",
+                    "Error al guardar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-            
-            usuarioControl.InsertarUsuario(u);
-
-            MessageBox.Show("Usuario guardado correctamente.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            LimpiarCampos();
-            CargarUsuarios();
 
         }
 
@@ -273,12 +290,14 @@ namespace EDUSEX.Views
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
+
+
             try
             {
                 if (idUsuarioEditando == null)
                 {
                     MessageBox.Show("Seleccione un usuario para actualizar.", "EDUSEX", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;             
+                    return;
                 }
 
                 if (!ValidarCampos())
@@ -328,6 +347,34 @@ namespace EDUSEX.Views
                     MessageBoxIcon.Error);
             }
         }
-    }
 
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRelleno_Click(object sender, EventArgs e)
+        {
+          try 
+          {                
+                  
+             Usuarios usuario = (Usuarios)dvgUsuarios.CurrentRow.DataBoundItem;
+
+             idUsuarioEditando = usuario.IdUsuario;
+
+              txtnombre.Text = usuario.Nombres;
+              txtapellido.Text = usuario.Apellidos;
+             txtCedula.Text = usuario.Cedula;
+             numEdad.Value = usuario.Edad;
+             boxsexo.Text = usuario.Sexo;
+             txtTelefono.Text = usuario.Telefono;
+             txtCorreo.Text = usuario.Correo;
+          }catch (Exception ex){
+
+                MessageBox.Show($"Error al rellenar los campos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+          }
+        }
+
+    }
 }

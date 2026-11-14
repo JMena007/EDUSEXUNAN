@@ -57,6 +57,9 @@ namespace EDUSEX.Views
             numEdad = new NumericUpDown();
             boxsexo = new ComboBox();
             panel1 = new Panel();
+            panelpass = new Panel();
+            txtpass = new TextBox();
+            lblpass = new Label();
             panel8 = new Panel();
             panel7 = new Panel();
             panel6 = new Panel();
@@ -90,7 +93,7 @@ namespace EDUSEX.Views
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dvgUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dvgUsuarios.Size = new Size(598, 213);
+            dvgUsuarios.Size = new Size(598, 223);
             dvgUsuarios.TabIndex = 0;
             dvgUsuarios.CellContentClick += dvgUsuarios_CellContentClick;
             // 
@@ -109,7 +112,7 @@ namespace EDUSEX.Views
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(38, 16);
+            label3.Location = new Point(19, 28);
             label3.Name = "label3";
             label3.Size = new Size(53, 15);
             label3.TabIndex = 7;
@@ -119,7 +122,7 @@ namespace EDUSEX.Views
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(406, 16);
+            label4.Location = new Point(311, 28);
             label4.Name = "label4";
             label4.Size = new Size(52, 15);
             label4.TabIndex = 8;
@@ -129,7 +132,7 @@ namespace EDUSEX.Views
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(406, 78);
+            label5.Location = new Point(311, 85);
             label5.Name = "label5";
             label5.Size = new Size(44, 15);
             label5.TabIndex = 9;
@@ -139,7 +142,7 @@ namespace EDUSEX.Views
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(406, 140);
+            label6.Location = new Point(579, 85);
             label6.Name = "label6";
             label6.Size = new Size(35, 15);
             label6.TabIndex = 10;
@@ -150,7 +153,7 @@ namespace EDUSEX.Views
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(543, 140);
+            label7.Location = new Point(579, 164);
             label7.Name = "label7";
             label7.Size = new Size(33, 15);
             label7.TabIndex = 11;
@@ -160,7 +163,7 @@ namespace EDUSEX.Views
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(40, 78);
+            label8.Location = new Point(18, 90);
             label8.Name = "label8";
             label8.Size = new Size(56, 15);
             label8.TabIndex = 12;
@@ -169,7 +172,7 @@ namespace EDUSEX.Views
             // txtnombre
             // 
             txtnombre.Cursor = Cursors.IBeam;
-            txtnombre.Location = new Point(40, 34);
+            txtnombre.Location = new Point(21, 46);
             txtnombre.Name = "txtnombre";
             txtnombre.Size = new Size(247, 23);
             txtnombre.TabIndex = 13;
@@ -177,7 +180,7 @@ namespace EDUSEX.Views
             // 
             // txtCedula
             // 
-            txtCedula.Location = new Point(406, 96);
+            txtCedula.Location = new Point(311, 103);
             txtCedula.Name = "txtCedula";
             txtCedula.Size = new Size(247, 23);
             txtCedula.TabIndex = 15;
@@ -185,7 +188,7 @@ namespace EDUSEX.Views
             // 
             // txtapellido
             // 
-            txtapellido.Location = new Point(410, 34);
+            txtapellido.Location = new Point(311, 46);
             txtapellido.Name = "txtapellido";
             txtapellido.Size = new Size(247, 23);
             txtapellido.TabIndex = 16;
@@ -197,7 +200,7 @@ namespace EDUSEX.Views
             btnGuardar.Cursor = Cursors.Hand;
             btnGuardar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(139, 207);
+            btnGuardar.Location = new Point(77, 217);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(100, 38);
             btnGuardar.TabIndex = 19;
@@ -240,7 +243,7 @@ namespace EDUSEX.Views
             btnLimpiar.Cursor = Cursors.Hand;
             btnLimpiar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
-            btnLimpiar.Location = new Point(300, 207);
+            btnLimpiar.Location = new Point(306, 217);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(100, 38);
             btnLimpiar.TabIndex = 22;
@@ -252,7 +255,7 @@ namespace EDUSEX.Views
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(40, 140);
+            label9.Location = new Point(15, 161);
             label9.Name = "label9";
             label9.Size = new Size(45, 15);
             label9.TabIndex = 23;
@@ -261,7 +264,7 @@ namespace EDUSEX.Views
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(41, 157);
+            txtCorreo.Location = new Point(16, 178);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(247, 23);
             txtCorreo.TabIndex = 24;
@@ -270,7 +273,7 @@ namespace EDUSEX.Views
             // txtTelefono
             // 
             txtTelefono.Cursor = Cursors.IBeam;
-            txtTelefono.Location = new Point(40, 96);
+            txtTelefono.Location = new Point(18, 108);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(247, 23);
             txtTelefono.TabIndex = 25;
@@ -278,7 +281,7 @@ namespace EDUSEX.Views
             // 
             // numEdad
             // 
-            numEdad.Location = new Point(543, 158);
+            numEdad.Location = new Point(579, 182);
             numEdad.Minimum = new decimal(new int[] { 16, 0, 0, 0 });
             numEdad.Name = "numEdad";
             numEdad.Size = new Size(110, 23);
@@ -289,10 +292,10 @@ namespace EDUSEX.Views
             // 
             boxsexo.DropDownStyle = ComboBoxStyle.DropDownList;
             boxsexo.FormattingEnabled = true;
-            boxsexo.Items.AddRange(new object[] { "Seleccionar", "Masculino", "femenino", "No Binarie", "Otros" });
-            boxsexo.Location = new Point(403, 158);
+            boxsexo.Items.AddRange(new object[] { "", "Masculino", "femenino", "No Binarie", "Otros" });
+            boxsexo.Location = new Point(579, 103);
             boxsexo.Name = "boxsexo";
-            boxsexo.Size = new Size(103, 23);
+            boxsexo.Size = new Size(110, 23);
             boxsexo.TabIndex = 27;
             boxsexo.SelectedIndexChanged += boxsexo_SelectedIndexChanged;
             // 
@@ -301,6 +304,9 @@ namespace EDUSEX.Views
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.WhiteSmoke;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(panelpass);
+            panel1.Controls.Add(txtpass);
+            panel1.Controls.Add(lblpass);
             panel1.Controls.Add(panel8);
             panel1.Controls.Add(panel7);
             panel1.Controls.Add(panel6);
@@ -327,13 +333,38 @@ namespace EDUSEX.Views
             panel1.Controls.Add(label7);
             panel1.Location = new Point(229, 41);
             panel1.Name = "panel1";
-            panel1.Size = new Size(714, 251);
+            panel1.Size = new Size(740, 269);
             panel1.TabIndex = 28;
+            // 
+            // panelpass
+            // 
+            panelpass.BackColor = Color.FromArgb(159, 89, 182);
+            panelpass.Location = new Point(308, 203);
+            panelpass.Name = "panelpass";
+            panelpass.Size = new Size(244, 2);
+            panelpass.TabIndex = 37;
+            // 
+            // txtpass
+            // 
+            txtpass.Location = new Point(306, 182);
+            txtpass.Name = "txtpass";
+            txtpass.Size = new Size(247, 23);
+            txtpass.TabIndex = 39;
+            // 
+            // lblpass
+            // 
+            lblpass.AutoSize = true;
+            lblpass.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblpass.Location = new Point(311, 161);
+            lblpass.Name = "lblpass";
+            lblpass.Size = new Size(69, 15);
+            lblpass.TabIndex = 35;
+            lblpass.Text = "Contraseña";
             // 
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(159, 89, 182);
-            panel8.Location = new Point(547, 179);
+            panel8.Location = new Point(583, 203);
             panel8.Name = "panel8";
             panel8.Size = new Size(104, 2);
             panel8.TabIndex = 34;
@@ -341,15 +372,15 @@ namespace EDUSEX.Views
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(159, 89, 182);
-            panel7.Location = new Point(403, 177);
+            panel7.Location = new Point(582, 123);
             panel7.Name = "panel7";
-            panel7.Size = new Size(102, 2);
+            panel7.Size = new Size(109, 2);
             panel7.TabIndex = 33;
             // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(159, 89, 182);
-            panel6.Location = new Point(410, 55);
+            panel6.Location = new Point(314, 67);
             panel6.Name = "panel6";
             panel6.Size = new Size(244, 2);
             panel6.TabIndex = 30;
@@ -357,7 +388,7 @@ namespace EDUSEX.Views
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(159, 89, 182);
-            panel5.Location = new Point(407, 117);
+            panel5.Location = new Point(312, 124);
             panel5.Name = "panel5";
             panel5.Size = new Size(244, 2);
             panel5.TabIndex = 32;
@@ -365,7 +396,7 @@ namespace EDUSEX.Views
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(159, 89, 182);
-            panel4.Location = new Point(41, 179);
+            panel4.Location = new Point(16, 200);
             panel4.Name = "panel4";
             panel4.Size = new Size(244, 2);
             panel4.TabIndex = 31;
@@ -373,7 +404,7 @@ namespace EDUSEX.Views
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(159, 89, 182);
-            panel3.Location = new Point(41, 117);
+            panel3.Location = new Point(19, 129);
             panel3.Name = "panel3";
             panel3.Size = new Size(244, 2);
             panel3.TabIndex = 30;
@@ -381,7 +412,7 @@ namespace EDUSEX.Views
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(159, 89, 182);
-            panel2.Location = new Point(43, 55);
+            panel2.Location = new Point(24, 67);
             panel2.Name = "panel2";
             panel2.Size = new Size(244, 2);
             panel2.TabIndex = 29;
@@ -392,7 +423,7 @@ namespace EDUSEX.Views
             BtnActualizar.Cursor = Cursors.Hand;
             BtnActualizar.Font = new Font("Arial", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnActualizar.ForeColor = Color.White;
-            BtnActualizar.Location = new Point(476, 207);
+            BtnActualizar.Location = new Point(512, 217);
             BtnActualizar.Name = "BtnActualizar";
             BtnActualizar.Size = new Size(100, 38);
             BtnActualizar.TabIndex = 28;
@@ -504,5 +535,8 @@ namespace EDUSEX.Views
         private Panel panel4;
         private Panel panel3;
         private Panel panel2;
+        private Panel panelpass;
+        private Label lblpass;
+        private TextBox txtpass;
     }
 }

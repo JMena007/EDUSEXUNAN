@@ -86,10 +86,13 @@ namespace EDUSEX.Views
 
             Buscadortxt.Visible = !esPaciente;
             guna2HtmlLabel1.Visible = !esPaciente;
+            btnRelleno.Visible = false;
 
             if (esPaciente)
             {
                 idUsuarioSeleccionado = SesionActual.IdUsuarioLogueado;
+                Usuarios usuario = userControl.ObtenerUsuarioPorId(SesionActual.IdUsuarioLogueado);
+                btnRelleno.Visible = usuario?.IdRol == 3;
             }
         }
 
@@ -396,6 +399,33 @@ namespace EDUSEX.Views
         private void label3_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRelleno_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Usuarios usuario = userControl.ObtenerUsuarioPorId(SesionActual.IdUsuarioLogueado);
+
+                if (usuario == null || usuario.IdRol != 3)
+                {
+                    btnRelleno.Visible = false;
+                }
+
+                idUsuarioSeleccionado = usuario.IdUsuario;
+                Nombretxt.Text = usuario.Nombres;
+                Apellidotxt.Text = usuario.Apellidos;
+                numEdad.Value = Math.Clamp(usuario.Edad, (int)numEdad.Minimum, (int)numEdad.Maximum);
+                comboBox2.Text = usuario.Sexo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"No se pudieron autorellenar los datos.\nDetalle: {ex.Message}",
+                    "Error de autocompletado",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
     }
 }

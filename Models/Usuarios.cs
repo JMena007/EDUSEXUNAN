@@ -50,7 +50,7 @@ namespace EDUSEX.Models
             using (var context = new EDUSEXContext())
             {
                 context.Usuarios.Add(this);
-                context.SaveChanges();
+                context.SaveChanges(); 
             }
         }
 
