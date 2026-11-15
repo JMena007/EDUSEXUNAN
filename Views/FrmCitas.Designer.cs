@@ -47,8 +47,8 @@
             btnActualizar = new Button();
             panel1 = new Panel();
             panelcita = new Panel();
-            btnRelleno = new Button();
             panel13 = new Panel();
+            btnRelleno = new Button();
             panel12 = new Panel();
             panel11 = new Panel();
             panel10 = new Panel();
@@ -59,6 +59,7 @@
             IPFecha = new DateTimePicker();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             panel14 = new Panel();
+            btnprintcita = new Button();
             ((System.ComponentModel.ISupportInitialize)dgwCitas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)hospitalesBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numEdad).BeginInit();
@@ -117,7 +118,7 @@
             btnEditarcita.BackColor = Color.DarkOrchid;
             btnEditarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEditarcita.ForeColor = SystemColors.ButtonFace;
-            btnEditarcita.Location = new Point(822, 380);
+            btnEditarcita.Location = new Point(822, 371);
             btnEditarcita.Name = "btnEditarcita";
             btnEditarcita.Size = new Size(100, 43);
             btnEditarcita.TabIndex = 27;
@@ -131,7 +132,7 @@
             btnEliminarcita.BackColor = Color.FromArgb(255, 128, 128);
             btnEliminarcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEliminarcita.ForeColor = SystemColors.ButtonFace;
-            btnEliminarcita.Location = new Point(822, 452);
+            btnEliminarcita.Location = new Point(822, 438);
             btnEliminarcita.Name = "btnEliminarcita";
             btnEliminarcita.Size = new Size(100, 42);
             btnEliminarcita.TabIndex = 28;
@@ -388,6 +389,14 @@
             panelcita.Size = new Size(752, 264);
             panelcita.TabIndex = 28;
             // 
+            // panel13
+            // 
+            panel13.BackColor = Color.FromArgb(159, 89, 182);
+            panel13.Location = new Point(581, 193);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(75, 2);
+            panel13.TabIndex = 39;
+            // 
             // btnRelleno
             // 
             btnRelleno.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -402,14 +411,6 @@
             btnRelleno.Text = "Autorellenar";
             btnRelleno.UseVisualStyleBackColor = false;
             btnRelleno.Click += btnRelleno_Click;
-            // 
-            // panel13
-            // 
-            panel13.BackColor = Color.FromArgb(159, 89, 182);
-            panel13.Location = new Point(581, 193);
-            panel13.Name = "panel13";
-            panel13.Size = new Size(75, 2);
-            panel13.TabIndex = 39;
             // 
             // panel12
             // 
@@ -495,12 +496,27 @@
             panel14.Size = new Size(491, 2);
             panel14.TabIndex = 33;
             // 
+            // btnprintcita
+            // 
+            btnprintcita.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnprintcita.BackColor = Color.MediumBlue;
+            btnprintcita.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnprintcita.ForeColor = SystemColors.ButtonFace;
+            btnprintcita.Location = new Point(822, 497);
+            btnprintcita.Name = "btnprintcita";
+            btnprintcita.Size = new Size(100, 43);
+            btnprintcita.TabIndex = 34;
+            btnprintcita.Text = "Imprimir Cita";
+            btnprintcita.UseVisualStyleBackColor = false;
+            btnprintcita.Click += btnprintcita_Click;
+            // 
             // FrmCitas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumPurple;
             ClientSize = new Size(981, 541);
+            Controls.Add(btnprintcita);
             Controls.Add(panel14);
             Controls.Add(guna2HtmlLabel1);
             Controls.Add(btnEliminarcita);
@@ -579,5 +595,6 @@
         private DateTimePicker IPFecha;
         private Panel panel14;
         private Button btnRelleno;
+        private Button btnprintcita;
     }
 }

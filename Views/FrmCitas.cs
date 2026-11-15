@@ -427,5 +427,25 @@ namespace EDUSEX.Views
                     MessageBoxIcon.Error);
             }
         }
+
+        private void btnprintcita_Click(object sender, EventArgs e)
+        {
+
+            Usuarios usuario = userControl.ObtenerUsuarioPorId(SesionActual.IdUsuarioLogueado);
+
+            if (usuario == null || usuario.IdRol != 3)
+            {
+                btnprintcita.Visible = false;
+            }
+
+            /* imprimir solo la cita mas reciente creada por el usuario logueado
+            Citas citaReciente = citasControl.ObtenerCitasPorUsuario(usuario.IdUsuario)
+                .OrderByDescending(c => c.FechaRegistro)
+                .FirstOrDefault();
+
+            pendiente: implementar la funcionalidad de impresión de la citaReciente
+            */
+
+        }
     }
 }

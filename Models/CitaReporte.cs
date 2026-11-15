@@ -14,5 +14,11 @@ namespace EDUSEX.Models
         public TimeSpan HoraCita { get; set; }
         public string Motivo { get; set; } = "";
         public string Estado { get; set; } = "";
+
+        public DateTime FechaRegistro { get; set; }
+
+        public CitaReporte()
+        {
+        }
     }
 }
